@@ -1,0 +1,12 @@
+torch
+transformers
+datasets
+pandas
+tqdm
+numpy
+scipy
+textdistance
+seqeval
+accelerate
+sklearn
+scikit-learn
