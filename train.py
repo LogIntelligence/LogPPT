@@ -24,15 +24,14 @@ import copy
 from logppt.utils import MainArguments, ModelArguments, TrainArguments, TaskArguments, find_labels
 from logppt.data import load_data_parsing, load_data_anomaly_detection, CustomDataCollator
 from logppt.models import add_label_token
-from logppt.tokenization import parsing_tokenize_dataset, detection_tokenize_dataset
+from logppt.tokenization import parsing_tokenize_dataset
 from logppt.evaluation import evaluate
 from logppt.tasks.log_parsing import template_extraction
-from logppt.tasks.anomaly_detection import anomaly_detection_evaluation
 
 logger = logging.getLogger(__name__)
 accelerator = Accelerator()
 
-filter_list = ["and", "or", "the", "a","of", "to", "at"]
+filter_list = ["and", "or", "the", "a", "of", "to", "at"]
 
 
 def train():
@@ -100,10 +99,8 @@ def train():
         template_extraction(tokenizer, model, accelerator, task_args.log_file, max_length=main_args.max_length,
                             model_name=model_type, shot=main_args.shot, dataset_name=task_args.dataset_name,
                             r_time=task_args.r_time, o_dir=task_args.task_output_dir, mode=main_args.mode)
-    elif task_args.task_name == "anomaly-detection":
-        anomaly_detection_evaluation(tokenizer, model, accelerator, main_args.validation_file, main_args.max_length)
     else:
-        pass
+        raise ValueError("Please choose the \"log-parsing\" task")
 
 
 if __name__ == '__main__':
@@ -175,20 +172,17 @@ if __name__ == '__main__':
     padding = "max_length" if main_args.pad_to_max_length else False
 
     if task_args.task_name == "log-parsing":
-        processed_raw_datasets, label_words, keywords = parsing_tokenize_dataset(tokenizer, raw_datasets, text_column_name,
-                                                                       label_name, main_args.max_length, padding,
-                                                                       label_to_id, label_token_to_id, model_type,
-                                                                       main_args.mode)
+        processed_raw_datasets, label_words, keywords = parsing_tokenize_dataset(tokenizer, raw_datasets,
+                                                                                 text_column_name,
+                                                                                 label_name, main_args.max_length,
+                                                                                 padding,
+                                                                                 label_to_id, label_token_to_id,
+                                                                                 model_type,
+                                                                                 main_args.mode)
         train_dataset = processed_raw_datasets["train"]
         eval_dataset = processed_raw_datasets["validation"]
-    elif task_args.task_name == "anomaly-detection":
-        processed_raw_datasets, label_words = detection_tokenize_dataset(tokenizer, raw_datasets, text_column_name,
-                                                                         label_name, main_args.max_length, padding,
-                                                                         label_to_id, id_to_label, label_token_to_id,
-                                                                         main_args.mode)
-
-        train_dataset = processed_raw_datasets["train"]
-        eval_dataset = None
+    else:
+        raise NotImplementedError()
     print(processed_raw_datasets)
 
     # DataLoaders creation:
@@ -221,11 +215,8 @@ if __name__ == '__main__':
         lbl_word_indices = list(label_words.keys()).copy()
         for k in lbl_word_indices:
             token = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(k)).strip()
-            # if token in filter_list:
-            #     continue
-            # if k in tokenizer.all_special_ids or len(token.strip()) < 2 or token.strip() in filter_list:
-            #     del label_words[k]
-            if k in tokenizer.all_special_ids or len(token) < 3 or token in filter_list or token.count(token[0]) == len(token)  or token in selected_words:
+            if k in tokenizer.all_special_ids or len(token) < 3 or token in filter_list \
+                    or token.count(token[0]) == len(token) or token in selected_words:
                 del label_words[k]
             else:
                 selected_words.append(token)

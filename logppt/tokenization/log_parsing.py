@@ -25,6 +25,7 @@ def parsing_tokenize_dataset(tokenizer, dataset, text_column_name, label_column_
         "i-val": []
     }
     keywords = set([])
+
     def tokenize_and_align_labels(examples):
         examples[text_column_name] = [" ".join(x.strip().split()) for x in examples[text_column_name]]
         tokenized_inputs = tokenizer(
