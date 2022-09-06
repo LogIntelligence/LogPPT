@@ -1,6 +1,5 @@
 import logging
 import math
-from collections import Counter
 
 import datasets
 import torch
@@ -17,7 +16,6 @@ from transformers import (
     set_seed
 )
 from logppt.models import load_model
-import copy
 from accelerate import Accelerator
 import copy
 
@@ -86,7 +84,7 @@ def train():
     print("Finish training, best metric: ")
     try:
         logger.info(best_metric)
-    except:
+    except Exception as _:
         print(best_metric)
 
     if main_args.output_dir is not None:
@@ -98,7 +96,7 @@ def train():
     if task_args.task_name == "log-parsing":
         template_extraction(tokenizer, model, accelerator, task_args.log_file, max_length=main_args.max_length,
                             model_name=model_type, shot=main_args.shot, dataset_name=task_args.dataset_name,
-                            r_time=task_args.r_time, o_dir=task_args.task_output_dir, mode=main_args.mode)
+                            o_dir=task_args.task_output_dir, mode=main_args.mode)
     else:
         raise ValueError("Please choose the \"log-parsing\" task")
 

@@ -8,6 +8,7 @@ import time
 from logppt.data import CustomDataCollator
 from tqdm import tqdm
 
+
 def map_template_xlnet(tokenizer, c, t, mode="prompt-tuning"):
     val_token = tokenizer.convert_tokens_to_ids('i-val') if mode == "prompt-tuning" else 1
     tokens = tokenizer.convert_ids_to_tokens(c)
@@ -117,7 +118,7 @@ def map_template_roberta(tokenizer, c, t, mode="prompt-tuning"):
 
 
 def template_extraction(tokenizer, model, accelerator, log_file, max_length, model_name='bert', shot=5,
-                        dataset_name="BGL", r_time="1", o_dir="outputs", mode="prompt-tuning"):
+                        dataset_name="BGL", o_dir="outputs", mode="prompt-tuning"):
     device = accelerator.device
     model.to(device)
     model.eval()
@@ -158,7 +159,7 @@ def template_extraction(tokenizer, model, accelerator, log_file, max_length, mod
         model, test_loader
     )
 
-    for batch in tqdm(test_loader):
+    for batch in tqdm(test_loader, desc='Parsing'):
         line_id = batch.pop("LineId")
         batch = {k: v.to(device) for k, v in batch.items()}
         with torch.no_grad():
@@ -173,7 +174,7 @@ def template_extraction(tokenizer, model, accelerator, log_file, max_length, mod
         for i in range(len(inp)):
             try:
                 p = inp[i].index(end_token) + 1
-            except:
+            except Exception as _:
                 p = len(inp[i])
             res[i] = res[i][:p]
             inp[i] = inp[i][:p]
@@ -215,7 +216,7 @@ def template_extraction(tokenizer, model, accelerator, log_file, max_length, mod
         else:
             templates[event_id]['Count'] += 1
     print("parsing time:", time.time() - t0)
-    os.makedirs(os.path.join(o_dir, f"{r_time}/{shot}shot"), exist_ok=True)
+    os.makedirs(os.path.join(o_dir, f"{shot}shot"), exist_ok=True)
     pd.DataFrame.from_dict(templates, orient='index').to_csv(
-        os.path.join(os.path.join(o_dir, f"{r_time}/{shot}shot", dataset_name + "_2k.log_templates.csv")))
-    df.to_csv(os.path.join(o_dir, f"{r_time}/{shot}shot/" + dataset_name + "_2k.log_structured.csv"))
+        os.path.join(os.path.join(o_dir, f"{shot}shot", dataset_name + "_2k.log_templates.csv")))
+    df.to_csv(os.path.join(o_dir, f"{shot}shot/" + dataset_name + "_2k.log_structured.csv"))

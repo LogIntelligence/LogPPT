@@ -4,7 +4,7 @@ shot=32
 
 for dataset in Proxifier Linux OpenSSH HPC BGL Hadoop Android Apache HDFS HealthApp Mac OpenStack Spark Thunderbird Windows Zookeeper; do
   trf="datasets/${dataset}/${shot}shot/1.json"
-  tef="datasets/log_parsing/${dataset}/test.json"
+  tef="datasets/${dataset}/test.json"
   python train.py --mode prompt-tuning --train_file ${trf} \
     --validation_file ${tef} \
     --model_name_or_path "./pretrained_model/roberta-base" \

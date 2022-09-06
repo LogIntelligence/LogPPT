@@ -121,9 +121,8 @@ def parsing_tokenize_dataset(tokenizer, dataset, text_column_name, label_column_
         remove_columns=dataset["train"].column_names,
         desc="Running tokenizer on dataset",
     )
-    print(tokenizer.convert_ids_to_tokens(list(keywords)))
+
     label_words['i-val'] = [x for x in label_words['i-val'] if x not in keywords]
-    print(tokenizer.convert_ids_to_tokens(label_words['i-val']))
     for x in label_words['i-val']:
         if x in keywords:
             print(x)

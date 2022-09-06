@@ -159,3 +159,6 @@ pretrained_model/roberta-base/vocab.json.1
 *.pdf
 results/GA_dis.png
 results/RQ1.ipynb
+*.bin
+*.json
+*.txt

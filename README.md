@@ -54,10 +54,10 @@ $ python fewshot-sampling.py
 dataset=Apache
 shot=32
 trf="datasets/${dataset}/${shot}shot/1.json"
-tef="datasets/log_parsing/${dataset}/test.json"
+tef="datasets/${dataset}/test.json"
 python train.py --mode prompt-tuning --train_file ${trf} \
     --validation_file ${tef} \
-    --model_name_or_path "./pretrained_model/roberta-base" \
+    --model_name_or_path "./pretrained_models/roberta-base" \
     --per_device_train_batch_size 8 \
     --learning_rate 5e-5 \
     --lr_scheduler_type polynomial \
@@ -68,6 +68,12 @@ python train.py --mode prompt-tuning --train_file ${trf} \
     --shot $shot \
     --dataset_name ${dataset} \
     --task_output_dir "outputs"
+```
+The parsed logs (parsing results) are saved in the `outputs` folder.
+
+For the descriptions of all parameters, please use:
+```shell
+python train.py --help
 ```
 ## Results
 ### RQ1: Parsing Effectiveness
