@@ -19,7 +19,7 @@ experimental results show that LogPPT is effective and efficient for log parsing
 
 LogPPT consists of the following components:
 1. **Adaptive Random Sampling algorithm**:  A few-shot data sampling algorithm, which is used to select K labelled logs for training (K is small).
-2. **Virtual Label Token Generation**: A module to generate a virtual label token (I-PAR) for prompt tuning.
+2. **Few-shot Data Sampling**: An adaptive random sampling based method for selecting K labelled logs for training (K is small).
 3. **Prompt-based Parsing**: A module to tune a pre-trained language model using prompt tuning for log parsing
 
 ## II. Requirements
@@ -75,29 +75,33 @@ For the descriptions of all parameters, please use:
 ```shell
 python train.py --help
 ```
-## Results
-### RQ1: Parsing Effectiveness
+## IV. Results
+### 4.1. RQ1: Parsing Effectiveness
 - Accuracy:
 <p align="center"><img src="docs/images/RQ1_comparison.png"></p>
+
 - Robustness:
 <p align="center"><img src="docs/images/RQ1_robustness1.png" width="700"><br>Robustness across different log data types</p>
 <p align="center"><img src="docs/images/RQ1_robustness2.png" width="500"><br>Robustness across different numbers of training data</p>
+
 - Accuracy on Unseen Logs:
 <p align="center"><img src="docs/images/RQ1_unseen.png" width="500"><br>Accuracy on Unseen Logs</p>
 
-### RQ2: Runtime Performance Evaluation
+### 4.2. RQ2: Runtime Performance Evaluation
 <p align="center"><img src="docs/images/RQ2_runtime.png" width="500"><br>Running time of different log parsers under different volume</p>
 
-### RQ3: Ablation Study
+### 4.3. RQ3: Ablation Study
 - We exclude the Virtual Label Token Generation module and let the pre-trained model automatically assign the embedding for the virtual label token “I-PAR”. To measure the contribution of the Adaptive Random Sampling module, we remove it from our model and randomly sample the log messages for labelling.
 <p align="center"><img src="docs/images/RQ3_ablation_study.png" width="500"><br>Ablation Study Results</p>
 
 - We vary the number of label words from 1 to 16 used in the Virtual Label Token Generation module.
 <p align="center"><img src="docs/images/RQ3_lbl_words.png" width="500"><br>Results with different numbers of label words</p>
 
-### RQ4: Comparison with Different Tuning Techniques
+### 4.4. RQ4: Comparison with Different Tuning Techniques
 We compare LogPPT with fine-tuning, hard-prompt, and soft-prompt.
+
 - Effectiveness:
 <p align="center"><img src="docs/images/RQ4_accuracy.png" width="500"><br>Accuracy across different tuning methods</p>
+
 - Efficiency:
 <p align="center"><img src="docs/images/RQ4_parsingtime.png" width="500"><br>Parsing time across different tuning methods</p>
