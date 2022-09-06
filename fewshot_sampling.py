@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import re
 import string
-from logflap.sampling import adaptive_random_sampling
+from logppt.sampling import adaptive_random_sampling
 from sklearn.utils import shuffle
 
 
