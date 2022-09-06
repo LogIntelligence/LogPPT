@@ -3,8 +3,10 @@ import os
 import pandas as pd
 import re
 import string
-from logppt.sampling import adaptive_random_sampling
 from sklearn.utils import shuffle
+
+from logppt.sampling import adaptive_random_sampling
+from logppt.utils import log_to_dataframe, benchmark
 
 
 def clean(s):
@@ -29,31 +31,33 @@ def clean(s):
 
 
 if __name__ == '__main__':
-
-    for dataset in ["Android", "Apache", "BGL", "Hadoop", "HDFS", "HealthApp", "HPC", "Linux", "Mac", "OpenSSH",
-                    "OpenStack", "Proxifier", "Spark", "Thunderbird", "Windows", "Zookeeper"]:
-        # for dataset in ["Thunderbird"]:
+    os.makedirs("datasets", exist_ok=True)
+    for dataset in benchmark.keys():
         print(dataset)
-        log = pd.read_csv("./logs/{0}/{1}_2k.log_structured_corrected.csv".format(dataset, dataset))
-        train_df = log.sample(n=2000)
-        samples = [(row['Content'], row['EventTemplate']) for _, row in log.iterrows()]
+        setting = benchmark[dataset]
+        os.makedirs("datasets/{0}".format(dataset), exist_ok=True)
+
+        logdf = log_to_dataframe(f'./logs/{setting["log_file"]}', setting['log_format'])
+        logdf.to_csv(f"datasets/{setting['log_file']}_structured.csv")
+        labelled_logs = pd.read_csv(f'./logs/{setting["log_file"]}_structured_corrected.csv')
+        train_df = labelled_logs.sample(n=2000)
+        samples = [(row['Content'], row['EventTemplate']) for _, row in labelled_logs.iterrows()]
         # print(samples)
         # samples = [gen_input_label(x[0], x[1], []) for x in samples]
         samples = [{"text": x[0], "label": x[1], "type": 1} for x in samples]
-        os.makedirs("datasets/log_parsing/{0}".format(dataset), exist_ok=True)
-        with open("datasets/log_parsing/{0}/test.json".format(dataset), "w") as f:
+        with open("datasets/{0}/test.json".format(dataset), "w") as f:
             for s in samples:
                 f.write(json.dumps(s) + "\n")
-        content = [(clean(x), i, len(x)) for i, x in enumerate(log['Content'].tolist())]
+        content = [(clean(x), i, len(x)) for i, x in enumerate(labelled_logs['Content'].tolist())]
         content = [x for x in content if len(x[0].split()) > 1]
 
-        for shot in [4, 8, 16, 32]:
+        for shot in [32]:
             keywords_list = []
-            os.makedirs("datasets/log_parsing/{0}/{1}shot".format(dataset, shot), exist_ok=True)
+            os.makedirs("datasets/{0}/{1}shot".format(dataset, shot), exist_ok=True)
             samples_ids = adaptive_random_sampling(shuffle(content), shot)
-            print(shot, samples_ids)
-            labeled_samples = [(row['Content'], row['EventTemplate']) for _, row in log.take(samples_ids).iterrows()]
+
+            labeled_samples = [(row['Content'], row['EventTemplate']) for _, row in labelled_logs.take(samples_ids).iterrows()]
             labeled_samples = [{"text": x[0], "label": x[1], "type": 1} for x in labeled_samples]
-            with open("datasets/log_parsing/{0}/{1}shot/{2}.json".format(dataset, shot, 1), "w") as f:
+            with open("datasets/{0}/{1}shot/{2}.json".format(dataset, shot, 1), "w") as f:
                 for s in labeled_samples:
                     f.write(json.dumps(s) + "\n")

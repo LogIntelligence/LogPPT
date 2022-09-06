@@ -146,18 +146,13 @@ class TaskArguments:
     )
 
     dataset_name: Optional[str] = field(
-        default="BGL",
+        default="Apache",
         metadata={"help": "The name of the dataset"}
     )
 
     log_file: Optional[str] = field(
-        default="BGL_2k.log",
+        default="Apache_2k.log",
         metadata={"help": "The name of the log file"}
-    )
-
-    r_time: Optional[str] = field(
-        default="1",
-        metadata={"help": "The running time (randomly repeat)"}
     )
 
     task_output_dir: Optional[str] = field(
