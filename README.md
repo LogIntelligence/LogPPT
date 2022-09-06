@@ -15,7 +15,7 @@ experimental results show that LogPPT is effective and efficient for log parsing
 
 ## Framework
 
-<p align="center"><img src="docs/LogPPT_overview.png"><br>An overview of LogPPT</p>
+<p align="center"><img src="docs/LogPPT_overview.png" width="400"><br>An overview of LogPPT</p>
 
 LogPPT consists of the following components:
 1. **Adaptive Random Sampling algorithm**:  A few-shot data sampling algorithm, which is used to select K labelled logs for training (K is small).
