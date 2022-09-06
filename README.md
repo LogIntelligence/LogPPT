@@ -52,7 +52,7 @@ $ bash download.sh
 - Accuracy:
 <p align="center"><img src="docs/images/RQ1_comparison.png"></p>
 - Robustness:
-<p align="center"><img src="docs/images/RQ1_robustness1.png"><br>Robustness across different log data types</p>
+<p align="center"><img src="docs/images/RQ1_robustness1.png" width="700"><br>Robustness across different log data types</p>
 <p align="center"><img src="docs/images/RQ1_robustness2.png" width="500"><br>Robustness across different numbers of training data</p>
 - Accuracy on Unseen Logs:
 <p align="center"><img src="docs/images/RQ1_unseen.png" width="500"><br>Accuracy on Unseen Logs</p>
