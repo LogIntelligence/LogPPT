@@ -75,13 +75,20 @@ For the descriptions of all parameters, please use:
 ```shell
 python train.py --help
 ```
+
+### 3.3. Evaluation
+
+```shell
+python benchmark.py
+```
+
 ## IV. Results
 ### 4.1. RQ1: Parsing Effectiveness
 - Accuracy:
-<p align="center"><img src="docs/images/RQ1_comparison.png"></p>
+<p align="center"><img src="docs/images/RQ1_comparison.png"width="800"></p>
 
 - Robustness:
-<p align="center"><img src="docs/images/RQ1_robustness1.png" width="700"><br>Robustness across different log data types</p>
+<p align="center"><img src="docs/images/RQ1_robustness1.png" width="600"><br>Robustness across different log data types</p>
 <p align="center"><img src="docs/images/RQ1_robustness2.png" width="500"><br>Robustness across different numbers of training data</p>
 
 - Accuracy on Unseen Logs:
