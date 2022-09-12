@@ -140,7 +140,6 @@ dmypy.json
 # Outputs
 /RQ1/
 /models/
-/outputs/
 /testing_logs/
 /datasets/*/
 /RQ*/

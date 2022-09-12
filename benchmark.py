@@ -120,7 +120,7 @@ bechmark_result.append(["Average", avg_ga / len(benchmark_settings.keys()), avg_
 print('\n=== Overall evaluation results ===')
 df_result = pd.DataFrame(bechmark_result,
                          columns=['Dataset', 'Group Accuracy', 'Parsing Accuracy', 'Edit distance', 'unseen_PA',
-                                  'no_unseen', 'FTA', 'PTA', 'RTA', 'OG', 'UG', 'MX'])
+                                  'no_unseen'])
 df_result.set_index('Dataset', inplace=True)
 print(df_result)
 df_result.T.to_csv(os.path.join(output_dir, 'benchmark_result.csv'))
