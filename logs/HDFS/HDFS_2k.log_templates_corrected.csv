@@ -1,7 +1,7 @@
 EventId,EventTemplate
 E1,<*> Served block <*> to <*>
 E2,<*> Starting thread to transfer block <*> to <*>
-E3,<*>:Got exception while serving <*> to <*>
+E3,<*>:Got exception while serving <*> to <*>:
 E4,BLOCK* ask <*> to delete <*>
 E5,BLOCK* ask <*> to replicate <*> to datanode(s) <*>
 E6,BLOCK* NameSystem.addStoredBlock: blockMap updated: <*> is added to <*> size <*>

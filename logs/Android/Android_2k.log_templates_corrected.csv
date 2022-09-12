@@ -14,7 +14,7 @@ E12,ACTION_BATTERY_CHANGED AMP: <*>; Volt: <*>
 E13,ACTION_BATTERY_CHANGED pluggedType: <*>
 E14,"ACTIVITY check resid: <*>, size=<*>"
 E15,"ActivityManagerService,attachApplication,callingPid = <*>"
-E16,"ActivityRecord info: ActivityInfo{<*>}, euid: <*>"
+E16,"ActivityRecord info: ActivityInfo{<*> <*>}, euid: <*>"
 E17,addNotification key=<*>|<*>|<*>|<*>|<*>
 E18,"animateCollapsePanels:flags=<*>, force=<*>, delayed=<*>, mExpandedVisible=<*>"
 E21,"Animating brightness: target=<*>, rate=<*>"
@@ -76,7 +76,7 @@ E78,makeExpandedInvisible: mExpandedVisible=<*>
 E80,Marking notification as seen <*>|<*>|<*>|<*>|<*>
 E81,mHeadsUpExistenceChangedRunnable
 E82,mVisiblity.getValue is <*>
-E83,"new Process app=ProcessRecord{<*>}, name: <*>:qzone, euid: <*>"
+E83,"new Process app=ProcessRecord{<*> <*>}, name: <*>:qzone, euid: <*>"
 E84,"notifyUiVisibilityChanged:vis=<*>, SystemUiVisibility=<*>"
 E85,onExpandingFinished
 E86,onExpandingStarted
@@ -103,7 +103,7 @@ E106,RefreshBatteryInfo isBatteryLow: <*>
 E107,registerCallback not in UI.
 E108,"release:lock=<*>, flg=<*>, tag=""<*>"", name=<*>, ws=<*>, uid=<*>, pid=<*>"
 E109,"Releasing suspend blocker ""PowerManagerService.WakeLocks""."
-E110,remove(PendingIntent{<*>: PendingIntentRecord{<*> broadcastIntent}}) changed bounds; rebatching
+E110,remove(PendingIntent{<*>: PendingIntentRecord{<*> <*> broadcastIntent}}) changed bounds; rebatching
 E111,removeNotification:<*>|<*>|<*>|<*>|<*>
 E112,removeNotificationChildren
 E113,resumeSuspendedAutohide
@@ -112,7 +112,7 @@ E115,schedulePeek
 E116,scheduleTimeTickEvent triggerAtTime = <*>
 E117,Scheduling restart of crashed service <*> in <*>
 E118,Screen frozen for <*> due to Window{<*> u0 <*>}
-E119,"sending alarm Alarm{<*> type <*> when <*> PendingIntent{<*>: PendingIntentRecord{<*> broadcastIntent}}},repeatInterval = <*>,listenerTag =<*>"
+E119,"sending alarm Alarm{<*> type <*> when <*> PendingIntent{<*>: PendingIntentRecord{<*> <*> broadcastIntent}}},repeatInterval = <*>,listenerTag =<*>"
 E120,"sending alarm Alarm{<*> type <*> when <*> PendingIntent{<*>: PendingIntentRecord{<*> android broadcastIntent}}},repeatInterval = <*>,listenerTag =time_tick"
 E121,Sending non-protected broadcast <*> from system <*> pkg <*>
 E122,"setDataSource(<*>, <*>, <*>)"

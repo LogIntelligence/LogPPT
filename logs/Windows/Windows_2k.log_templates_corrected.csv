@@ -7,11 +7,11 @@ E5,"<*> IAdvancedInstallerAwareStore_ResolvePendingTransactions (call <*>) (flag
 E6,<*> ICSITransaction::Commit calling IStorePendingTransaction::Apply - coldpatching=<*> applyflags=<*>
 E7,<*> Performing <*> operations; <*> are not lock/unlock and follow:
 E8,"<*> Store coherency cookie matches last scavenge cookie, skipping scavenge."
-E9,<*>@<*> CSI Transaction @<*> destroyed
-E10,"<*>@<*> CSI Transaction @<*> initialized for deployment engine {<*>} with flags <*> and client id [<*>]""<*>/"""
-E11,<*>@<*> PopulateComponentFamiliesKey - Begin
-E12,<*>@<*> PopulateComponentFamiliesKey - End
-E13,<*>@<*> WcpInitialize (wcp.dll version <*>) called (stack @<*>)
+E9,<*>@<*>/<*>/<*>:<*>:<*>:<*> CSI Transaction @<*> destroyed
+E10,"<*>@<*>/<*>/<*>:<*>:<*>:<*> CSI Transaction @<*> initialized for deployment engine {<*>} with flags <*> and client id [<*>]""<*>/"""
+E11,<*>@<*>/<*>/<*>:<*>:<*>:<*> PopulateComponentFamiliesKey - Begin
+E12,<*>@<*>/<*>/<*>:<*>:<*>:<*> PopulateComponentFamiliesKey - End
+E13,<*>@<*>/<*>/<*>:<*>:<*>:<*> WcpInitialize (wcp.dll version <*>) called (stack @<*>)
 E14,"Disabling manifest caching, because the image is not writeable."
 E15,Ending the TrustedInstaller main loop.
 E16,Ending TrustedInstaller finalization.

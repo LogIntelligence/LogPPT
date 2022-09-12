@@ -9,10 +9,10 @@ E7,ACPI: Subsystem revision <*>
 E8,ALERT exited abnormally with [<*>]
 E9,"ANONYMOUS FTP LOGIN FROM <*>, (anonymous)"
 E10,apm: BIOS version <*> Flags <*> (Driver version <*>)
-E11,audit(<*>): initialized
+E11,audit(<*>:<*>): initialized
 E12,audit: initializing netlink socket (disabled)
-E13,Authentication failed from <*>: Permission denied in replay cache code
-E14,Authentication failed from <*>: Software caused connection abort
+E13,Authentication failed from <*> <*>: Permission denied in replay cache code
+E14,Authentication failed from <*> <*>: Software caused connection abort
 E15,authentication failure; logname= uid=<*> euid=<*> tty=:<*> ruser= rhost=
 E16,authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= rhost=<*>
 E18,authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= rhost=<*> user=<*>
@@ -25,7 +25,7 @@ E25,Calibrating delay loop... <*> BogoMIPS
 E26,Capability LSM initialized
 E27,check pass; user unknown
 E28,Checking 'hlt' instruction... OK.
-E29,connection from <*> at <*>
+E29,connection from <*> <*> at <*>:<*>:<*>
 E30,Console: colour VGA+ <*>
 E31,Couldn't authenticate user
 E32,"CPU <*> irqstacks, hard=<*> soft=<*>"
@@ -64,7 +64,7 @@ E64,"klogd <*>, log source = <*> started."
 E65,klogd startup succeeded
 E66,Linux agpgart interface <*> (c) Dave Jones
 E67,Linux Plug and Play Support <*> (c) Adam Belay
-E68,Linux version <*> (bhcompile@bugs.build.redhat.com) (gcc version <*> (Red Hat Linux <*>)) #<*> EDT <*>
+E68,Linux version <*> (bhcompile@bugs.build.redhat.com) (gcc version <*> (Red Hat Linux <*>)) #<*> <*>:<*>:<*> EDT <*>
 E69,mapped 4G/4G trampoline to <*>.
 E70,"Memory: <*> available (<*> kernel code, <*> reserved, <*> data, <*> init, <*> highmem)"
 E71,"Mount-cache hash table entries: <*> (order: <*>, <*> bytes)"
@@ -108,7 +108,7 @@ E108,"Total HugeTLB memory allocated, <*>"
 E109,Transparent bridge - <*>
 E110,usbcore: registered new driver hub
 E111,usbcore: registered new driver usbfs
-E112,User unknown timed out after <*> seconds at <*>
+E112,User unknown timed out after <*> seconds at <*>:<*>:<*> <*>
 E113,Using tsc for high-res timesource
 E114,Version <*> Starting
 E115,VFS: Disk quotas <*>

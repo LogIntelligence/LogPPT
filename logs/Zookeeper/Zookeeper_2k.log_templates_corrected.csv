@@ -1,17 +1,17 @@
 EventId,EventTemplate
-E1,******* GOODBYE <*> ********
-E2,Accepted socket connection from <*>
+E1,******* GOODBYE <*>:<*> ********
+E2,Accepted socket connection from <*>:<*>
 E3,autopurge.purgeInterval set to <*>
 E4,autopurge.snapRetainCount set to <*>
-E5,Cannot open channel to <*> at election address <*>
+E5,Cannot open channel to <*> at election address <*>:<*>
 E6,caught end of stream exception
-E7,Client attempting to establish new session at <*>
-E8,Client attempting to renew session <*> at <*>
-E9,Closed socket connection for client <*> (no session established for client)
-E10,Closed socket connection for client <*> which had sessionid <*>
+E7,Client attempting to establish new session at <*>:<*>
+E8,Client attempting to renew session <*> at <*>:<*>
+E9,Closed socket connection for client <*>:<*> (no session established for client)
+E10,Closed socket connection for client <*>:<*> which had sessionid <*>
 E11,"Connection broken for id <*>, my id = <*>, error ="
-E12,Connection request from old client <*>; will be dropped if server is in r-o mode
-E13,Established session <*> with negotiated timeout <*> for client <*>
+E12,Connection request from old client <*>:<*>; will be dropped if server is in r-o mode
+E13,Established session <*> with negotiated timeout <*> for client <*>:<*>
 E14,Exception causing close of session <*> due to java.io.IOException: ZooKeeperServer not running
 E15,"Expiring session <*>, timeout of <*> exceeded"
 E16,First is <*>
@@ -27,7 +27,7 @@ E25,Interrupting SendWorker
 E26,LOOKING
 E27,maxSessionTimeout set to <*>
 E28,minSessionTimeout set to <*>
-E29,My election bind port: <*>/<*>
+E29,My election bind port: <*>/<*>:<*>
 E30,"New election. My id = <*>, proposed zxid=<*>"
 E31,Notification time out: <*>
 E32,"Notification: <*> (n.leader), <*> (n.zxid), <*> (n.round), FOLLOWING (n.state), <*> (n.sid), <*> (n.peerEPoch), FOLLOWING (my state)"
@@ -38,7 +38,7 @@ E36,"Notification: <*> (n.leader), <*> (n.zxid), <*> (n.round), LOOKING (n.state
 E37,"Notification: <*> (n.leader), <*> (n.zxid), <*> (n.round), LOOKING (n.state), <*> (n.sid), <*> (n.peerEPoch), LOOKING (my state)"
 E38,Processed session termination for sessionid: <*>
 E39,Reading snapshot <*>
-E40,Received connection request <*>
+E40,Received connection request <*>:<*>
 E41,Revalidating client: <*>
 E42,Send worker leaving thread
 E43,Sending DIFF

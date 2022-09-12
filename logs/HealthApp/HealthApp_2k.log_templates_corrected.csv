@@ -37,7 +37,7 @@ E35,isScreenOn <*>
 E36,needAutoSync autoSyncSwitch is open
 E37,"new date =<*>, type=<*>,<*>,old=<*>"
 E38,next day:<*>
-E39,onExtend:<*>
+E39,onExtend:<*> <*> <*> <*>
 E40,onReceive action: android.intent.action.SCREEN_OFF
 E41,onReceive action: android.intent.action.SCREEN_ON
 E42,onStandStepChanged <*>
@@ -45,7 +45,7 @@ E43,processHandleBroadcastAction action:android.intent.action.SCREEN_ON
 E44,processHandleBroadcastAction action:android.intent.action.TIME_TICK
 E45,registersensorsuccess: <*>
 E46,reload : <*> restar <*>
-E47,REPORT : <*>
+E47,REPORT : <*> <*> <*> <*>
 E48,reStartStepCounter
 E49,"saveHealthDetailData() deviceID = <*>,clientID=<*>,id=<*>"
 E50,"saveHealthDetailData() saveOneDetailData fail hiHealthData = <*>,type = <*>"
@@ -55,7 +55,7 @@ E53,"screen status unknown,think screen on"
 E54,sendSyncFailedBroadcast
 E55,setBasicStandardSteps basicStandardStep=<*> restartSteps=<*>
 E56,setDiffTotalSteps=<*>
-E57,setGoalNotifiShownRecord <*>
+E57,setGoalNotifiShownRecord <*> <*>
 E58,setTodayTotalDetailSteps=<*>
 E59,setWriteDBLastDataMinute success
 E60,setWriteDBLastDataMinute=<*>

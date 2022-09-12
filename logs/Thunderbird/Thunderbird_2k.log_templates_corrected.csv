@@ -1,15 +1,15 @@
 EventId,EventTemplate
-E1,(C) <*> Netfilter core team
-E2,(<*>) CMD (<*>)
+E1,(C) <*>-<*> Netfilter core team
+E2,(<*>) CMD (<*> <*>)
 E3,(<*>) CMD (run-parts <*>)
 E4,(supports <*>)
 E5,... autorun DONE.
 E6,[ib_sm_sweep.c:<*>]: No topology change
 E7,[ib_sm_sweep.c:<*>]: No configuration change required
 E8,[ib_sm_sweep.c:<*>]: ********************** NEW SWEEP ********************
-E9,<*> (Release Date: <*>)
+E9,<*> (Release Date: <*> <*>)
 E10,<*> (v001 DELL PE BKC <*> MSFT <*>) @ <*>
-E11,<*> ak Exp $
+E11,<*> <*> <*> ak Exp $
 E12,"<*> AUX port at <*>,<*> irq <*>"
 E13,"<*> KBD port at <*>,<*> irq <*>"
 E14,<*>-ioctl (<*>) initialised: <*>
@@ -80,9 +80,9 @@ E78,Now running on <*>'s privileges.
 E79,passed.
 E80,PCI Hot Plug PCI Core version: <*>
 E81,"PCI interrupt <*> -> GSI <*> (level, low) -> IRQ <*>"
-E82,PCI Interrupt Link [<*>] (IRQs <*>) <*>
-E83,PCI Interrupt Link [<*>] (IRQs <*>)
-E84,"PCI Interrupt Link [<*>] (IRQs <*>) <*>, disabled."
+E82,PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>
+E83,PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>)
+E84,"PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>, disabled."
 E85,PCI Interrupt Routing Table [<*>]
 E86,PCI <*> Bridge [PCI0] (<*>)
 E87,PE/PV Model: <*> SCSI BP Rev: <*>

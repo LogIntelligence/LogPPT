@@ -15,10 +15,10 @@ E13,Component State Change: Component <*> is in the unavailable state (HWID=<*>)
 E14,configured out
 E15,critical
 E16,Failed subcommands <*>
-E17,Fan speeds ( <*> **** <*> )
-E18,Fan speeds ( <*> )
+E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
 E19,halt (command <*>)
-E20,inconsistent nodesets node-<*> <ok> node-<*> <ok> node-<*> <ok> node-<*>
+E20,inconsistent nodesets node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <*>
 E21,Link error
 E22,Link error on broadcast tree Interconnect-<*>:<*>:<*>:<*>
 E23,link errors remain current
@@ -40,7 +40,7 @@ E38,running
 E39,ServerFileSystem: An ServerFileSystem domain panic has occurred on <*>
 E40,ServerFileSystem: ServerFileSystem domain <*> is full
 E41,starting
-E42,Targeting domains:node-<*> and nodes:node-[<*>] child of command <*>
+E42,Targeting domains:node-<*> and nodes:node-[<*>-<*>] child of command <*>
 E43,Targeting domains:node-<*> nodes:node-<*>
 E44,Temperature (<*>) exceeds warning threshold
 E45,wait (command <*>)

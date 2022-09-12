@@ -1984,7 +1984,7 @@ LineId,Month,Date,Time,Level,Component,PID,Content,EventId,EventTemplate
 1983,Jul,27,14:41:54,combo,sysctl,,kernel.core_uses_pid = 1,E63,kernel.core_uses_pid = <*>
 1984,Jul,27,14:41:59,combo,hcid,1690.0,HCI daemon ver 2.4 started,E48,HCI daemon ver <*> started
 1985,Jul,27,14:41:59,combo,bluetooth,,hcid startup succeeded,E49,hcid startup succeeded
-1986,Jul,27,14:41:59,combo,kernel,,audit(1122475266.4294965305:0): initialized,E11,audit(<*>): initialized
+1986,Jul,27,14:41:59,combo,kernel,,audit(1122475266.4294965305:0): initialized,E11,audit(<*>:<*>): initialized
 1987,Jul,27,14:41:54,combo,network,,Setting network parameters:  succeeded,E104,Setting network parameters: succeeded
 1988,Jul,27,14:41:59,combo,bluetooth,,sdpd startup succeeded,E94,sdpd startup succeeded
 1989,Jul,27,14:41:59,combo,sdpd,1696.0,sdpd v1.5 started,E95,sdpd <*> started

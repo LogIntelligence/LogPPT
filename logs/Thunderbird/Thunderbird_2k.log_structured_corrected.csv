@@ -1099,15 +1099,15 @@ LineId,Label,Timestamp,Date,User,Month,Day,Time,Location,Component,PID,Content,E
 1098,-,1131567000,2005.11.09,tbird-admin1,Nov,9,12:10:00,local@tbird-admin1,/apps/x86_64/system/ganglia-3.0.1/sbin/gmetad,1682.0,data_thread() got not answer from any [Thunderbird_A8] datasource,E32,data_thread() got not answer from any [<*>] datasource
 1099,-,1131567000,2005.11.09,tbird-admin1,Nov,9,12:10:00,local@tbird-admin1,/apps/x86_64/system/ganglia-3.0.1/sbin/gmetad,1682.0,data_thread() got not answer from any [Thunderbird_D8] datasource,E32,data_thread() got not answer from any [<*>] datasource
 1100,-,1131567001,2005.11.09,aadmin1,Nov,9,12:10:01,src@aadmin1,crond(pam_unix),16570.0,session opened for user root by (uid=0),E118,session opened for user <*> by (uid=<*>)
-1101,-,1131567001,2005.11.09,aadmin1,Nov,9,12:10:01,src@aadmin1,crond,16571.0,(root) CMD (/projects/tbird/temps/get_temps a),E2,(<*>) CMD (<*>)
+1101,-,1131567001,2005.11.09,aadmin1,Nov,9,12:10:01,src@aadmin1,crond,16571.0,(root) CMD (/projects/tbird/temps/get_temps a),E2,(<*>) CMD (<*> <*>)
 1102,-,1131567001,2005.11.09,badmin1,Nov,9,12:10:01,src@badmin1,crond(pam_unix),11179.0,session opened for user root by (uid=0),E118,session opened for user <*> by (uid=<*>)
-1103,-,1131567001,2005.11.09,badmin1,Nov,9,12:10:01,src@badmin1,crond,11180.0,(root) CMD (/projects/tbird/temps/get_temps b),E2,(<*>) CMD (<*>)
+1103,-,1131567001,2005.11.09,badmin1,Nov,9,12:10:01,src@badmin1,crond,11180.0,(root) CMD (/projects/tbird/temps/get_temps b),E2,(<*>) CMD (<*> <*>)
 1104,-,1131567001,2005.11.09,cadmin1,Nov,9,12:10:01,src@cadmin1,crond(pam_unix),19394.0,session opened for user root by (uid=0),E118,session opened for user <*> by (uid=<*>)
-1105,-,1131567001,2005.11.09,cadmin1,Nov,9,12:10:01,src@cadmin1,crond,19395.0,(root) CMD (/projects/tbird/temps/get_temps c),E2,(<*>) CMD (<*>)
+1105,-,1131567001,2005.11.09,cadmin1,Nov,9,12:10:01,src@cadmin1,crond,19395.0,(root) CMD (/projects/tbird/temps/get_temps c),E2,(<*>) CMD (<*> <*>)
 1106,-,1131567001,2005.11.09,dadmin1,Nov,9,12:10:01,src@dadmin1,crond(pam_unix),24261.0,session opened for user root by (uid=0),E118,session opened for user <*> by (uid=<*>)
-1107,-,1131567001,2005.11.09,dadmin1,Nov,9,12:10:01,src@dadmin1,crond,24262.0,(root) CMD (/projects/tbird/temps/get_temps d),E2,(<*>) CMD (<*>)
+1107,-,1131567001,2005.11.09,dadmin1,Nov,9,12:10:01,src@dadmin1,crond,24262.0,(root) CMD (/projects/tbird/temps/get_temps d),E2,(<*>) CMD (<*> <*>)
 1108,-,1131567001,2005.11.09,eadmin1,Nov,9,12:10:01,src@eadmin1,crond(pam_unix),4309.0,session opened for user root by (uid=0),E118,session opened for user <*> by (uid=<*>)
-1109,-,1131567001,2005.11.09,eadmin1,Nov,9,12:10:01,src@eadmin1,crond,4310.0,(root) CMD (/projects/tbird/temps/get_temps e),E2,(<*>) CMD (<*>)
+1109,-,1131567001,2005.11.09,eadmin1,Nov,9,12:10:01,src@eadmin1,crond,4310.0,(root) CMD (/projects/tbird/temps/get_temps e),E2,(<*>) CMD (<*> <*>)
 1110,-,1131567001,2005.11.09,tbird-admin1,Nov,9,12:10:01,local@tbird-admin1,/apps/x86_64/system/ganglia-3.0.1/sbin/gmetad,1682.0,data_thread() got not answer from any [Thunderbird_A4] datasource,E32,data_thread() got not answer from any [<*>] datasource
 1111,-,1131567002,2005.11.09,tbird-sm1,Nov,9,12:10:02,src@tbird-sm1,ib_sm.x,24904.0,[ib_sm_sweep.c:1831]: ********************** NEW SWEEP ********************,E8,[ib_sm_sweep.c:<*>]: ********************** NEW SWEEP ********************
 1112,-,1131567003,2005.11.09,bn688,Nov,9,12:10:03,bn688/bn688,ntpd,21977.0,"synchronized to 10.100.16.250, stratum 3",E125,"synchronized to <*>, stratum <*>"
@@ -1206,14 +1206,14 @@ LineId,Label,Timestamp,Date,User,Month,Day,Time,Location,Component,PID,Content,E
 1205,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,Local APIC address 0xfee00000,E66,Local APIC address <*>
 1206,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,MADT (v001 DELL PE BKC 0x00000001 MSFT 0x0100000a) @ 0x00000000000fd724,E10,<*> (v001 DELL PE BKC <*> MSFT <*>) @ <*>
 1207,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,MCFG (v001 DELL PE BKC 0x00000001 MSFT 0x0100000a) @ 0x00000000000fd854,E10,<*> (v001 DELL PE BKC <*> MSFT <*>) @ <*>
-1208,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Link [LNKA] (IRQs 3 4 5 6 7 10 11 12) *14,E82,PCI Interrupt Link [<*>] (IRQs <*>) <*>
-1209,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Link [LNKB] (IRQs 3 4 5 6 7 10 *11 12),E83,PCI Interrupt Link [<*>] (IRQs <*>)
-1210,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Link [LNKC] (IRQs 3 4 5 6 7 10 11 12) *15,E82,PCI Interrupt Link [<*>] (IRQs <*>) <*>
-1211,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKD] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*>) <*>, disabled."
-1212,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKE] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*>) <*>, disabled."
-1213,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKF] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*>) <*>, disabled."
-1214,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKG] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*>) <*>, disabled."
-1215,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKH] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*>) <*>, disabled."
+1208,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Link [LNKA] (IRQs 3 4 5 6 7 10 11 12) *14,E82,PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>
+1209,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Link [LNKB] (IRQs 3 4 5 6 7 10 *11 12),E83,PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>)
+1210,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Link [LNKC] (IRQs 3 4 5 6 7 10 11 12) *15,E82,PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>
+1211,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKD] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>, disabled."
+1212,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKE] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>, disabled."
+1213,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKF] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>, disabled."
+1214,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKG] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>, disabled."
+1215,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,"PCI Interrupt Link [LNKH] (IRQs 3 4 5 6 7 10 11 12) *0, disabled.",E84,"PCI Interrupt Link [<*>] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>) <*>, disabled."
 1216,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Routing Table [\_SB_.PCI0.PALO.DOBA._PRT],E85,PCI Interrupt Routing Table [<*>]
 1217,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Routing Table [\_SB_.PCI0.PALO.DOBB._PRT],E85,PCI Interrupt Routing Table [<*>]
 1218,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ACPI,,PCI Interrupt Routing Table [\_SB_.PCI0.PALO._PRT],E85,PCI Interrupt Routing Table [<*>]
@@ -1266,7 +1266,7 @@ LineId,Label,Timestamp,Date,User,Month,Day,Time,Location,Component,PID,Content,E
 1265,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,EXT3-fs,,mounted filesystem with ordered data mode.,E71,mounted filesystem with ordered data mode.
 1266,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,EXT3-fs,,mounted filesystem with ordered data mode.,E71,mounted filesystem with ordered data mode.
 1267,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,EXT3-fs,,mounted filesystem with ordered data mode.,E71,mounted filesystem with ordered data mode.
-1268,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,IA32 emulation $Id,,"sys_ia32.c,v 1.32 2002/03/24 13:02:28 ak Exp $",E11,<*> ak Exp $
+1268,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,IA32 emulation $Id,,"sys_ia32.c,v 1.32 2002/03/24 13:02:28 ak Exp $",E11,<*> <*> <*> ak Exp $
 1269,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,IOAPIC,0.0,"apic_id 8, version 32, address 0xfec00000, GSI 0-23",E18,"apic_id <*>, version <*>, address <*>, GSI <*>"
 1270,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,IOAPIC,1.0,"apic_id 9, version 32, address 0xfec80000, GSI 32-55",E18,"apic_id <*>, version <*>, address <*>, GSI <*>"
 1271,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,IOAPIC,2.0,"apic_id 10, version 32, address 0xfec83000, GSI 64-87",E18,"apic_id <*>, version <*>, address <*>, GSI <*>"
@@ -1317,10 +1317,10 @@ LineId,Label,Timestamp,Date,User,Month,Day,Time,Location,Component,PID,Content,E
 1316,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ide5,,Wait for ready failed before probe !,E145,Wait for ready failed before probe !
 1317,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ide,,Assuming 33MHz system bus speed for PIO modes; override with idebus=xx,E20,Assuming <*> system bus speed for PIO modes; override with idebus=xx
 1318,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ioctl32(fdisk:515),,Unknown cmd fd(5) cmd(80081272){00} arg(ffffda44) on /dev/sda,E132,Unknown cmd fd(<*>) cmd(<*>){<*>} arg(<*>) on <*>
-1319,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ip_tables,,(C) 2000-2002 Netfilter core team,E1,(C) <*> Netfilter core team
-1320,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ip_tables,,(C) 2000-2002 Netfilter core team,E1,(C) <*> Netfilter core team
-1321,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ip_tables,,(C) 2000-2002 Netfilter core team,E1,(C) <*> Netfilter core team
-1322,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ip_tables,,(C) 2000-2002 Netfilter core team,E1,(C) <*> Netfilter core team
+1319,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ip_tables,,(C) 2000-2002 Netfilter core team,E1,(C) <*>-<*> Netfilter core team
+1320,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ip_tables,,(C) 2000-2002 Netfilter core team,E1,(C) <*>-<*> Netfilter core team
+1321,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ip_tables,,(C) 2000-2002 Netfilter core team,E1,(C) <*>-<*> Netfilter core team
+1322,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ip_tables,,(C) 2000-2002 Netfilter core team,E1,(C) <*>-<*> Netfilter core team
 1323,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,ksign,,Installing public key data,E54,Installing public key data
 1324,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,md,,... autorun DONE.,E5,... autorun DONE.
 1325,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,md,,... autorun DONE.,E5,... autorun DONE.
@@ -1329,8 +1329,8 @@ LineId,Label,Timestamp,Date,User,Month,Day,Time,Location,Component,PID,Content,E
 1328,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,md,,autorun ...,E23,autorun ...
 1329,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,md,,autorun ...,E23,autorun ...
 1330,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,md,,"md driver 0.90.0 MAX_MD_DEVS=256, MD_SB_DISKS=27",E69,"md driver <*> MAX_MD_DEVS=<*>, MD_SB_DISKS=<*>"
-1331,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,megaraid cmm,,#38#-rh1 (Release Date: Fri Dec 10 19:02:14 EST 2004),E9,<*> (Release Date: <*>)
-1332,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,megaraid,,#39# (Release Date: Mon Sep 27 22:15:07 EDT 2004),E9,<*> (Release Date: <*>)
+1331,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,megaraid cmm,,#38#-rh1 (Release Date: Fri Dec 10 19:02:14 EST 2004),E9,<*> (Release Date: <*> <*>)
+1332,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,megaraid,,#39# (Release Date: Mon Sep 27 22:15:07 EDT 2004),E9,<*> (Release Date: <*> <*>)
 1333,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,megaraid,,fw version:[516A] bios version:[H418],E47,fw version:[<*>] bios version:[<*>]
 1334,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,megaraid,,probe new device 0x1028:0x0013:0x1028:0x016c: bus 2:slot 14:func 0,E91,probe new device <*>: bus <*>:slot <*>:func <*>
 1335,-,1131567043,2005.11.09,tbird-admin1,Nov,9,12:10:43,local@tbird-admin1,mice,,PS/2 mouse device common for all mice,E96,PS/<*> mouse device common for all mice

@@ -162,14 +162,14 @@ LineId,LogId,Node,Component,State,Time,Flag,Content,EventId,EventTemplate
 161,91679,3440,boot_cmd,success,1109728975,1,Command has completed successfully,E12,Command has completed successfully
 162,130127,3501,boot_cmd,success,1111856688,1,Command has completed successfully,E12,Command has completed successfully
 163,240717,3664,boot_cmd,success,1118282468,1,Command has completed successfully,E12,Command has completed successfully
-164,2599204,1971,boot_cmd,new,1074297378,1,Targeting domains:node-D3 and nodes:node-[104-127] child of command 1963,E42,Targeting domains:node-<*> and nodes:node-[<*>] child of command <*>
-165,2599217,1973,boot_cmd,new,1074297389,1,Targeting domains:node-D4 and nodes:node-[136-159] child of command 1964,E42,Targeting domains:node-<*> and nodes:node-[<*>] child of command <*>
+164,2599204,1971,boot_cmd,new,1074297378,1,Targeting domains:node-D3 and nodes:node-[104-127] child of command 1963,E42,Targeting domains:node-<*> and nodes:node-[<*>-<*>] child of command <*>
+165,2599217,1973,boot_cmd,new,1074297389,1,Targeting domains:node-D4 and nodes:node-[136-159] child of command 1964,E42,Targeting domains:node-<*> and nodes:node-[<*>-<*>] child of command <*>
 166,70088,2206,shutdown_cmd,new,1077059790,1,Targeting domains:node-D7 and nodes:node-[224\ 228\ 232],E43,Targeting domains:node-<*> nodes:node-<*>
-167,162883,2414,boot_cmd,new,1077877853,1,Targeting domains:node-D4 and nodes:node-[128-135] child of command 2401,E42,Targeting domains:node-<*> and nodes:node-[<*>] child of command <*>
-168,210240,2490,boot_cmd,new,1078453922,1,Targeting domains:node-D0 and nodes:node-[8-31] child of command 2489,E42,Targeting domains:node-<*> and nodes:node-[<*>] child of command <*>
+167,162883,2414,boot_cmd,new,1077877853,1,Targeting domains:node-D4 and nodes:node-[128-135] child of command 2401,E42,Targeting domains:node-<*> and nodes:node-[<*>-<*>] child of command <*>
+168,210240,2490,boot_cmd,new,1078453922,1,Targeting domains:node-D0 and nodes:node-[8-31] child of command 2489,E42,Targeting domains:node-<*> and nodes:node-[<*>-<*>] child of command <*>
 169,451683,3223,boot_cmd,new,1098825780,1,Targeting domains:node-D0 and nodes:node-0,E43,Targeting domains:node-<*> nodes:node-<*>
 170,38390,3344,boot_cmd,new,1104070308,1,Targeting domains:node-D[0\ 5] and nodes:node-[27\ 191],E43,Targeting domains:node-<*> nodes:node-<*>
-171,128520,3491,boot_cmd,new,1111855423,1,Targeting domains:node-D2 and nodes:node-[64-95] child of command 3488,E42,Targeting domains:node-<*> and nodes:node-[<*>] child of command <*>
+171,128520,3491,boot_cmd,new,1111855423,1,Targeting domains:node-D2 and nodes:node-[64-95] child of command 3488,E42,Targeting domains:node-<*> and nodes:node-[<*>-<*>] child of command <*>
 172,276415,3709,boot_cmd,new,1119845316,1,Targeting domains:node-D2 and nodes:node-84,E43,Targeting domains:node-<*> nodes:node-<*>
 173,51338,node-3,node,psu,1106496000,1,psu failure\ ambient=28,E35,psu failure\ ambient=<*>
 174,191898,node-238,node,psu,1131240275,1,psu failure\ ambient=28,E35,psu failure\ ambient=<*>
@@ -213,96 +213,96 @@ LineId,LogId,Node,Component,State,Time,Flag,Content,EventId,EventTemplate
 212,365140,node-69,unix.hw,net.niff.down,1085075228,1,NIFF: node node-69 detected a failed network connection on network 5.5.224.0 via interface alt0,E27,NIFF: node node-<*> detected a failed network connection on network <*> via interface alt0
 213,401608,node-162,unix.hw,net.niff.down,1142550442,1,NIFF: node node-162 detected a failed network connection on network 5.5.224.0 via interface alt0,E27,NIFF: node node-<*> detected a failed network connection on network <*> via interface alt0
 214,180537,node-D0,clusterfilesystem,fdmn.panic,1131228351,1,ServerFileSystem: An ServerFileSystem domain panic has occurred on storage442,E39,ServerFileSystem: An ServerFileSystem domain panic has occurred on <*>
-215,268543,Interconnect-0N00,switch_module,fan,1119372267,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-216,268265,Interconnect-0N00,switch_module,fan,1119290224,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-217,292663,Interconnect-0N00,switch_module,fan,1121581239,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-218,291810,Interconnect-0N00,switch_module,fan,1121525534,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-219,289739,Interconnect-0N00,switch_module,fan,1121303273,1,Fan speeds ( 3552 3534 3375 4245 3515 3479 ),E18,Fan speeds ( <*> )
-220,327293,Interconnect-0N00,switch_module,fan,1123408044,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-221,26132,Interconnect-0N00,switch_module,fan,1124831967,1,Fan speeds ( 3552 3534 3375 11637 3515 3479 ),E18,Fan speeds ( <*> )
-222,37743,Interconnect-0N00,switch_module,fan,1125827345,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-223,37524,Interconnect-0N00,switch_module,fan,1125819002,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-224,36180,Interconnect-0N00,switch_module,fan,1125718237,1,Fan speeds ( 3552 3534 3375 4245 3515 3479 ),E18,Fan speeds ( <*> )
-225,35581,Interconnect-0N00,switch_module,fan,1125706262,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-226,35374,Interconnect-0N00,switch_module,fan,1125677285,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-227,34697,Interconnect-0N00,switch_module,fan,1125668027,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-228,34204,Interconnect-0N00,switch_module,fan,1125664672,1,Fan speeds ( 3552 3534 3375 4470 3515 3479 ),E18,Fan speeds ( <*> )
-229,34116,Interconnect-0N00,switch_module,fan,1125660960,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-230,33940,Interconnect-0N00,switch_module,fan,1125651957,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-231,33385,Interconnect-0N00,switch_module,fan,1125557358,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-232,33086,Interconnect-0N00,switch_module,fan,1125545019,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-233,45567,Interconnect-0N00,switch_module,fan,1126010536,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-234,45526,Interconnect-0N00,switch_module,fan,1126010284,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-235,45496,Interconnect-0N00,switch_module,fan,1126001523,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-236,45232,Interconnect-0N00,switch_module,fan,1125974682,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-237,44885,Interconnect-0N00,switch_module,fan,1125968635,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-238,44792,Interconnect-0N00,switch_module,fan,1125967289,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-239,44437,Interconnect-0N00,switch_module,fan,1125958618,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-240,44077,Interconnect-0N00,switch_module,fan,1125942184,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-241,43807,Interconnect-0N00,switch_module,fan,1125941020,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-242,43763,Interconnect-0N00,switch_module,fan,1125940778,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-243,43379,Interconnect-0N00,switch_module,fan,1125938946,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-244,43219,Interconnect-0N00,switch_module,fan,1125938127,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-245,42827,Interconnect-0N00,switch_module,fan,1125936247,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-246,42774,Interconnect-0N00,switch_module,fan,1125935993,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-247,42301,Interconnect-0N00,switch_module,fan,1125933864,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-248,42057,Interconnect-0N00,switch_module,fan,1125932744,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-249,41384,Interconnect-0N00,switch_module,fan,1125929387,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-250,41142,Interconnect-0N00,switch_module,fan,1125922192,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-251,41066,Interconnect-0N00,switch_module,fan,1125920701,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-252,40628,Interconnect-0N00,switch_module,fan,1125915215,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-253,40627,Interconnect-0N00,switch_module,fan,1125915213,1,Fan speeds ( 3552 3534 3375 4166 3515 3479 ),E18,Fan speeds ( <*> )
-254,40365,Interconnect-0N00,switch_module,fan,1125913604,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-255,40096,Interconnect-0N00,switch_module,fan,1125911516,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-256,39347,Interconnect-0N00,switch_module,fan,1125873598,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-257,104906,Interconnect-0N00,switch_module,fan,1128271361,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-258,104883,Interconnect-0N00,switch_module,fan,1128271267,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-259,121157,Interconnect-0N00,switch_module,fan,1129314010,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-260,120901,Interconnect-0N00,switch_module,fan,1129307838,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-261,120373,Interconnect-0N00,switch_module,fan,1129295995,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-262,120348,Interconnect-0N00,switch_module,fan,1129295109,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-263,119419,Interconnect-0N00,switch_module,fan,1129159678,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-264,119213,Interconnect-0N00,switch_module,fan,1129157128,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-265,119202,Interconnect-0N00,switch_module,fan,1129156854,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-266,119142,Interconnect-0N00,switch_module,fan,1129155779,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-267,119082,Interconnect-0N00,switch_module,fan,1129155045,1,Fan speeds ( 3552 3534 3375 4530 3515 3479 ),E18,Fan speeds ( <*> )
-268,118806,Interconnect-0N00,switch_module,fan,1129150679,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-269,117431,Interconnect-0N00,switch_module,fan,1128907389,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-270,117146,Interconnect-0N00,switch_module,fan,1128901378,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-271,116927,Interconnect-0N00,switch_module,fan,1128899272,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-272,116705,Interconnect-0N00,switch_module,fan,1128888604,1,Fan speeds ( 3552 3534 3375 4192 3515 3479 ),E18,Fan speeds ( <*> )
-273,116664,Interconnect-0N00,switch_module,fan,1128887986,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-274,236285,Interconnect-0N00,switch_module,fan,1132421073,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-275,243687,Interconnect-0N00,switch_module,fan,1132558950,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-276,260011,Interconnect-0N00,switch_module,fan,1133183830,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-277,259847,Interconnect-0N00,switch_module,fan,1133182195,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-278,259763,Interconnect-0N00,switch_module,fan,1133181426,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-279,259536,Interconnect-0N00,switch_module,fan,1133178458,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-280,259457,Interconnect-0N00,switch_module,fan,1133177775,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-281,259180,Interconnect-0N00,switch_module,fan,1133174442,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-282,259133,Interconnect-0N00,switch_module,fan,1133174185,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-283,259101,Interconnect-0N00,switch_module,fan,1133174025,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-284,258955,Interconnect-0N00,switch_module,fan,1133173381,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-285,258413,Interconnect-0N00,switch_module,fan,1133169111,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-286,258185,Interconnect-0N00,switch_module,fan,1133168036,1,Fan speeds ( 3552 3534 3391 4299 3515 3479 ),E18,Fan speeds ( <*> )
-287,257965,Interconnect-0N00,switch_module,fan,1133166706,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-288,257953,Interconnect-0N00,switch_module,fan,1133166616,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-289,257691,Interconnect-0N00,switch_module,fan,1133165477,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> **** <*> )
-290,349086,Interconnect-0N00,switch_module,fan,1140616724,1,Fan speeds ( 3552 3552 3391 **** 3515 3497 ),E17,Fan speeds ( <*> **** <*> )
-291,349016,Interconnect-0N00,switch_module,fan,1140616395,1,Fan speeds ( 3552 3552 3391 **** 3515 3497 ),E17,Fan speeds ( <*> **** <*> )
-292,380336,Interconnect-0N00,switch_module,fan,1141884709,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-293,379923,Interconnect-0N00,switch_module,fan,1141832424,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-294,379647,Interconnect-0N00,switch_module,fan,1141828356,1,Fan speeds ( 3534 3534 3375 4272 3497 3479 ),E18,Fan speeds ( <*> )
-295,379641,Interconnect-0N00,switch_module,fan,1141828195,1,Fan speeds ( 3534 3534 3375 4470 3497 3479 ),E18,Fan speeds ( <*> )
-296,445104,Interconnect-0N00,switch_module,fan,1144366153,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-297,442494,Interconnect-0N00,switch_module,fan,1143993115,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-298,442338,Interconnect-0N00,switch_module,fan,1143991258,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-299,442189,Interconnect-0N00,switch_module,fan,1143988225,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-300,442187,Interconnect-0N00,switch_module,fan,1143988205,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-301,441407,Interconnect-0N00,switch_module,fan,1143980889,1,Fan speeds ( 3534 3534 3375 4115 3497 3479 ),E18,Fan speeds ( <*> )
-302,441258,Interconnect-0N00,switch_module,fan,1143979891,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-303,441254,Interconnect-0N00,switch_module,fan,1143979871,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
-304,441208,Interconnect-0N00,switch_module,fan,1143979502,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> **** <*> )
+215,268543,Interconnect-0N00,switch_module,fan,1119372267,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+216,268265,Interconnect-0N00,switch_module,fan,1119290224,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+217,292663,Interconnect-0N00,switch_module,fan,1121581239,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+218,291810,Interconnect-0N00,switch_module,fan,1121525534,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+219,289739,Interconnect-0N00,switch_module,fan,1121303273,1,Fan speeds ( 3552 3534 3375 4245 3515 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+220,327293,Interconnect-0N00,switch_module,fan,1123408044,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+221,26132,Interconnect-0N00,switch_module,fan,1124831967,1,Fan speeds ( 3552 3534 3375 11637 3515 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+222,37743,Interconnect-0N00,switch_module,fan,1125827345,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+223,37524,Interconnect-0N00,switch_module,fan,1125819002,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+224,36180,Interconnect-0N00,switch_module,fan,1125718237,1,Fan speeds ( 3552 3534 3375 4245 3515 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+225,35581,Interconnect-0N00,switch_module,fan,1125706262,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+226,35374,Interconnect-0N00,switch_module,fan,1125677285,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+227,34697,Interconnect-0N00,switch_module,fan,1125668027,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+228,34204,Interconnect-0N00,switch_module,fan,1125664672,1,Fan speeds ( 3552 3534 3375 4470 3515 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+229,34116,Interconnect-0N00,switch_module,fan,1125660960,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+230,33940,Interconnect-0N00,switch_module,fan,1125651957,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+231,33385,Interconnect-0N00,switch_module,fan,1125557358,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+232,33086,Interconnect-0N00,switch_module,fan,1125545019,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+233,45567,Interconnect-0N00,switch_module,fan,1126010536,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+234,45526,Interconnect-0N00,switch_module,fan,1126010284,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+235,45496,Interconnect-0N00,switch_module,fan,1126001523,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+236,45232,Interconnect-0N00,switch_module,fan,1125974682,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+237,44885,Interconnect-0N00,switch_module,fan,1125968635,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+238,44792,Interconnect-0N00,switch_module,fan,1125967289,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+239,44437,Interconnect-0N00,switch_module,fan,1125958618,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+240,44077,Interconnect-0N00,switch_module,fan,1125942184,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+241,43807,Interconnect-0N00,switch_module,fan,1125941020,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+242,43763,Interconnect-0N00,switch_module,fan,1125940778,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+243,43379,Interconnect-0N00,switch_module,fan,1125938946,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+244,43219,Interconnect-0N00,switch_module,fan,1125938127,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+245,42827,Interconnect-0N00,switch_module,fan,1125936247,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+246,42774,Interconnect-0N00,switch_module,fan,1125935993,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+247,42301,Interconnect-0N00,switch_module,fan,1125933864,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+248,42057,Interconnect-0N00,switch_module,fan,1125932744,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+249,41384,Interconnect-0N00,switch_module,fan,1125929387,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+250,41142,Interconnect-0N00,switch_module,fan,1125922192,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+251,41066,Interconnect-0N00,switch_module,fan,1125920701,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+252,40628,Interconnect-0N00,switch_module,fan,1125915215,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+253,40627,Interconnect-0N00,switch_module,fan,1125915213,1,Fan speeds ( 3552 3534 3375 4166 3515 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+254,40365,Interconnect-0N00,switch_module,fan,1125913604,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+255,40096,Interconnect-0N00,switch_module,fan,1125911516,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+256,39347,Interconnect-0N00,switch_module,fan,1125873598,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+257,104906,Interconnect-0N00,switch_module,fan,1128271361,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+258,104883,Interconnect-0N00,switch_module,fan,1128271267,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+259,121157,Interconnect-0N00,switch_module,fan,1129314010,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+260,120901,Interconnect-0N00,switch_module,fan,1129307838,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+261,120373,Interconnect-0N00,switch_module,fan,1129295995,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+262,120348,Interconnect-0N00,switch_module,fan,1129295109,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+263,119419,Interconnect-0N00,switch_module,fan,1129159678,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+264,119213,Interconnect-0N00,switch_module,fan,1129157128,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+265,119202,Interconnect-0N00,switch_module,fan,1129156854,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+266,119142,Interconnect-0N00,switch_module,fan,1129155779,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+267,119082,Interconnect-0N00,switch_module,fan,1129155045,1,Fan speeds ( 3552 3534 3375 4530 3515 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+268,118806,Interconnect-0N00,switch_module,fan,1129150679,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+269,117431,Interconnect-0N00,switch_module,fan,1128907389,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+270,117146,Interconnect-0N00,switch_module,fan,1128901378,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+271,116927,Interconnect-0N00,switch_module,fan,1128899272,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+272,116705,Interconnect-0N00,switch_module,fan,1128888604,1,Fan speeds ( 3552 3534 3375 4192 3515 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+273,116664,Interconnect-0N00,switch_module,fan,1128887986,1,Fan speeds ( 3552 3534 3375 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+274,236285,Interconnect-0N00,switch_module,fan,1132421073,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+275,243687,Interconnect-0N00,switch_module,fan,1132558950,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+276,260011,Interconnect-0N00,switch_module,fan,1133183830,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+277,259847,Interconnect-0N00,switch_module,fan,1133182195,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+278,259763,Interconnect-0N00,switch_module,fan,1133181426,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+279,259536,Interconnect-0N00,switch_module,fan,1133178458,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+280,259457,Interconnect-0N00,switch_module,fan,1133177775,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+281,259180,Interconnect-0N00,switch_module,fan,1133174442,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+282,259133,Interconnect-0N00,switch_module,fan,1133174185,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+283,259101,Interconnect-0N00,switch_module,fan,1133174025,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+284,258955,Interconnect-0N00,switch_module,fan,1133173381,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+285,258413,Interconnect-0N00,switch_module,fan,1133169111,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+286,258185,Interconnect-0N00,switch_module,fan,1133168036,1,Fan speeds ( 3552 3534 3391 4299 3515 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+287,257965,Interconnect-0N00,switch_module,fan,1133166706,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+288,257953,Interconnect-0N00,switch_module,fan,1133166616,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+289,257691,Interconnect-0N00,switch_module,fan,1133165477,1,Fan speeds ( 3552 3534 3391 **** 3515 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+290,349086,Interconnect-0N00,switch_module,fan,1140616724,1,Fan speeds ( 3552 3552 3391 **** 3515 3497 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+291,349016,Interconnect-0N00,switch_module,fan,1140616395,1,Fan speeds ( 3552 3552 3391 **** 3515 3497 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+292,380336,Interconnect-0N00,switch_module,fan,1141884709,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+293,379923,Interconnect-0N00,switch_module,fan,1141832424,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+294,379647,Interconnect-0N00,switch_module,fan,1141828356,1,Fan speeds ( 3534 3534 3375 4272 3497 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+295,379641,Interconnect-0N00,switch_module,fan,1141828195,1,Fan speeds ( 3534 3534 3375 4470 3497 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+296,445104,Interconnect-0N00,switch_module,fan,1144366153,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+297,442494,Interconnect-0N00,switch_module,fan,1143993115,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+298,442338,Interconnect-0N00,switch_module,fan,1143991258,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+299,442189,Interconnect-0N00,switch_module,fan,1143988225,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+300,442187,Interconnect-0N00,switch_module,fan,1143988205,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+301,441407,Interconnect-0N00,switch_module,fan,1143980889,1,Fan speeds ( 3534 3534 3375 4115 3497 3479 ),E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
+302,441258,Interconnect-0N00,switch_module,fan,1143979891,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+303,441254,Interconnect-0N00,switch_module,fan,1143979871,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
+304,441208,Interconnect-0N00,switch_module,fan,1143979502,1,Fan speeds ( 3534 3534 3375 **** 3497 3479 ),E17,Fan speeds ( <*> <*> <*> **** <*> <*> )
 305,130987,3504,boot_cmd,abort,1111858191,1,Command has been aborted,E11,Command has been aborted
 306,27385,Interconnect-0N02,switch_module,control,1101771720,1,power/control problem,E34,power/control problem
 307,30700,Interconnect-1T00,switch_module,bcast-error,1076189965,1,Link error,E21,Link error
@@ -400,7 +400,7 @@ LineId,LogId,Node,Component,State,Time,Flag,Content,EventId,EventTemplate
 399,2595682,node-12,node,status,1074288817,1,not responding,E32,not responding
 400,2596033,node-131,node,status,1074288991,1,not responding,E32,not responding
 401,2596168,node-211,node,status,1074289105,1,not responding,E32,not responding
-402,2599698,node-D5,domain,status,1074297720,1,inconsistent nodesets node-160 0x0001edfe <ok> node-161 0x1001fdfe <ok> node-162 0x1001fdfe <ok> node-163 0x1001fdfe <ok>,E20,inconsistent nodesets node-<*> <ok> node-<*> <ok> node-<*> <ok> node-<*>
+402,2599698,node-D5,domain,status,1074297720,1,inconsistent nodesets node-160 0x0001edfe <ok> node-161 0x1001fdfe <ok> node-162 0x1001fdfe <ok> node-163 0x1001fdfe <ok>,E20,inconsistent nodesets node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <*>
 403,2601823,node-49,node,status,1074298784,1,running,E38,running
 404,2601830,node-56,node,status,1074298784,1,running,E38,running
 405,2601896,node-122,node,status,1074298784,0,running,E38,running
@@ -427,7 +427,7 @@ LineId,LogId,Node,Component,State,Time,Flag,Content,EventId,EventTemplate
 426,100048,node-215,node,status,1077649605,1,running,E38,running
 427,90661,node-61,node,status,1077630630,1,configured out,E14,configured out
 428,135341,node-225,node,status,1077805320,1,not responding,E32,not responding
-429,160937,node-D1,domain,status,1077875820,1,inconsistent nodesets node-32 0x00000002 <ok> node-34 0x000001fe <ok> node-33 0x000001fe <ok> node-35 0x000001fe <ok>,E20,inconsistent nodesets node-<*> <ok> node-<*> <ok> node-<*> <ok> node-<*>
+429,160937,node-D1,domain,status,1077875820,1,inconsistent nodesets node-32 0x00000002 <ok> node-34 0x000001fe <ok> node-33 0x000001fe <ok> node-35 0x000001fe <ok>,E20,inconsistent nodesets node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <*>
 430,172472,node-100,node,status,1077891510,1,configured out,E14,configured out
 431,172572,node-168,node,status,1077891560,1,not responding,E32,not responding
 432,178780,node-147,node,status,1077897241,0,running,E38,running
@@ -561,7 +561,7 @@ LineId,LogId,Node,Component,State,Time,Flag,Content,EventId,EventTemplate
 560,413350,node-41,node,status,1092320602,1,running,E38,running
 561,416005,full,partition,status,1092949734,1,running,E38,running
 562,368988,node-96,node,status,1085567825,-1,configured out,E14,configured out
-563,418211,node-D0,domain,status,1093628640,1,inconsistent nodesets node-1 0x000001fc <ok> node-2 0x000001fc <ok> node-7 0x000001fc <ok> node-4 0x000001fc <ok> node-6 0x000001fc <ok> node-5 0x000001fc <ok> node-3 0x000001fc <ok> node-14 0x0003fdfc <ok> node-13 0x0003fdfc <ok> node-12 0x0003fdfc <ok> node-10 0x0003fdfc <ok> node-16 0x0003fdfc <ok> node-15 0x0003fdfc <ok>,E20,inconsistent nodesets node-<*> <ok> node-<*> <ok> node-<*> <ok> node-<*>
+563,418211,node-D0,domain,status,1093628640,1,inconsistent nodesets node-1 0x000001fc <ok> node-2 0x000001fc <ok> node-7 0x000001fc <ok> node-4 0x000001fc <ok> node-6 0x000001fc <ok> node-5 0x000001fc <ok> node-3 0x000001fc <ok> node-14 0x0003fdfc <ok> node-13 0x0003fdfc <ok> node-12 0x0003fdfc <ok> node-10 0x0003fdfc <ok> node-16 0x0003fdfc <ok> node-15 0x0003fdfc <ok>,E20,inconsistent nodesets node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <*>
 564,413243,node-191,node,status,1092320499,0,configured out,E14,configured out
 565,417113,full,partition,status,1093473150,1,blocked,E3,blocked
 566,413275,node-222,node,status,1092320499,0,configured out,E14,configured out
@@ -698,7 +698,7 @@ LineId,LogId,Node,Component,State,Time,Flag,Content,EventId,EventTemplate
 697,401242,node-145,node,status,1142533309,0,running,E38,running
 698,401248,node-151,node,status,1142533309,0,running,E38,running
 699,401202,node-104,node,status,1142533309,0,running,E38,running
-700,415345,node-D0,domain,status,1142942280,1,inconsistent nodesets node-31 0x1fffffffe <ok> node-0 0xfffffffe <ok> node-1 0xfffffffe <ok> node-2 0xfffffffe <ok> node-30 0xfffffffe <ok>,E20,inconsistent nodesets node-<*> <ok> node-<*> <ok> node-<*> <ok> node-<*>
+700,415345,node-D0,domain,status,1142942280,1,inconsistent nodesets node-31 0x1fffffffe <ok> node-0 0xfffffffe <ok> node-1 0xfffffffe <ok> node-2 0xfffffffe <ok> node-30 0xfffffffe <ok>,E20,inconsistent nodesets node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <*>
 701,414885,node-225,node,status,1142872170,1,configured out,E14,configured out
 702,401232,node-135,node,status,1142533309,1,running,E38,running
 703,454307,full,partition,status,1145174910,1,blocked,E3,blocked
