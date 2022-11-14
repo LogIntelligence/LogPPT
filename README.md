@@ -96,7 +96,7 @@ python benchmark.py
 
 ### 4.2. RQ1: Parsing Effectiveness
 - Accuracy:
-<p align="center"><img src="docs/images/RQ1_comparison.png"width="800"></p>
+<p align="center"><img src="docs/images/RQ1_comparison.png" width="800"></p>
 
 - Robustness:
 <p align="center"><img src="docs/images/RQ1_robustness1.png" width="600"><br>Robustness across different log data types</p>
@@ -123,3 +123,10 @@ We compare LogPPT with fine-tuning, hard-prompt, and soft-prompt.
 
 - Efficiency:
 <p align="center"><img src="docs/images/RQ4_parsingtime.png" width="500"><br>Parsing time across different tuning methods</p>
+
+### Additional results with [PTA and RTA](https://doi.org/10.1145/3510003.3510101) metrics
+
+- PTA: The ratio of correctly identified templates over the total number of identified templates.
+
+- RTA: The ratio of correctly identified templates over the total number of oracle templates.
+<p align="center"><img src="docs/images/Result_with_PTA_RTA.png" width="500"></p>
