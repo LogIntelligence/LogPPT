@@ -130,3 +130,15 @@ We compare LogPPT with fine-tuning, hard-prompt, and soft-prompt.
 
 - RTA: The ratio of correctly identified templates over the total number of oracle templates.
 <p align="center"><img src="docs/images/Result_with_PTA_RTA.png" width="500"></p>
+
+### Parsing results with [Build Log](logs/BuildLog/example.log) from [LogChunks](https://zenodo.org/record/3632351)
+
+| Raw logs                                                                                                                                         | Events                                                                                    |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|
+| TEST 9/13884 \[2/2 concurrent test workers running\]                                                                                             | TEST <\*> \[<\*> concurrent test workers running\]                                        |
+| (1.039 s) Test touch() function : basic functionality \[ext/standard/tests/file/touch_basic.phpt\]                                               | <\*> Test touch() function : basic functionality <*>                                      |
+| (120.099 s) Bug #60120 (proc_open hangs when data in stdin/out/err is getting larger or equal to 2048) \[ext/standard/tests/file/bug60120.phpt\] | <\*> Bug <\*> (proc_open hangs when data in <\*> is getting larger or equal to <\*>) <\*> |
+| SKIP Bug #54977 UTF-8 files and folder are not shown \[ext/standard/tests/file/windows_mb_path/bug54977.phpt\] reason: windows only test         | SKIP Bug <\*> UTF-8 files and folder are not shown <\*> reason: windows only test         |
+| Exts skipped    :   17                                                                                                                           | Exts skipped : <*>                                                                        |
+
+[Full results with 32shot](outputs/32shot/BuildLog_2k.log_structured.csv)
