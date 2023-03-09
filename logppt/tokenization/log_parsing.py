@@ -115,7 +115,8 @@ def parsing_tokenize_dataset(tokenizer, dataset, text_column_name, label_column_
         tokenized_inputs['ori_labels'] = labels
         return tokenized_inputs
 
-    processed_raw_datasets = dataset.map(
+    processed_raw_datasets = {}
+    processed_raw_datasets['train'] = dataset['train'].map(
         tokenize_and_align_labels,
         batched=True,
         remove_columns=dataset["train"].column_names,
@@ -126,5 +127,12 @@ def parsing_tokenize_dataset(tokenizer, dataset, text_column_name, label_column_
     for x in label_words['i-val']:
         if x in keywords:
             print(x)
+
+    processed_raw_datasets['validation'] = dataset['validation'].map(
+        tokenize_and_align_labels,
+        batched=True,
+        remove_columns=dataset["train"].column_names,
+        desc="Running tokenizer on dataset",
+    )
 
     return processed_raw_datasets, label_words, keywords
