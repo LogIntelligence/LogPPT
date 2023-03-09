@@ -212,7 +212,7 @@ if __name__ == '__main__':
         lbl_word2 = copy.deepcopy(label_words)
         lbl_word_indices = list(label_words.keys()).copy()
         for k in lbl_word_indices:
-            token = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(k)).strip()
+            token = tokenizer.convert_tokens_to_string([tokenizer.convert_ids_to_tokens(k)]).strip()
             if k in tokenizer.all_special_ids or len(token) < 3 or token in filter_list \
                     or token.count(token[0]) == len(token) or token in selected_words:
                 del label_words[k]
