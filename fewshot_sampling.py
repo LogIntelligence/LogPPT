@@ -18,8 +18,6 @@ def clean(s):
     -------
     str, preprocessed log message without number tokens and special characters
     """
-    # s = re.sub(r'(\d+\.){3}\d+(:\d+)?', " ", s)
-    # s = re.sub(r'(\/.*?\.[\S:]+)', ' ', s)
     s = re.sub(':|\(|\)|=|,|"|\{|\}|@|$|\[|\]|\||;|\.', ' ', s)
     s = " ".join([word.lower() if word.isupper() else word for word in s.strip().split()])
     s = re.sub('([A-Z][a-z]+)', r' \1', re.sub('([A-Z]+)', r' \1', s))
@@ -39,24 +37,16 @@ if __name__ == '__main__':
 
         logdf = log_to_dataframe(f'./logs/{setting["log_file"]}', setting['log_format'])
         logdf.to_csv(f"datasets/{setting['log_file']}_structured.csv")
-        labelled_logs = pd.read_csv(f'./logs/{setting["log_file"]}_structured_corrected.csv')
-        train_df = labelled_logs.sample(n=2000)
-        samples = [(row['Content'], row['EventTemplate']) for _, row in labelled_logs.iterrows()]
-        # print(samples)
-        # samples = [gen_input_label(x[0], x[1], []) for x in samples]
-        samples = [{"text": x[0], "label": x[1], "type": 1} for x in samples]
-        with open("datasets/{0}/test.json".format(dataset), "w") as f:
-            for s in samples:
-                f.write(json.dumps(s) + "\n")
-        content = [(clean(x), i, len(x)) for i, x in enumerate(labelled_logs['Content'].tolist())]
+        content = [(clean(x), i, len(x)) for i, x in enumerate(logdf['Content'].tolist())]
         content = [x for x in content if len(x[0].split()) > 1]
+        content = shuffle(content)
 
-        for shot in [32]:
+        for shot in [4, 8, 16, 32]:
             keywords_list = []
             os.makedirs("datasets/{0}/{1}shot".format(dataset, shot), exist_ok=True)
             samples_ids = adaptive_random_sampling(shuffle(content), shot)
 
-            labeled_samples = [(row['Content'], row['EventTemplate']) for _, row in labelled_logs.take(samples_ids).iterrows()]
+            labeled_samples = [(row['Content'], row['Content']) for _, row in logdf.take(samples_ids).iterrows()]
             labeled_samples = [{"text": x[0], "label": x[1], "type": 1} for x in labeled_samples]
             with open("datasets/{0}/{1}shot/{2}.json".format(dataset, shot, 1), "w") as f:
                 for s in labeled_samples:

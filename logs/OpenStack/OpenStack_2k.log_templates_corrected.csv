@@ -29,14 +29,14 @@ E27,Active base files: <*>
 E28,Auditing locally available compute resources for node <*>
 E29,Base or swap file too young to remove: <*>
 E30,Compute_service record updated for <*>
-E31,Creating event network-vif-plugged:<*>-<*>-<*>-<*>-<*> for instance <*>
+E31,Creating event network-vif-plugged:<*> for instance <*>
 E32,Final resource view: name=<*> phys_ram=<*> used_ram=<*> phys_disk=<*> used_disk=<*> total_vcpus=<*> used_vcpus=<*> pci_stats=[]
 E33,HTTP exception thrown: No instances found for any event
 E34,image <*> at (<*>): checking
 E35,"image <*> at (<*>): in use: on this node <*> local, <*> on other nodes sharing this instance storage"
 E36,Removable base files: <*>
 E37,Removing base or swap file: <*>
-E38,Running instance usage audit for host <*> from <*>-<*>-<*> <*>:<*>:<*> to <*>-<*>-<*> <*>:<*>:<*>. <*> instances.
+E38,Running instance usage audit for host <*> from <*> to <*>. <*> instances.
 E39,Successfully synced instances from host '<*>'.
 E40,The instance sync for host '<*>' did not match. Re-created its InstanceList.
 E41,"Total usable vcpus: <*>, total allocated vcpus: <*>"

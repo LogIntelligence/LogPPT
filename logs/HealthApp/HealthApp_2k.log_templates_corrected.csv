@@ -1,5 +1,5 @@
 EventId,EventTemplate
-E1,Alarm uploadStaticsToDB totalSteps=<*>:<*>:<*>:<*>
+E1,Alarm uploadStaticsToDB totalSteps=<*> Calories:<*> Floor:<*> Distance:<*>
 E2,"bulkSaveDetailHiHealthData() size = <*>,totalTime = <*>"
 E3,calculateAltitudeWithCache totalAltitude=<*>
 E4,calculateCaloriesWithCache totalCalories=<*>

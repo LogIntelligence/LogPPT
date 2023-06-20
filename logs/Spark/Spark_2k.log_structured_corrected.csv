@@ -8,11 +8,11 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 7,17/06/09,20:10:41,INFO,spark.SecurityManager,"SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(yarn, curi); users with modify permissions: Set(yarn, curi)",E26,"SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(yarn, curi); users with modify permissions: Set(yarn, curi)"
 8,17/06/09,20:10:41,INFO,slf4j.Slf4jLogger,Slf4jLogger started,E28,Slf4jLogger started
 9,17/06/09,20:10:41,INFO,Remoting,Starting remoting,E31,Starting remoting
-10,17/06/09,20:10:41,INFO,Remoting,Remoting started; listening on addresses :[akka.tcp://sparkExecutorActorSystem@mesos-slave-07:55904],E23,Remoting started; listening on addresses :[akka.tcp://<*>]
+10,17/06/09,20:10:41,INFO,Remoting,Remoting started; listening on addresses :[akka.tcp://sparkExecutorActorSystem@mesos-slave-07:55904],E23,Remoting started; listening on addresses :[<*>]
 11,17/06/09,20:10:41,INFO,util.Utils,Successfully started service 'sparkExecutorActorSystem' on port 55904.,E34,Successfully started service 'sparkExecutorActorSystem' on port <*>.
 12,17/06/09,20:10:41,INFO,storage.DiskBlockManager,Created local directory at /opt/hdfs/nodemanager/usercache/curi/appcache/application_1485248649253_0147/blockmgr-70293f72-844a-4b39-9ad6-fb0ad7e364e4,E7,Created local directory at <*>
 13,17/06/09,20:10:41,INFO,storage.MemoryStore,MemoryStore started with capacity 17.7 GB,E18,MemoryStore started with capacity <*> GB
-14,17/06/09,20:10:42,INFO,executor.CoarseGrainedExecutorBackend,Connecting to driver: spark://CoarseGrainedScheduler@10.10.34.11:48069,E6,Connecting to driver: spark://<*>
+14,17/06/09,20:10:42,INFO,executor.CoarseGrainedExecutorBackend,Connecting to driver: spark://CoarseGrainedScheduler@10.10.34.11:48069,E6,Connecting to driver: <*>
 15,17/06/09,20:10:42,INFO,executor.CoarseGrainedExecutorBackend,Successfully registered with driver,E32,Successfully registered with driver
 16,17/06/09,20:10:42,INFO,executor.Executor,Starting executor ID 5 on host mesos-slave-07,E30,Starting executor ID <*> on host <*>
 17,17/06/09,20:10:42,INFO,util.Utils,Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40984.,E33,Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port <*>.
@@ -38,11 +38,11 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 37,17/06/09,20:10:46,INFO,spark.CacheManager,"Partition rdd_2_0 not found, computing it",E19,"Partition <*> not found, computing it"
 38,17/06/09,20:10:46,INFO,spark.CacheManager,"Partition rdd_2_2 not found, computing it",E19,"Partition <*> not found, computing it"
 39,17/06/09,20:10:46,INFO,spark.CacheManager,"Partition rdd_2_4 not found, computing it",E19,"Partition <*> not found, computing it"
-40,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:21876+7292,E12,Input split: hdfs://<*>
-41,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:14584+7292,E12,Input split: hdfs://<*>
-42,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:0+7292,E12,Input split: hdfs://<*>
-43,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:7292+7292,E12,Input split: hdfs://<*>
-44,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:29168+7292,E12,Input split: hdfs://<*>
+40,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:21876+7292,E12,Input split: <*>
+41,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:14584+7292,E12,Input split: <*>
+42,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:0+7292,E12,Input split: <*>
+43,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:7292+7292,E12,Input split: <*>
+44,17/06/09,20:10:46,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:29168+7292,E12,Input split: <*>
 45,17/06/09,20:10:46,INFO,broadcast.TorrentBroadcast,Started reading broadcast variable 8,E29,Started reading broadcast variable <*>
 46,17/06/09,20:10:46,INFO,storage.MemoryStore,"Block broadcast_8_piece0 stored as bytes in memory (estimated size 21.4 KB, free 35.4 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 47,17/06/09,20:10:46,INFO,broadcast.TorrentBroadcast,Reading broadcast variable 8 took 19 ms,E20,Reading broadcast variable <*> took <*> ms
@@ -878,11 +878,11 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 877,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 42, boot = -343, init = 384, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 878,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 39, boot = -342, init = 381, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 879,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 41, boot = -343, init = 384, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
-880,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000003_1012' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000003,E25,Saved output of task '<*>' to hdfs://<*>
-881,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000004_1026' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000004,E25,Saved output of task '<*>' to hdfs://<*>
-882,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000002_998' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000002,E25,Saved output of task '<*>' to hdfs://<*>
-883,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000000_970' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000000,E25,Saved output of task '<*>' to hdfs://<*>
-884,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000001_984' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000001,E25,Saved output of task '<*>' to hdfs://<*>
+880,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000003_1012' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000003,E25,Saved output of task '<*>' to <*>
+881,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000004_1026' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000004,E25,Saved output of task '<*>' to <*>
+882,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000002_998' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000002,E25,Saved output of task '<*>' to <*>
+883,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000000_970' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000000,E25,Saved output of task '<*>' to <*>
+884,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000001_984' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000001,E25,Saved output of task '<*>' to <*>
 885,17/06/09,20:10:57,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000004_1026: Committed,E1,<*>: Committed
 886,17/06/09,20:10:57,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000002_998: Committed,E1,<*>: Committed
 887,17/06/09,20:10:57,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000003_1012: Committed,E1,<*>: Committed
@@ -918,15 +918,15 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 917,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 40, boot = -400, init = 440, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 918,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 38, boot = -390, init = 428, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 919,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 41, boot = -398, init = 439, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
-920,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000044_1129' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000044,E25,Saved output of task '<*>' to hdfs://<*>
+920,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000044_1129' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000044,E25,Saved output of task '<*>' to <*>
 921,17/06/09,20:10:57,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000044_1129: Committed,E1,<*>: Committed
-922,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000043_1128' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000043,E25,Saved output of task '<*>' to hdfs://<*>
-923,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000040_1125' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000040,E25,Saved output of task '<*>' to hdfs://<*>
+922,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000043_1128' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000043,E25,Saved output of task '<*>' to <*>
+923,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000040_1125' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000040,E25,Saved output of task '<*>' to <*>
 924,17/06/09,20:10:57,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000043_1128: Committed,E1,<*>: Committed
 925,17/06/09,20:10:57,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000040_1125: Committed,E1,<*>: Committed
-926,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000042_1127' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000042,E25,Saved output of task '<*>' to hdfs://<*>
+926,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000042_1127' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000042,E25,Saved output of task '<*>' to <*>
 927,17/06/09,20:10:57,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000042_1127: Committed,E1,<*>: Committed
-928,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000041_1126' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000041,E25,Saved output of task '<*>' to hdfs://<*>
+928,17/06/09,20:10:57,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000041_1126' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000041,E25,Saved output of task '<*>' to <*>
 929,17/06/09,20:10:57,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000041_1126: Committed,E1,<*>: Committed
 930,17/06/09,20:10:57,INFO,executor.Executor,Finished task 44.0 in stage 24.0 (TID 1129). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 931,17/06/09,20:10:57,INFO,executor.Executor,Finished task 43.0 in stage 24.0 (TID 1128). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -958,15 +958,15 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 957,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 39, boot = -86, init = 125, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 958,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 42, boot = -81, init = 122, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 959,17/06/09,20:10:57,INFO,python.PythonRunner,"Times: total = 41, boot = -83, init = 123, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
-960,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000083_1138' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000083,E25,Saved output of task '<*>' to hdfs://<*>
+960,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000083_1138' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000083,E25,Saved output of task '<*>' to <*>
 961,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000083_1138: Committed,E1,<*>: Committed
-962,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000084_1141' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000084,E25,Saved output of task '<*>' to hdfs://<*>
-963,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000080_1135' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000080,E25,Saved output of task '<*>' to hdfs://<*>
+962,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000084_1141' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000084,E25,Saved output of task '<*>' to <*>
+963,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000080_1135' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000080,E25,Saved output of task '<*>' to <*>
 964,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000084_1141: Committed,E1,<*>: Committed
 965,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000080_1135: Committed,E1,<*>: Committed
-966,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000082_1137' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000082,E25,Saved output of task '<*>' to hdfs://<*>
+966,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000082_1137' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000082,E25,Saved output of task '<*>' to <*>
 967,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000082_1137: Committed,E1,<*>: Committed
-968,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000081_1136' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000081,E25,Saved output of task '<*>' to hdfs://<*>
+968,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000081_1136' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000081,E25,Saved output of task '<*>' to <*>
 969,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000081_1136: Committed,E1,<*>: Committed
 970,17/06/09,20:10:58,INFO,executor.Executor,Finished task 83.0 in stage 24.0 (TID 1138). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 971,17/06/09,20:10:58,INFO,executor.Executor,Finished task 84.0 in stage 24.0 (TID 1141). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -990,7 +990,7 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 989,17/06/09,20:10:58,INFO,storage.BlockManager,Found block rdd_21_3 locally,E10,Found block <*> locally
 990,17/06/09,20:10:58,INFO,output.FileOutputCommitter,File Output Committer Algorithm version is 1,E8,File Output Committer Algorithm version is <*>
 991,17/06/09,20:10:58,INFO,python.PythonRunner,"Times: total = 40, boot = -82, init = 122, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
-992,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000124_1151' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000124,E25,Saved output of task '<*>' to hdfs://<*>
+992,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000124_1151' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000124,E25,Saved output of task '<*>' to <*>
 993,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000124_1151: Committed,E1,<*>: Committed
 994,17/06/09,20:10:58,INFO,executor.Executor,Finished task 124.0 in stage 24.0 (TID 1151). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 995,17/06/09,20:10:58,INFO,output.FileOutputCommitter,File Output Committer Algorithm version is 1,E8,File Output Committer Algorithm version is <*>
@@ -1003,12 +1003,12 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1002,17/06/09,20:10:58,INFO,python.PythonRunner,"Times: total = 38, boot = -112, init = 150, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1003,17/06/09,20:10:58,INFO,python.PythonRunner,"Times: total = 40, boot = -107, init = 147, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1004,17/06/09,20:10:58,INFO,python.PythonRunner,"Times: total = 40, boot = -116, init = 156, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
-1005,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000120_1145' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000120,E25,Saved output of task '<*>' to hdfs://<*>
+1005,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000120_1145' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000120,E25,Saved output of task '<*>' to <*>
 1006,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000120_1145: Committed,E1,<*>: Committed
-1007,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000122_1147' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000122,E25,Saved output of task '<*>' to hdfs://<*>
-1008,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000121_1146' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000121,E25,Saved output of task '<*>' to hdfs://<*>
+1007,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000122_1147' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000122,E25,Saved output of task '<*>' to <*>
+1008,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000121_1146' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000121,E25,Saved output of task '<*>' to <*>
 1009,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000122_1147: Committed,E1,<*>: Committed
-1010,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000123_1150' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000123,E25,Saved output of task '<*>' to hdfs://<*>
+1010,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000123_1150' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000123,E25,Saved output of task '<*>' to <*>
 1011,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000121_1146: Committed,E1,<*>: Committed
 1012,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000123_1150: Committed,E1,<*>: Committed
 1013,17/06/09,20:10:58,INFO,executor.Executor,Finished task 120.0 in stage 24.0 (TID 1145). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1030,16 +1030,16 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1029,17/06/09,20:10:58,INFO,storage.BlockManager,Found block rdd_26_2 locally,E10,Found block <*> locally
 1030,17/06/09,20:10:58,INFO,python.PythonRunner,"Times: total = 38, boot = -62, init = 100, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1031,17/06/09,20:10:58,INFO,output.FileOutputCommitter,File Output Committer Algorithm version is 1,E8,File Output Committer Algorithm version is <*>
-1032,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000160_1155' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000160,E25,Saved output of task '<*>' to hdfs://<*>
+1032,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000160_1155' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000160,E25,Saved output of task '<*>' to <*>
 1033,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000160_1155: Committed,E1,<*>: Committed
 1034,17/06/09,20:10:58,INFO,executor.Executor,Finished task 160.0 in stage 24.0 (TID 1155). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1035,17/06/09,20:10:58,INFO,python.PythonRunner,"Times: total = 38, boot = -45, init = 83, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1036,17/06/09,20:10:58,INFO,python.PythonRunner,"Times: total = 38, boot = -37, init = 75, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1037,17/06/09,20:10:58,INFO,output.FileOutputCommitter,File Output Committer Algorithm version is 1,E8,File Output Committer Algorithm version is <*>
 1038,17/06/09,20:10:58,INFO,output.FileOutputCommitter,File Output Committer Algorithm version is 1,E8,File Output Committer Algorithm version is <*>
-1039,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000163_1158' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000163,E25,Saved output of task '<*>' to hdfs://<*>
+1039,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000163_1158' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000163,E25,Saved output of task '<*>' to <*>
 1040,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000163_1158: Committed,E1,<*>: Committed
-1041,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000164_1159' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000164,E25,Saved output of task '<*>' to hdfs://<*>
+1041,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000164_1159' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000164,E25,Saved output of task '<*>' to <*>
 1042,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000164_1159: Committed,E1,<*>: Committed
 1043,17/06/09,20:10:58,INFO,executor.Executor,Finished task 163.0 in stage 24.0 (TID 1158). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1044,17/06/09,20:10:58,INFO,executor.Executor,Finished task 164.0 in stage 24.0 (TID 1159). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1047,9 +1047,9 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1046,17/06/09,20:10:58,INFO,python.PythonRunner,"Times: total = 37, boot = -62, init = 99, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1047,17/06/09,20:10:58,INFO,output.FileOutputCommitter,File Output Committer Algorithm version is 1,E8,File Output Committer Algorithm version is <*>
 1048,17/06/09,20:10:58,INFO,output.FileOutputCommitter,File Output Committer Algorithm version is 1,E8,File Output Committer Algorithm version is <*>
-1049,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000162_1157' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000162,E25,Saved output of task '<*>' to hdfs://<*>
+1049,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000162_1157' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000162,E25,Saved output of task '<*>' to <*>
 1050,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000162_1157: Committed,E1,<*>: Committed
-1051,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000161_1156' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000161,E25,Saved output of task '<*>' to hdfs://<*>
+1051,17/06/09,20:10:58,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0024_m_000161_1156' to hdfs://10.10.34.11:9000/pjhe/test/1/_temporary/0/task_201706092018_0024_m_000161,E25,Saved output of task '<*>' to <*>
 1052,17/06/09,20:10:58,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0024_m_000161_1156: Committed,E1,<*>: Committed
 1053,17/06/09,20:10:58,INFO,executor.Executor,Finished task 162.0 in stage 24.0 (TID 1157). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1054,17/06/09,20:10:58,INFO,executor.Executor,Finished task 161.0 in stage 24.0 (TID 1156). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1082,15 +1082,15 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1081,17/06/09,20:10:59,INFO,python.PythonRunner,"Times: total = 39, boot = -700, init = 739, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1082,17/06/09,20:10:59,INFO,python.PythonRunner,"Times: total = 39, boot = -690, init = 729, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1083,17/06/09,20:10:59,INFO,python.PythonRunner,"Times: total = 41, boot = -699, init = 740, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
-1084,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000004_1199' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000004,E25,Saved output of task '<*>' to hdfs://<*>
+1084,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000004_1199' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000004,E25,Saved output of task '<*>' to <*>
 1085,17/06/09,20:10:59,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0025_m_000004_1199: Committed,E1,<*>: Committed
 1086,17/06/09,20:10:59,INFO,executor.Executor,Finished task 4.0 in stage 25.0 (TID 1199). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
-1087,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000003_1198' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000003,E25,Saved output of task '<*>' to hdfs://<*>
+1087,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000003_1198' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000003,E25,Saved output of task '<*>' to <*>
 1088,17/06/09,20:10:59,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0025_m_000003_1198: Committed,E1,<*>: Committed
-1089,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000000_1166' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000000,E25,Saved output of task '<*>' to hdfs://<*>
+1089,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000000_1166' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000000,E25,Saved output of task '<*>' to <*>
 1090,17/06/09,20:10:59,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0025_m_000000_1166: Committed,E1,<*>: Committed
-1091,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000002_1194' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000002,E25,Saved output of task '<*>' to hdfs://<*>
-1092,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000001_1180' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000001,E25,Saved output of task '<*>' to hdfs://<*>
+1091,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000002_1194' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000002,E25,Saved output of task '<*>' to <*>
+1092,17/06/09,20:10:59,INFO,output.FileOutputCommitter,Saved output of task 'attempt_201706092018_0025_m_000001_1180' to hdfs://10.10.34.11:9000/pjhe/test/2/_temporary/0/task_201706092018_0025_m_000001,E25,Saved output of task '<*>' to <*>
 1093,17/06/09,20:10:59,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0025_m_000002_1194: Committed,E1,<*>: Committed
 1094,17/06/09,20:10:59,INFO,mapred.SparkHadoopMapRedUtil,attempt_201706092018_0025_m_000001_1180: Committed,E1,<*>: Committed
 1095,17/06/09,20:10:59,INFO,executor.Executor,Finished task 3.0 in stage 25.0 (TID 1198). 2364 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1112,16 +1112,16 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1111,17/06/09,20:11:07,INFO,broadcast.TorrentBroadcast,Reading broadcast variable 37 took 14 ms,E20,Reading broadcast variable <*> took <*> ms
 1112,17/06/09,20:11:07,INFO,storage.MemoryStore,"Block broadcast_37 stored as values in memory (estimated size 8.8 KB, free 500.9 KB)",E3,"Block <*> stored as values in memory (estimated size <*>, free <*>)"
 1113,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_0 not found, computing it",E19,"Partition <*> not found, computing it"
-1114,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:0+7292,E12,Input split: hdfs://<*>
+1114,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:0+7292,E12,Input split: <*>
 1115,17/06/09,20:11:07,INFO,broadcast.TorrentBroadcast,Started reading broadcast variable 36,E29,Started reading broadcast variable <*>
 1116,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_4 not found, computing it",E19,"Partition <*> not found, computing it"
-1117,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:29168+7292,E12,Input split: hdfs://<*>
+1117,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:29168+7292,E12,Input split: <*>
 1118,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_3 not found, computing it",E19,"Partition <*> not found, computing it"
-1119,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:21876+7292,E12,Input split: hdfs://<*>
+1119,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:21876+7292,E12,Input split: <*>
 1120,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_2 not found, computing it",E19,"Partition <*> not found, computing it"
-1121,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:14584+7292,E12,Input split: hdfs://<*>
+1121,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:14584+7292,E12,Input split: <*>
 1122,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_1 not found, computing it",E19,"Partition <*> not found, computing it"
-1123,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:7292+7292,E12,Input split: hdfs://<*>
+1123,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:7292+7292,E12,Input split: <*>
 1124,17/06/09,20:11:07,INFO,storage.MemoryStore,"Block broadcast_36_piece0 stored as bytes in memory (estimated size 21.4 KB, free 522.3 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1125,17/06/09,20:11:07,INFO,broadcast.TorrentBroadcast,Reading broadcast variable 36 took 11 ms,E20,Reading broadcast variable <*> took <*> ms
 1126,17/06/09,20:11:07,INFO,storage.MemoryStore,"Block broadcast_36 stored as values in memory (estimated size 281.6 KB, free 803.9 KB)",E3,"Block <*> stored as values in memory (estimated size <*>, free <*>)"
@@ -1142,7 +1142,7 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1141,17/06/09,20:11:07,INFO,python.PythonRunner,"Times: total = 41, boot = 21, init = 20, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1142,17/06/09,20:11:07,INFO,python.PythonRunner,"Times: total = 41, boot = 20, init = 20, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1143,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_5 not found, computing it",E19,"Partition <*> not found, computing it"
-1144,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:36460+7292,E12,Input split: hdfs://<*>
+1144,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:36460+7292,E12,Input split: <*>
 1145,17/06/09,20:11:07,INFO,python.PythonRunner,"Times: total = 42, boot = 23, init = 19, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1146,17/06/09,20:11:07,INFO,python.PythonRunner,"Times: total = 42, boot = 20, init = 21, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1147,17/06/09,20:11:07,INFO,executor.Executor,Finished task 4.0 in stage 26.0 (TID 1204). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1158,13 +1158,13 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1157,17/06/09,20:11:07,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1209,E11,Got assigned task <*>
 1158,17/06/09,20:11:07,INFO,executor.Executor,Running task 9.0 in stage 26.0 (TID 1209),E24,Running task <*> in stage <*> (TID <*>)
 1159,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_6 not found, computing it",E19,"Partition <*> not found, computing it"
-1160,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:43752+7292,E12,Input split: hdfs://<*>
+1160,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:43752+7292,E12,Input split: <*>
 1161,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_7 not found, computing it",E19,"Partition <*> not found, computing it"
-1162,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:51044+7292,E12,Input split: hdfs://<*>
+1162,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:51044+7292,E12,Input split: <*>
 1163,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_8 not found, computing it",E19,"Partition <*> not found, computing it"
-1164,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:58336+7292,E12,Input split: hdfs://<*>
+1164,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:58336+7292,E12,Input split: <*>
 1165,17/06/09,20:11:07,INFO,spark.CacheManager,"Partition rdd_42_9 not found, computing it",E19,"Partition <*> not found, computing it"
-1166,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:65628+7292,E12,Input split: hdfs://<*>
+1166,17/06/09,20:11:07,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:65628+7292,E12,Input split: <*>
 1167,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 54, boot = 21, init = 28, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1168,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_5 stored as bytes in memory (estimated size 930.0 B, free 809.3 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1169,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 57, boot = 11, init = 41, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
@@ -1180,7 +1180,7 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1179,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1210,E11,Got assigned task <*>
 1180,17/06/09,20:11:08,INFO,executor.Executor,Running task 10.0 in stage 26.0 (TID 1210),E24,Running task <*> in stage <*> (TID <*>)
 1181,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_10 not found, computing it",E19,"Partition <*> not found, computing it"
-1182,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:72920+7292,E12,Input split: hdfs://<*>
+1182,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:72920+7292,E12,Input split: <*>
 1183,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 41, boot = 24, init = 17, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1184,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 38, boot = 18, init = 20, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1185,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 39, boot = 18, init = 21, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
@@ -1196,15 +1196,15 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1195,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1213,E11,Got assigned task <*>
 1196,17/06/09,20:11:08,INFO,executor.Executor,Running task 13.0 in stage 26.0 (TID 1213),E24,Running task <*> in stage <*> (TID <*>)
 1197,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_11 not found, computing it",E19,"Partition <*> not found, computing it"
-1198,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:80212+7292,E12,Input split: hdfs://<*>
+1198,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:80212+7292,E12,Input split: <*>
 1199,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1214,E11,Got assigned task <*>
 1200,17/06/09,20:11:08,INFO,executor.Executor,Running task 14.0 in stage 26.0 (TID 1214),E24,Running task <*> in stage <*> (TID <*>)
 1201,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_12 not found, computing it",E19,"Partition <*> not found, computing it"
-1202,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:87504+7292,E12,Input split: hdfs://<*>
+1202,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:87504+7292,E12,Input split: <*>
 1203,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_13 not found, computing it",E19,"Partition <*> not found, computing it"
-1204,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:94796+7292,E12,Input split: hdfs://<*>
+1204,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:94796+7292,E12,Input split: <*>
 1205,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_14 not found, computing it",E19,"Partition <*> not found, computing it"
-1206,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:102088+7292,E12,Input split: hdfs://<*>
+1206,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:102088+7292,E12,Input split: <*>
 1207,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 48, boot = 8, init = 35, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1208,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_10 stored as bytes in memory (estimated size 948.0 B, free 813.1 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1209,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 48, boot = 10, init = 33, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
@@ -1220,7 +1220,7 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1219,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1215,E11,Got assigned task <*>
 1220,17/06/09,20:11:08,INFO,executor.Executor,Running task 15.0 in stage 26.0 (TID 1215),E24,Running task <*> in stage <*> (TID <*>)
 1221,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_15 not found, computing it",E19,"Partition <*> not found, computing it"
-1222,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:109380+7292,E12,Input split: hdfs://<*>
+1222,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:109380+7292,E12,Input split: <*>
 1223,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 41, boot = 21, init = 20, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1224,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 39, boot = 20, init = 18, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1225,17/06/09,20:11:08,INFO,executor.Executor,Finished task 11.0 in stage 26.0 (TID 1211). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1232,19 +1232,19 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1231,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 39, boot = 24, init = 14, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1232,17/06/09,20:11:08,INFO,executor.Executor,Running task 17.0 in stage 26.0 (TID 1217),E24,Running task <*> in stage <*> (TID <*>)
 1233,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_16 not found, computing it",E19,"Partition <*> not found, computing it"
-1234,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:116672+7292,E12,Input split: hdfs://<*>
+1234,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:116672+7292,E12,Input split: <*>
 1235,17/06/09,20:11:08,INFO,executor.Executor,Finished task 12.0 in stage 26.0 (TID 1212). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1236,17/06/09,20:11:08,INFO,executor.Executor,Finished task 14.0 in stage 26.0 (TID 1214). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1237,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_17 not found, computing it",E19,"Partition <*> not found, computing it"
-1238,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:123964+7292,E12,Input split: hdfs://<*>
+1238,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:123964+7292,E12,Input split: <*>
 1239,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1218,E11,Got assigned task <*>
 1240,17/06/09,20:11:08,INFO,executor.Executor,Running task 18.0 in stage 26.0 (TID 1218),E24,Running task <*> in stage <*> (TID <*>)
 1241,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1219,E11,Got assigned task <*>
 1242,17/06/09,20:11:08,INFO,executor.Executor,Running task 19.0 in stage 26.0 (TID 1219),E24,Running task <*> in stage <*> (TID <*>)
 1243,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_18 not found, computing it",E19,"Partition <*> not found, computing it"
-1244,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:131256+7292,E12,Input split: hdfs://<*>
+1244,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:131256+7292,E12,Input split: <*>
 1245,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_19 not found, computing it",E19,"Partition <*> not found, computing it"
-1246,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:138548+7292,E12,Input split: hdfs://<*>
+1246,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:138548+7292,E12,Input split: <*>
 1247,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 49, boot = 16, init = 28, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1248,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_15 stored as bytes in memory (estimated size 913.0 B, free 817.5 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1249,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 53, boot = 14, init = 34, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
@@ -1260,7 +1260,7 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1259,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1220,E11,Got assigned task <*>
 1260,17/06/09,20:11:08,INFO,executor.Executor,Running task 20.0 in stage 26.0 (TID 1220),E24,Running task <*> in stage <*> (TID <*>)
 1261,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_20 not found, computing it",E19,"Partition <*> not found, computing it"
-1262,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:145840+7292,E12,Input split: hdfs://<*>
+1262,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:145840+7292,E12,Input split: <*>
 1263,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 38, boot = 24, init = 14, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1264,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 43, boot = 23, init = 19, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1265,17/06/09,20:11:08,INFO,executor.Executor,Finished task 16.0 in stage 26.0 (TID 1216). 2701 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1270,9 +1270,9 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1269,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1222,E11,Got assigned task <*>
 1270,17/06/09,20:11:08,INFO,executor.Executor,Running task 22.0 in stage 26.0 (TID 1222),E24,Running task <*> in stage <*> (TID <*>)
 1271,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_21 not found, computing it",E19,"Partition <*> not found, computing it"
-1272,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:153132+7292,E12,Input split: hdfs://<*>
+1272,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:153132+7292,E12,Input split: <*>
 1273,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_22 not found, computing it",E19,"Partition <*> not found, computing it"
-1274,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:160424+7292,E12,Input split: hdfs://<*>
+1274,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:160424+7292,E12,Input split: <*>
 1275,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 38, boot = 20, init = 18, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1276,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 41, boot = 20, init = 21, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1277,17/06/09,20:11:08,INFO,executor.Executor,Finished task 18.0 in stage 26.0 (TID 1218). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1282,9 +1282,9 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1281,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1224,E11,Got assigned task <*>
 1282,17/06/09,20:11:08,INFO,executor.Executor,Running task 24.0 in stage 26.0 (TID 1224),E24,Running task <*> in stage <*> (TID <*>)
 1283,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_23 not found, computing it",E19,"Partition <*> not found, computing it"
-1284,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:167716+7292,E12,Input split: hdfs://<*>
+1284,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:167716+7292,E12,Input split: <*>
 1285,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_24 not found, computing it",E19,"Partition <*> not found, computing it"
-1286,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:175008+7292,E12,Input split: hdfs://<*>
+1286,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:175008+7292,E12,Input split: <*>
 1287,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 47, boot = 5, init = 37, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1288,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_20 stored as bytes in memory (estimated size 917.0 B, free 821.7 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1289,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 53, boot = 15, init = 33, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
@@ -1300,7 +1300,7 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1299,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1225,E11,Got assigned task <*>
 1300,17/06/09,20:11:08,INFO,executor.Executor,Running task 25.0 in stage 26.0 (TID 1225),E24,Running task <*> in stage <*> (TID <*>)
 1301,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_25 not found, computing it",E19,"Partition <*> not found, computing it"
-1302,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:182300+7292,E12,Input split: hdfs://<*>
+1302,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:182300+7292,E12,Input split: <*>
 1303,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 42, boot = 26, init = 16, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1304,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 39, boot = 23, init = 16, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1305,17/06/09,20:11:08,INFO,executor.Executor,Finished task 22.0 in stage 26.0 (TID 1222). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1310,11 +1310,11 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1309,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1227,E11,Got assigned task <*>
 1310,17/06/09,20:11:08,INFO,executor.Executor,Running task 27.0 in stage 26.0 (TID 1227),E24,Running task <*> in stage <*> (TID <*>)
 1311,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_26 not found, computing it",E19,"Partition <*> not found, computing it"
-1312,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:189592+7292,E12,Input split: hdfs://<*>
+1312,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:189592+7292,E12,Input split: <*>
 1313,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 38, boot = 21, init = 17, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1314,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 42, boot = 20, init = 22, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1315,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_27 not found, computing it",E19,"Partition <*> not found, computing it"
-1316,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:196884+7292,E12,Input split: hdfs://<*>
+1316,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:196884+7292,E12,Input split: <*>
 1317,17/06/09,20:11:08,INFO,executor.Executor,Finished task 23.0 in stage 26.0 (TID 1223). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1318,17/06/09,20:11:08,INFO,executor.Executor,Finished task 24.0 in stage 26.0 (TID 1224). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1319,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1228,E11,Got assigned task <*>
@@ -1322,9 +1322,9 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1321,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1229,E11,Got assigned task <*>
 1322,17/06/09,20:11:08,INFO,executor.Executor,Running task 29.0 in stage 26.0 (TID 1229),E24,Running task <*> in stage <*> (TID <*>)
 1323,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_28 not found, computing it",E19,"Partition <*> not found, computing it"
-1324,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:204176+7292,E12,Input split: hdfs://<*>
+1324,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:204176+7292,E12,Input split: <*>
 1325,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_29 not found, computing it",E19,"Partition <*> not found, computing it"
-1326,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:211468+7292,E12,Input split: hdfs://<*>
+1326,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:211468+7292,E12,Input split: <*>
 1327,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 48, boot = 5, init = 38, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1328,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_25 stored as bytes in memory (estimated size 950.0 B, free 826.0 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1329,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 52, boot = 7, init = 40, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
@@ -1340,7 +1340,7 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1339,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1230,E11,Got assigned task <*>
 1340,17/06/09,20:11:08,INFO,executor.Executor,Running task 30.0 in stage 26.0 (TID 1230),E24,Running task <*> in stage <*> (TID <*>)
 1341,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_30 not found, computing it",E19,"Partition <*> not found, computing it"
-1342,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:218760+7292,E12,Input split: hdfs://<*>
+1342,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:218760+7292,E12,Input split: <*>
 1343,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 38, boot = 34, init = 4, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1344,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 42, boot = 24, init = 17, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1345,17/06/09,20:11:08,INFO,executor.Executor,Finished task 26.0 in stage 26.0 (TID 1226). 2705 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1351,9 +1351,9 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1350,17/06/09,20:11:08,INFO,executor.Executor,Running task 32.0 in stage 26.0 (TID 1232),E24,Running task <*> in stage <*> (TID <*>)
 1351,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 42, boot = 22, init = 19, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1352,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_31 not found, computing it",E19,"Partition <*> not found, computing it"
-1353,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:226052+7292,E12,Input split: hdfs://<*>
+1353,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:226052+7292,E12,Input split: <*>
 1354,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_32 not found, computing it",E19,"Partition <*> not found, computing it"
-1355,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:233344+7292,E12,Input split: hdfs://<*>
+1355,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:233344+7292,E12,Input split: <*>
 1356,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 39, boot = 20, init = 18, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1357,17/06/09,20:11:08,INFO,executor.Executor,Finished task 28.0 in stage 26.0 (TID 1228). 2705 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1358,17/06/09,20:11:08,INFO,executor.Executor,Finished task 29.0 in stage 26.0 (TID 1229). 2705 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1362,9 +1362,9 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1361,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1234,E11,Got assigned task <*>
 1362,17/06/09,20:11:08,INFO,executor.Executor,Running task 34.0 in stage 26.0 (TID 1234),E24,Running task <*> in stage <*> (TID <*>)
 1363,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_34 not found, computing it",E19,"Partition <*> not found, computing it"
-1364,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:247928+7292,E12,Input split: hdfs://<*>
+1364,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:247928+7292,E12,Input split: <*>
 1365,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_33 not found, computing it",E19,"Partition <*> not found, computing it"
-1366,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:240636+7292,E12,Input split: hdfs://<*>
+1366,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:240636+7292,E12,Input split: <*>
 1367,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 46, boot = 16, init = 25, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1368,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_30 stored as bytes in memory (estimated size 906.0 B, free 830.3 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1369,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 51, boot = 12, init = 34, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
@@ -1379,7 +1379,7 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1378,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 50, boot = 2, init = 43, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1379,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_34 stored as bytes in memory (estimated size 842.0 B, free 832.9 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1380,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_35 not found, computing it",E19,"Partition <*> not found, computing it"
-1381,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:255220+7292,E12,Input split: hdfs://<*>
+1381,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:255220+7292,E12,Input split: <*>
 1382,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_33 stored as bytes in memory (estimated size 869.0 B, free 833.7 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1383,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 42, boot = 24, init = 18, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1384,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 38, boot = 23, init = 15, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
@@ -1390,10 +1390,10 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1389,17/06/09,20:11:08,INFO,executor.CoarseGrainedExecutorBackend,Got assigned task 1237,E11,Got assigned task <*>
 1390,17/06/09,20:11:08,INFO,executor.Executor,Running task 37.0 in stage 26.0 (TID 1237),E24,Running task <*> in stage <*> (TID <*>)
 1391,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_36 not found, computing it",E19,"Partition <*> not found, computing it"
-1392,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:262512+7292,E12,Input split: hdfs://<*>
+1392,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:262512+7292,E12,Input split: <*>
 1393,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_37 not found, computing it",E19,"Partition <*> not found, computing it"
 1394,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 43, boot = 17, init = 25, finish = 1",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
-1395,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:269804+7292,E12,Input split: hdfs://<*>
+1395,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:269804+7292,E12,Input split: <*>
 1396,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 38, boot = 12, init = 26, finish = 0",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1397,17/06/09,20:11:08,INFO,executor.Executor,Finished task 34.0 in stage 26.0 (TID 1234). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 1398,17/06/09,20:11:08,INFO,executor.Executor,Finished task 33.0 in stage 26.0 (TID 1233). 2703 bytes result sent to driver,E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
@@ -1403,9 +1403,9 @@ LineId,Date,Time,Level,Component,Content,EventId,EventTemplate
 1402,17/06/09,20:11:08,INFO,executor.Executor,Running task 39.0 in stage 26.0 (TID 1239),E24,Running task <*> in stage <*> (TID <*>)
 1403,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 47, boot = 17, init = 23, finish = 7",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1404,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_38 not found, computing it",E19,"Partition <*> not found, computing it"
-1405,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:277096+7292,E12,Input split: hdfs://<*>
+1405,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:277096+7292,E12,Input split: <*>
 1406,17/06/09,20:11:08,INFO,spark.CacheManager,"Partition rdd_42_39 not found, computing it",E19,"Partition <*> not found, computing it"
-1407,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:284388+7303,E12,Input split: hdfs://<*>
+1407,17/06/09,20:11:08,INFO,rdd.HadoopRDD,Input split: hdfs://10.10.34.11:9000/pjhe/logs/2kSOSP.log:284388+7303,E12,Input split: <*>
 1408,17/06/09,20:11:08,INFO,storage.MemoryStore,"Block rdd_42_35 stored as bytes in memory (estimated size 917.0 B, free 834.6 KB)",E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 1409,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 53, boot = 8, init = 40, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"
 1410,17/06/09,20:11:08,INFO,python.PythonRunner,"Times: total = 53, boot = 12, init = 36, finish = 5",E35,"Times: total = <*>, boot = <*>, init = <*>, finish = <*>"

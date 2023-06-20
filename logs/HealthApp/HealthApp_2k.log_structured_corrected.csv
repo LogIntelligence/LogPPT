@@ -700,7 +700,7 @@ LineId,Time,Component,Pid,Content,EventId,EventTemplate
 699,20171223-22:19:58:112,Step_ExtSDM,30002312,calculateAltitudeWithCache totalAltitude=240,E3,calculateAltitudeWithCache totalAltitude=<*>
 700,20171223-22:19:58:363,Step_LSC,30002312,onStandStepChanged 3735,E42,onStandStepChanged <*>
 701,20171223-22:19:58:363,Step_LSC,30002312,flushTempCacheToDB by stand,E14,flushTempCacheToDB by stand
-702,20171223-22:19:58:366,Step_LSC,30002312,Alarm uploadStaticsToDB totalSteps=7163Calories:153367Floor:240Distance:5112,E1,Alarm uploadStaticsToDB totalSteps=<*>:<*>:<*>:<*>
+702,20171223-22:19:58:366,Step_LSC,30002312,Alarm uploadStaticsToDB totalSteps=7163 Calories:153367 Floor:240 Distance:5112,E1,Alarm uploadStaticsToDB totalSteps=<*> Calories:<*> Floor:<*> Distance:<*>
 703,20171223-22:19:58:366,Step_FlushableStepDataCache,30002312,writeDataToDB size 327,E75,writeDataToDB size <*>
 704,20171223-22:19:58:366,Step_FlushableStepDataCache,30002312,"upLoadOneMinuteDataToEngine time=25233975,0,93,0,20002",E72,"upLoadOneMinuteDataToEngine time=<*>,<*>,<*>,<*>,<*>"
 705,20171223-22:19:58:366,Step_FlushableStepDataCache,30002312,"upLoadOneMinuteDataToEngine time=25233976,0,1,0,20002",E72,"upLoadOneMinuteDataToEngine time=<*>,<*>,<*>,<*>,<*>"

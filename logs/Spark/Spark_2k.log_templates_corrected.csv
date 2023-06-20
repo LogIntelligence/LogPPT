@@ -4,13 +4,13 @@ E2,"Block <*> stored as bytes in memory (estimated size <*>, free <*>)"
 E3,"Block <*> stored as values in memory (estimated size <*>, free <*>)"
 E4,Changing modify acls to: <*>
 E5,Changing view acls to: <*>
-E6,Connecting to driver: spark://<*>
+E6,Connecting to driver: <*>
 E7,Created local directory at <*>
 E8,File Output Committer Algorithm version is <*>
 E9,Finished task <*> in stage <*> (TID <*>). <*> bytes result sent to driver
 E10,Found block <*> locally
 E11,Got assigned task <*>
-E12,Input split: hdfs://<*>
+E12,Input split: <*>
 E13,"mapred.job.id is deprecated. Instead, use mapreduce.job.id"
 E14,"mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id"
 E15,"mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap"
@@ -21,9 +21,9 @@ E19,"Partition <*> not found, computing it"
 E20,Reading broadcast variable <*> took <*> ms
 E21,Registered BlockManager
 E22,"Registered signal handlers for [TERM, HUP, INT]"
-E23,Remoting started; listening on addresses :[akka.tcp://<*>]
+E23,Remoting started; listening on addresses :[<*>]
 E24,Running task <*> in stage <*> (TID <*>)
-E25,Saved output of task '<*>' to hdfs://<*>
+E25,Saved output of task '<*>' to <*>
 E26,"SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(yarn, curi); users with modify permissions: Set(yarn, curi)"
 E27,Server created on <*>
 E28,Slf4jLogger started

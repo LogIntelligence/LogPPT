@@ -156,11 +156,11 @@ LineId,Date,Day,Time,Component,Pid,Content,EventId,EventTemplate
 155,Dec,10,07:51:12,LabSZ,24324,pam_unix(sshd:auth): check pass; user unknown,E21,pam_unix(sshd:auth): check pass; user unknown
 156,Dec,10,07:51:12,LabSZ,24324,pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=195.154.37.122,E19,pam_unix(sshd:auth): authentication failure; logname= uid=<*> euid=<*> tty=ssh ruser= rhost=<*>
 157,Dec,10,07:51:15,LabSZ,24324,Failed password for invalid user support from 195.154.37.122 port 56539 ssh2,E10,Failed password for invalid user <*> from <*> port <*> ssh2
-158,Dec,10,07:51:15,LabSZ,24324,error: Received disconnect from 195.154.37.122: 3: com.jcraft.jsch.JSchException: Auth fail [preauth],E6,error: Received disconnect from <*>: <*>: com.jcraft.jsch.JSchException: Auth fail [preauth]
+158,Dec,10,07:51:15,LabSZ,24324,error: Received disconnect from 195.154.37.122: 3: com.jcraft.jsch.JSchException: Auth fail [preauth],E6,error: Received disconnect from <*>: <*>: <*>: Auth fail [preauth]
 159,Dec,10,07:51:17,LabSZ,24326,reverse mapping checking getaddrinfo for 195-154-37-122.rev.poneytelecom.eu [195.154.37.122] failed - POSSIBLE BREAK-IN ATTEMPT!,E27,reverse mapping checking getaddrinfo for <*> [<*>] failed - POSSIBLE BREAK-IN ATTEMPT!
 160,Dec,10,07:51:18,LabSZ,24326,pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=195.154.37.122  user=uucp,E20,pam_unix(sshd:auth): authentication failure; logname= uid=<*> euid=<*> tty=ssh ruser= rhost=<*> user=<*>
 161,Dec,10,07:51:20,LabSZ,24326,Failed password for uucp from 195.154.37.122 port 59266 ssh2,E9,Failed password for <*> from <*> port <*> ssh2
-162,Dec,10,07:51:20,LabSZ,24326,error: Received disconnect from 195.154.37.122: 3: com.jcraft.jsch.JSchException: Auth fail [preauth],E6,error: Received disconnect from <*>: <*>: com.jcraft.jsch.JSchException: Auth fail [preauth]
+162,Dec,10,07:51:20,LabSZ,24326,error: Received disconnect from 195.154.37.122: 3: com.jcraft.jsch.JSchException: Auth fail [preauth],E6,error: Received disconnect from <*>: <*>: <*>: Auth fail [preauth]
 163,Dec,10,07:53:26,LabSZ,24329,Connection closed by 194.190.163.22 [preauth],E2,Connection closed by <*> [preauth]
 164,Dec,10,07:55:55,LabSZ,24331,Invalid user test from 52.80.34.196,E13,Invalid user <*> from <*>
 165,Dec,10,07:55:55,LabSZ,24331,input_userauth_request: invalid user test [preauth],E12,input_userauth_request: invalid user <*> [preauth]

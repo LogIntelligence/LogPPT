@@ -317,10 +317,10 @@ LineId,LogId,Node,Component,State,Time,Flag,Content,EventId,EventTemplate
 316,293098,Interconnect-1T00,switch_module,bcast-error,1081296321,1,Link error,E21,Link error
 317,303852,Interconnect-1T00,switch_module,bcast-error,1082033409,1,Link in reset,E24,Link in reset
 318,323647,Interconnect-1T00,switch_module,bcast-error,1083198788,1,Link ok,E25,Link ok
-319,26281,Interconnect-0T00,switch_module,bcast-error,1124878893,1,Link error on broadcast tree Interconnect-0T00:00:2:1,E22,Link error on broadcast tree Interconnect-<*>:<*>:<*>:<*>
-320,407973,Interconnect-1T00,switch_module,bcast-error,1142703109,1,Link error on broadcast tree Interconnect-1T00:00:3:6,E22,Link error on broadcast tree Interconnect-<*>:<*>:<*>:<*>
-321,408176,Interconnect-1T00,switch_module,bcast-error,1142743438,1,Link error on broadcast tree Interconnect-1T00:00:2:0,E22,Link error on broadcast tree Interconnect-<*>:<*>:<*>:<*>
-322,408221,Interconnect-1T00,switch_module,bcast-error,1142752287,1,Link error on broadcast tree Interconnect-1T00:00:2:0,E22,Link error on broadcast tree Interconnect-<*>:<*>:<*>:<*>
+319,26281,Interconnect-0T00,switch_module,bcast-error,1124878893,1,Link error on broadcast tree Interconnect-0T00:00:2:1,E22,Link error on broadcast tree Interconnect-<*>
+320,407973,Interconnect-1T00,switch_module,bcast-error,1142703109,1,Link error on broadcast tree Interconnect-1T00:00:3:6,E22,Link error on broadcast tree Interconnect-<*>
+321,408176,Interconnect-1T00,switch_module,bcast-error,1142743438,1,Link error on broadcast tree Interconnect-1T00:00:2:0,E22,Link error on broadcast tree Interconnect-<*>
+322,408221,Interconnect-1T00,switch_module,bcast-error,1142752287,1,Link error on broadcast tree Interconnect-1T00:00:2:0,E22,Link error on broadcast tree Interconnect-<*>
 323,191911,node-D4,clusterfilesystem,fdmn.full,1077949575,1,ServerFileSystem: ServerFileSystem domain root14_local is full,E40,ServerFileSystem: ServerFileSystem domain <*> is full
 324,280513,node-D0,clusterfilesystem,fdmn.full,1079715693,1,ServerFileSystem: ServerFileSystem domain root10_local is full,E40,ServerFileSystem: ServerFileSystem domain <*> is full
 325,284487,node-D3,clusterfilesystem,fdmn.full,1080155118,1,ServerFileSystem: ServerFileSystem domain root22_local is full,E40,ServerFileSystem: ServerFileSystem domain <*> is full

@@ -20,7 +20,7 @@ E18,Fan speeds ( <*> <*> <*> <*> <*> <*> )
 E19,halt (command <*>)
 E20,inconsistent nodesets node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <ok> node-<*> <*> <*>
 E21,Link error
-E22,Link error on broadcast tree Interconnect-<*>:<*>:<*>:<*>
+E22,Link error on broadcast tree Interconnect-<*>
 E23,link errors remain current
 E24,Link in reset
 E25,Link ok
