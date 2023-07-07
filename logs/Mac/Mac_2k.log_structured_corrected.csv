@@ -1576,9 +1576,7 @@ LineId,Month,Date,Time,User,Component,PID,Address,Content,EventId,EventTemplate
 1575,Jul,6,20:53:41,calvisitor-10-105-162-178,locationd,82,,"NETWORK: requery, 0, 0, 0, 0, 291, items, fQueryRetries, 0, fLastRetryTimestamp, 521092126.3",E271,"NETWORK: requery, <*>, <*>, <*>, <*>, <*>, items, fQueryRetries, <*>, fLastRetryTimestamp, <*>"
 1576,Jul,6,21:00:02,calvisitor-10-105-162-178,locationd,82,,"NETWORK: no response from server, reachability, 2, queryRetries, 2",E270,"NETWORK: no response from server, reachability, <*>, queryRetries, <*>"
 1577,Jul,6,21:03:09,calvisitor-10-105-162-178,WindowServer,184,,send_datagram_available_ping: pid 445 failed to act on a ping it dequeued before timing out.,E305,send_datagram_available_ping: pid <*> failed to act on a ping it dequeued before timing out.
-1578,Jul,6,21:08:02,calvisitor-10-105-162-178,Preview,11512,,"Page bounds {{0, 0}
-{400, 400}}",E281,"Page bounds {{<*>, <*>}
-{<*>, <*>}}"
+1578,Jul,6,21:08:02,calvisitor-10-105-162-178,Preview,11512,,"Page bounds {{0, 0} {400, 400}}",E281,"Page bounds {{<*>, <*>} {<*>, <*>}}"
 1579,Jul,6,21:22:31,calvisitor-10-105-162-178,WeChat,24144,,Failed to connect (titleField) outlet from (MMSessionPickerChoosenRowView) to (NSTextField): missing setter or instance variable,E217,Failed to connect (titleField) outlet from (MMSessionPickerChoosenRowView) to (NSTextField): missing setter or instance variable
 1580,Jul,6,22:05:30,calvisitor-10-105-162-178,CalendarAgent,279,,[com.apple.calendar.store.log.caldav.queue] [Account xpc_ben@163.com@https://caldav.163.com/caldav/principals/users/xpc_ben%40163.com/ timed out when executing operation: <CalDAVAccountRefreshQueueableOperation: 0x7fa11f9f2290; Sequence: 0>],E29,[com.apple.calendar.store.log.caldav.queue] [Account <*> timed out when executing operation: <CalDAVAccountRefreshQueueableOperation: <*>; Sequence: <*>]
 1581,Jul,6,22:26:19,calvisitor-10-105-162-178,WindowServer,184,,send_datagram_available_ping: pid 445 failed to act on a ping it dequeued before timing out.,E305,send_datagram_available_ping: pid <*> failed to act on a ping it dequeued before timing out.
@@ -1586,9 +1584,7 @@ LineId,Month,Date,Time,User,Component,PID,Address,Content,EventId,EventTemplate
 1583,Jul,6,22:37:40,calvisitor-10-105-162-178,WindowServer,184,,send_datagram_available_ping: pid 445 failed to act on a ping it dequeued before timing out.,E305,send_datagram_available_ping: pid <*> failed to act on a ping it dequeued before timing out.
 1584,Jul,6,23:00:45,calvisitor-10-105-162-178,Safari,9852,,KeychainGetICDPStatus: keychain: -25300,E256,KeychainGetICDPStatus: keychain: <*>
 1585,Jul,6,23:28:39,calvisitor-10-105-162-178,locationd,82,,Location icon should now be in state 'Inactive',E259,Location icon should now be in state 'Inactive'
-1586,Jul,6,23:33:20,calvisitor-10-105-162-178,Preview,11512,,"Page bounds {{0, 0}
-{400, 400}}",E281,"Page bounds {{<*>, <*>}
-{<*>, <*>}}"
+1586,Jul,6,23:33:20,calvisitor-10-105-162-178,Preview,11512,,"Page bounds {{0, 0} {400, 400}}",E281,"Page bounds {{<*>, <*>} {<*>, <*>}}"
 1587,Jul,6,23:33:55,calvisitor-10-105-162-178,SpotlightNetHelper,352,,"CFPasteboardRef CFPasteboardCreate(CFAllocatorRef, CFStringRef) : failed to create global data",E183,"CFPasteboardRef CFPasteboardCreate(CFAllocatorRef, CFStringRef) : failed to create global data"
 1588,Jul,7,00:01:59,calvisitor-10-105-162-178,kernel,0,,Sandbox: SpotlightNetHelp(352) deny(1) ipc-posix-shm-read-data CFPBS:186A7:,E298,Sandbox: <*>(<*>) deny(<*>) ipc-posix-shm-read-data CFPBS:<*>:
 1589,Jul,7,00:02:27,calvisitor-10-105-162-178,Safari,9852,,tcp_connection_tls_session_error_callback_imp 2438 __tcp_connection_tls_session_callback_write_block_invoke.434 error 22,E319,tcp_connection_tls_session_error_callback_imp <*> __tcp_connection_tls_session_callback_write_block_invoke.<*> error <*>
@@ -1988,9 +1984,7 @@ LineId,Month,Date,Time,User,Component,PID,Address,Content,EventId,EventTemplate
 1983,Jul,8,06:26:32,calvisitor-10-105-162-124,GoogleSoftwareUpdateAgent,39159,,2017-07-08 06:26:32.364 GoogleSoftwareUpdateAgent[39159/0x7000002a0000] [lvl=2] -[KSAgentApp(KeystoneDelegate) updateEngineFinishedWithErrors:] Keystone finished: errors=0,E78,<*>-<*>-<*> <*>:<*>:<*> GoogleSoftwareUpdateAgent[<*>/<*>] [lvl=<*>] -[KSAgentApp(KeystoneDelegate) updateEngineFinishedWithErrors:] Keystone finished: errors=<*>
 1984,Jul,8,06:26:32,calvisitor-10-105-162-124,GoogleSoftwareUpdateAgent,39159,,2017-07-08 06:26:32.365 GoogleSoftwareUpdateAgent[39159/0x7000002a0000] [lvl=2] -[KSAgentApp(KeystoneThread) runKeystonesInThreadWithArg:] About to run checks for any other apps.,E79,<*>-<*>-<*> <*>:<*>:<*> GoogleSoftwareUpdateAgent[<*>/<*>] [lvl=<*>] -[KSAgentApp(KeystoneThread) runKeystonesInThreadWithArg:] About to run checks for any other apps.
 1985,Jul,8,06:45:24,calvisitor-10-105-162-124,kernel,0,,ARPT: 787923.793193: wl0: leaveModulePoweredForOffloads: Wi-Fi will stay on.,E139,ARPT: <*>: wl0: leaveModulePoweredForOffloads: Wi-Fi will stay on.
-1986,Jul,8,06:46:42,calvisitor-10-105-162-124,WeChat,24144,,"Arranged view frame: {{0, 0}
-{260, 877}}",E152,"Arranged view frame: {{<*>, <*>}
-{<*>, <*>}}"
+1986,Jul,8,06:46:42,calvisitor-10-105-162-124,WeChat,24144,,"Arranged view frame: {{0, 0} {260, 877}}",E152,"Arranged view frame: {{<*>, <*>} {<*>, <*>}}"
 1987,Jul,8,07:01:03,calvisitor-10-105-162-124,CalendarAgent,279,,[com.apple.calendar.store.log.caldav.coredav] [Refusing to parse response to PROPPATCH because of content-type: [text/html; charset=UTF-8].],E28,[com.apple.calendar.store.log.caldav.coredav] [Refusing to parse response to PROPPATCH because of content-type: [text/html; charset=UTF-<*>].]
 1988,Jul,8,07:12:41,calvisitor-10-105-162-124,kernel,0,,IO80211AWDLPeerManager::setAwdlOperatingMode Setting the AWDL operation mode from AUTO to SUSPENDED,E59,<*>::setAwdlOperatingMode Setting the AWDL operation mode from AUTO to SUSPENDED
 1989,Jul,8,07:12:45,calvisitor-10-105-162-124,corecaptured,39203,,CCProfileMonitor::setStreamEventHandler,E179,CCProfileMonitor::setStreamEventHandler

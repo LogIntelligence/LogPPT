@@ -1575,8 +1575,7 @@ Jul  6 20:46:03 calvisitor-10-105-162-178 GoogleSoftwareUpdateAgent[37316]: 2017
 Jul  6 20:53:41 calvisitor-10-105-162-178 locationd[82]: NETWORK: requery, 0, 0, 0, 0, 291, items, fQueryRetries, 0, fLastRetryTimestamp, 521092126.3
 Jul  6 21:00:02 calvisitor-10-105-162-178 locationd[82]: NETWORK: no response from server, reachability, 2, queryRetries, 2
 Jul  6 21:03:09 calvisitor-10-105-162-178 WindowServer[184]: send_datagram_available_ping: pid 445 failed to act on a ping it dequeued before timing out.
-Jul  6 21:08:02 calvisitor-10-105-162-178 Preview[11512]: Page bounds {{0, 0}
-{400, 400}}
+Jul  6 21:08:02 calvisitor-10-105-162-178 Preview[11512]: Page bounds {{0, 0} {400, 400}}
 Jul  6 21:22:31 calvisitor-10-105-162-178 WeChat[24144]: Failed to connect (titleField) outlet from (MMSessionPickerChoosenRowView) to (NSTextField): missing setter or instance variable
 Jul  6 22:05:30 calvisitor-10-105-162-178 CalendarAgent[279]: [com.apple.calendar.store.log.caldav.queue] [Account xpc_ben@163.com@https://caldav.163.com/caldav/principals/users/xpc_ben%40163.com/ timed out when executing operation: <CalDAVAccountRefreshQueueableOperation: 0x7fa11f9f2290; Sequence: 0>]
 Jul  6 22:26:19 calvisitor-10-105-162-178 WindowServer[184]: send_datagram_available_ping: pid 445 failed to act on a ping it dequeued before timing out.
@@ -1584,8 +1583,7 @@ Jul  6 22:33:18 calvisitor-10-105-162-178 CalendarAgent[279]: [com.apple.calenda
 Jul  6 22:37:40 calvisitor-10-105-162-178 WindowServer[184]: send_datagram_available_ping: pid 445 failed to act on a ping it dequeued before timing out.
 Jul  6 23:00:45 calvisitor-10-105-162-178 Safari[9852]: KeychainGetICDPStatus: keychain: -25300
 Jul  6 23:28:39 calvisitor-10-105-162-178 locationd[82]: Location icon should now be in state 'Inactive'
-Jul  6 23:33:20 calvisitor-10-105-162-178 Preview[11512]: Page bounds {{0, 0}
-{400, 400}}
+Jul  6 23:33:20 calvisitor-10-105-162-178 Preview[11512]: Page bounds {{0, 0} {400, 400}}
 Jul  6 23:33:55 calvisitor-10-105-162-178 SpotlightNetHelper[352]: CFPasteboardRef CFPasteboardCreate(CFAllocatorRef, CFStringRef) : failed to create global data
 Jul  7 00:01:59 calvisitor-10-105-162-178 kernel[0]: Sandbox: SpotlightNetHelp(352) deny(1) ipc-posix-shm-read-data CFPBS:186A7:
 Jul  7 00:02:27 calvisitor-10-105-162-178 Safari[9852]: tcp_connection_tls_session_error_callback_imp 2438 __tcp_connection_tls_session_callback_write_block_invoke.434 error 22
@@ -1985,8 +1983,7 @@ Jul  8 06:22:52 calvisitor-10-105-162-124 com.apple.xpc.launchd[1] (com.apple.xp
 Jul  8 06:26:32 calvisitor-10-105-162-124 GoogleSoftwareUpdateAgent[39159]: 2017-07-08 06:26:32.364 GoogleSoftwareUpdateAgent[39159/0x7000002a0000] [lvl=2] -[KSAgentApp(KeystoneDelegate) updateEngineFinishedWithErrors:] Keystone finished: errors=0
 Jul  8 06:26:32 calvisitor-10-105-162-124 GoogleSoftwareUpdateAgent[39159]: 2017-07-08 06:26:32.365 GoogleSoftwareUpdateAgent[39159/0x7000002a0000] [lvl=2] -[KSAgentApp(KeystoneThread) runKeystonesInThreadWithArg:] About to run checks for any other apps.
 Jul  8 06:45:24 calvisitor-10-105-162-124 kernel[0]: ARPT: 787923.793193: wl0: leaveModulePoweredForOffloads: Wi-Fi will stay on.
-Jul  8 06:46:42 calvisitor-10-105-162-124 WeChat[24144]:     Arranged view frame: {{0, 0}
-{260, 877}}
+Jul  8 06:46:42 calvisitor-10-105-162-124 WeChat[24144]: Arranged view frame: {{0, 0} {260, 877}}
 Jul  8 07:01:03 calvisitor-10-105-162-124 CalendarAgent[279]: [com.apple.calendar.store.log.caldav.coredav] [Refusing to parse response to PROPPATCH because of content-type: [text/html; charset=UTF-8].]
 Jul  8 07:12:41 calvisitor-10-105-162-124 kernel[0]: IO80211AWDLPeerManager::setAwdlOperatingMode Setting the AWDL operation mode from AUTO to SUSPENDED
 Jul  8 07:12:45 calvisitor-10-105-162-124 corecaptured[39203]: CCProfileMonitor::setStreamEventHandler

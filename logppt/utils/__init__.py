@@ -11,7 +11,7 @@ benchmark = {
 
     'Hadoop': {
         'log_file': 'Hadoop/Hadoop_2k.log',
-        'log_format': '<SessionId> <Date> <Time> <Level> \[<Process>\] <Component>: <Content>',
+        'log_format': '<Date> <Time> <Level> \[<Process>\] <Component>: <Content>',
     },
 
     'Spark': {
