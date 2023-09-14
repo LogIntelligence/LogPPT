@@ -3,10 +3,11 @@ transformers
 datasets
 pandas
 tqdm
-numpy
+numpy==1.19.5
 scipy
 textdistance
 seqeval
 accelerate
-sklearn
 scikit-learn
+nltk
+natsort
