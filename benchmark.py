@@ -2,8 +2,8 @@ from logppt.evaluation.utils.evaluator_main import evaluator
 import os
 import pandas as pd
 
-input_dir = './logs/'  # The input directory of log file
-output_dir = './outputs/32shot'  # The output directory of parsing results
+input_dir = './logs_groundtruth_v2/'  # The input directory of log file
+output_dir = 'benchmark_results/16shot/1/PreLog_adaptive'  # The output directory of parsing results
 benchmark_settings = {
     'HDFS': {
         'log_file': 'HDFS/HDFS_2k.log',
@@ -92,29 +92,33 @@ avg_ga, avg_pa, avg_ed = 0, 0, 0
 avg_unseen_pa = 0
 avg_no_unseen = 0
 unseen_datasets = 0
+count = 0
 for dataset, setting in benchmark_settings.items():
     print('\n=== Evaluation on %s ===' % dataset)
     indir = os.path.join(input_dir, os.path.dirname(setting['log_file']))
     log_file = os.path.basename(setting['log_file'])
+    if not os.path.exists(os.path.join(output_dir, log_file + '_structured.csv')):
+        continue
+    # try:
+    GA, PA, ED, unseen_PA, no_unseen = evaluator(
+        groundtruth=os.path.join(input_dir, log_file + '_structured.csv'),
+        parsedresult=os.path.join(output_dir, log_file + '_structured.csv')
+    )
+    bechmark_result.append([dataset, GA, PA, ED, unseen_PA, no_unseen])  # , _, _, _, _, _, _])
+    avg_ga += GA
+    avg_pa += PA
+    avg_ed += ED
+    avg_unseen_pa += unseen_PA
+    avg_no_unseen += no_unseen
+    count += 1
+    if no_unseen > 0:
+        unseen_datasets += 1
+    # except Exception as ex:
+    #     print(ex)
+    #     pass
 
-    try:
-        GA, PA, ED, _, _, _, _, _, _, unseen_PA, no_unseen = evaluator(
-            groundtruth=os.path.join(indir, log_file + '_structured_corrected.csv'),
-            parsedresult=os.path.join(output_dir, log_file + '_structured.csv')
-        )
-        bechmark_result.append([dataset, GA, PA, ED, unseen_PA, no_unseen])  # , _, _, _, _, _, _])
-        avg_ga += GA
-        avg_pa += PA
-        avg_ed += ED
-        avg_unseen_pa += unseen_PA
-        avg_no_unseen += no_unseen
-        if no_unseen > 0:
-            unseen_datasets += 1
-    except Exception as _:
-        pass
-
-bechmark_result.append(["Average", avg_ga / len(benchmark_settings.keys()), avg_pa / len(benchmark_settings.keys()),
-                        avg_ed / len(benchmark_settings.keys()), avg_unseen_pa / unseen_datasets,
+bechmark_result.append(["Average", avg_ga / count, avg_pa / count,
+                        avg_ed / count, avg_unseen_pa / unseen_datasets,
                         avg_no_unseen / unseen_datasets])
 
 print('\n=== Overall evaluation results ===')

@@ -54,11 +54,11 @@ def evaluator(groundtruth, parsedresult):
     print(f"Unseen Accuracy {unseen_PA} - {no_unseen}")
     # calculate template-level accuracy
     start_time = time.time()
-    tool_templates, ground_templates, FTA, PTA, RTA, OG, UG, MX = evaluate_template_level(
-        groundtruth=groundtruth,
-        parsedresult=parsedresult
-    )
-    TA_end_time = time.time() - start_time
-    print('Template-level accuracy calculation done. [Time taken: {:.3f}]'.format(TA_end_time))
+    # tool_templates, ground_templates, FTA, PTA, RTA, OG, UG, MX = evaluate_template_level(
+    #     groundtruth=groundtruth,
+    #     parsedresult=parsedresult
+    # )
+    # TA_end_time = time.time() - start_time
+    # print('Template-level accuracy calculation done. [Time taken: {:.3f}]'.format(TA_end_time))
 
-    return GA, PA, ED, FTA, PTA, RTA, OG, UG, MX, unseen_PA, no_unseen
+    return GA, PA, ED, unseen_PA, no_unseen

@@ -4,10 +4,19 @@ from nltk.metrics.distance import edit_distance
 from sklearn.metrics import accuracy_score
 import numpy as np
 
+from logppt.evaluation.post_process import correct_single_template
+
+
+def normalized_edit_distance(s1, s2):
+    return 1 - edit_distance(s1, s2) / min(len(s1), len(s2))
+
 
 def evaluate(groundtruth, parsedresult):
     df_groundtruth = pd.read_csv(groundtruth)
     df_parsedlog = pd.read_csv(parsedresult, index_col=False)
+    df_parsedlog['EventTemplate'] = df_parsedlog['EventTemplate'].apply(correct_single_template)
+    # df_groundtruth['EventTemplate'] = df_groundtruth['EventTemplate'].apply(correct_single_template)
+    df_parsedlog['LineId'] = list(range(1, len(df_parsedlog) + 1))
     # df_groundtruth['EventTemplate'] = df_groundtruth['EventTemplate'].str.lower()
 
     # Remove invalid groundtruth event Ids
@@ -21,7 +30,7 @@ def evaluate(groundtruth, parsedresult):
     edit_distance_result = []
     for i, j in zip(np.array(df_groundtruth.EventTemplate.values, dtype='str'),
                     np.array(df_parsedlog.EventTemplate.values, dtype='str')):
-        edit_distance_result.append(edit_distance(i, j))
+        edit_distance_result.append(normalized_edit_distance(i, j))
 
     edit_distance_result_mean = np.mean(edit_distance_result)
     edit_distance_result_std = np.std(edit_distance_result)
