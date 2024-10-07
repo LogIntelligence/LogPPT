@@ -9,8 +9,8 @@ from logppt import BENCHMARK
 
 
 def test_adaptive_random_sampling(data_version='2k'):
-    data_dir = "./datasets/loghub-2k"
-    output_dir = "./datasets/loghub-2k"
+    data_dir = f"./datasets/loghub-{data_version}"
+    output_dir = f"./datasets/loghub-{data_version}"
     for dataset in BENCHMARK.keys():
         print(dataset)
         if dataset != 'Apache':
@@ -38,3 +38,6 @@ def test_adaptive_random_sampling(data_version='2k'):
             with open(f'{output_dir}/{dataset}/samples/logppt_{shot}.json', 'w') as f:
                 for sample in samples:
                     f.write(json.dumps({'log': sample[0], 'template': sample[1]}) + '\n')
+
+if __name__ == '__main__':
+    test_adaptive_random_sampling(data_version='full')

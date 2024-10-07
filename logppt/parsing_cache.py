@@ -19,15 +19,20 @@ def lcs_similarity(X, Y):
 class ParsingCache(object):
     def __init__(self):
         self.template_tree = {}
-        self.template_list = []
+        self.template_list = {}
+
+    def get_template_list(self):
+        return self.template_list
     
     def add_templates(self, event_template, insert=True, relevant_templates=[]):
         template_tokens = message_split(event_template)
+        # print("template tokens: ", template_tokens)
         if not template_tokens or event_template == "<*>":
             return -1
         if insert or len(relevant_templates) == 0:
             id = self.insert(event_template, template_tokens, len(self.template_list))
-            self.template_list.append(event_template)
+            # self.template_list.append(event_template)
+            self.template_list[id] = event_template
             return id
         
         max_similarity = 0
@@ -44,11 +49,13 @@ class ParsingCache(object):
             success, id = self.modify(similar_template, event_template)
             if not success:
                 id = self.insert(event_template, template_tokens, len(self.template_list))
-                self.template_list.append(event_template)
+                # self.template_list.append(event_template)
+                self.template_list[id] = event_template
             return id
         else:
             id = self.insert(event_template, template_tokens, len(self.template_list))
-            self.template_list.append(event_template)
+            # self.template_list.append(event_template)
+            self.template_list[id] = event_template
             return id
             #print("template tokens: ", template_tokens)
             

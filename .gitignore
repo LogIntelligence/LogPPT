@@ -163,3 +163,4 @@ results/RQ1.ipynb
 *.txt
 *.csv
 **.csv
+/demo/results/

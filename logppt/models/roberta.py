@@ -134,6 +134,10 @@ class RobertaForLogParsing(ModelBase):
         template = map_template(
             self.tokenizer, tokenized_input['input_ids'][0], logits[0], vtoken=vtoken)
         return correct_single_template(template)
+    
+    def load_checkpoint(self, checkpoint_path):
+        self.plm = RobertaForMaskedLM.from_pretrained(checkpoint_path)
+        self.tokenizer = AutoTokenizer.from_pretrained(checkpoint_path)
 
 
 def map_template(tokenizer, c, t, vtoken="<*>"):

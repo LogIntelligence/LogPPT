@@ -13,18 +13,21 @@ Copyright (C) 2022 University of Luxembourg
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import pandas as pd
+from __future__ import print_function
+
+import os
+from logppt.evaluation.common import correct_templates_and_update_files, datasets
 
 
-def calculate_parsing_accuracy(groundtruth, parsedresult):
+def main():
+    for system in datasets:
+        print('-' * 70)
+        print(system)
+        dir_path = os.path.join('..', 'logs', system)
+        log_file_basename = system + '_2k.log'
+        correct_templates_and_update_files(dir_path, log_file_basename, inplace=False)
 
-    parsedresult_df = pd.read_csv(parsedresult)
-    groundtruth_df = pd.read_csv(groundtruth)
 
-    correctly_parsed_messages = parsedresult_df[['EventTemplate']].eq(groundtruth_df[['EventTemplate']]).values.sum()
-    total_messages = len(parsedresult_df[['Content']])
+if __name__ == '__main__':
+    main()
 
-    PA = float(correctly_parsed_messages) / total_messages
-    print('Parsing_Accuracy (PA): {:.4f}'.format(PA))
-
-    return PA

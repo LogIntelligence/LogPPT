@@ -25,6 +25,25 @@ from datetime import datetime
 from natsort import natsorted
 
 
+all_datasets = [
+    "Proxifier",
+    "Linux",
+    "Apache",
+    "Zookeeper",
+    "Mac",
+    "OpenStack",
+    "HealthApp",
+    "Hadoop",
+    "HPC",
+    "OpenSSH",
+    "BGL",
+    "HDFS",
+    # "Android",
+    "Spark",
+    # "Windows",
+    "Thunderbird",
+]
+
 datasets = ['HDFS', 'Hadoop', 'Spark', 'Zookeeper', 'OpenStack', 'BGL', 'HPC', 'Thunderbird', 'Windows', 'Linux',
             'Mac', 'Android', 'HealthApp', 'Apache', 'OpenSSH', 'Proxifier']  # to keep the order of the systems
 
@@ -69,6 +88,27 @@ def common_args():
     parser.add_argument('-otc', '--oracle_template_correction',
                         help="Set this if you want to use corrected oracle templates",
                         default=False, action='store_true')
+    parser.add_argument('--complex', type=int,
+                        help="Set this if you want to test on complex dataset",
+                        default=0)
+    parser.add_argument('--frequent', type=int,
+                        help="Set this if you want to test on frequent dataset",
+                        default=0)
+    parser.add_argument('--example_size', type=int,
+                        default=0)
+    parser.add_argument('--data_type', type=str,
+                    help="Set this if you want to test on full or 2k dataset",
+                    default="full")
+    parser.add_argument('--dataset', type=str,
+                        help="Set this if you want to test on a specific dataset",
+                        default='null')
+    # parser.add_argument('--config', type=str,
+    #                     help="The file name of a specific configuration",
+    #                     default='null', required=True)
+    parser.add_argument('--output_dir', type=str,
+                        help="The directory to save the results",
+                        default='../examples/outputs/results')
+    
     args = parser.parse_args()
     return args
 

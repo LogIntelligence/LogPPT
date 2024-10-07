@@ -20,6 +20,10 @@ class ModelBase(nn.Module):
     def forward(self):
         pass
 
+    @abstractmethod
+    def load_checkpoint(self, checkpoint_path: str):
+        pass
+
     def __call__(self, *args: Any, **kwds: Any) -> Any:
         return self.forward(*args, **kwds)
     

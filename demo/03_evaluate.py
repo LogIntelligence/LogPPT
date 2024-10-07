@@ -1,130 +1,96 @@
-from logppt.evaluation.utils.evaluator_main import evaluator
+"""
+This file is part of TA-Eval-Rep.
+Copyright (C) 2022 University of Luxembourg
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
+import sys
 import os
-import pandas as pd
 
-input_dir = './logs_groundtruth_v2/'  # The input directory of log file
-output_dir = 'benchmark_results/16shot/1/PreLog_adaptive'  # The output directory of parsing results
-benchmark_settings = {
-    'HDFS': {
-        'log_file': 'HDFS/HDFS_2k.log',
-        'log_format': '<Date> <Time> <Pid> <Level> <Component>: <Content>',
-    },
+sys.path.append('../')
 
-    'Hadoop': {
-        'log_file': 'Hadoop/Hadoop_2k.log',
-        'log_format': '<Date> <Time> <Level> \[<Process>\] <Component>: <Content>',
-    },
-    #
-    'Spark': {
-        'log_file': 'Spark/Spark_2k.log',
-        'log_format': '<Date> <Time> <Level> <Component>: <Content>',
-    },
+from logppt.evaluation.common import common_args
+from logppt.evaluation.evaluator_main import evaluator, prepare_results
+from logppt.evaluation.postprocess import post_average
+import logging
 
-    'Zookeeper': {
-        'log_file': 'Zookeeper/Zookeeper_2k.log',
-        'log_format': '<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>',
-    },
-    #
-    'BGL': {
-        'log_file': 'BGL/BGL_2k.log',
-        'log_format': '<Label> <Timestamp> <Date> <Node> <Time> <NodeRepeat> <Type> <Component> <Level> <Content>',
-    },
+logger = logging.getLogger("LogPPT")
+logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler(sys.stdout))
+# set logging format
+formatter = logging.Formatter(
+    '%(asctime)s | %(name)s | %(levelname)s | %(message)s')
+logger.handlers[0].setFormatter(formatter)
 
-    'HPC': {
-        'log_file': 'HPC/HPC_2k.log',
-        'log_format': '<LogId> <Node> <Component> <State> <Time> <Flag> <Content>',
-    },
-    #
-    'Thunderbird': {
-        'log_file': 'Thunderbird/Thunderbird_2k.log',
-        'log_format': '<Label> <Timestamp> <Date> <User> <Month> <Day> <Time> <Location> <Component>(\[<PID>\])?: <Content>',
-    },
 
-    'Windows': {
-        'log_file': 'Windows/Windows_2k.log',
-        'log_format': '<Date> <Time>, <Level>                  <Component>    <Content>',
-    },
+datasets_full = [
+    "Proxifier",
+    "Apache",
+    "OpenSSH",
+    "HDFS",
+    "OpenStack",
+    "HPC",
+    "Zookeeper",
+    "HealthApp",
+    "Hadoop",
+    "Spark",
+    "BGL",
+    "Linux",
+    "Mac",
+    "Thunderbird",
+]
 
-    'Linux': {
-        'log_file': 'Linux/Linux_2k.log',
-        'log_format': '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
-    },
 
-    'Android': {
-        'log_file': 'Android/Android_2k.log',
-        'log_format': '<Date> <Time>  <Pid>  <Tid> <Level> <Component>: <Content>',
-    },
+if __name__ == "__main__":
+    args = common_args()
+    
+    # initialize by data type
+    datasets = datasets_full
+    data_type = "full"
+    input_dir = f"../datasets/loghub-{data_type}/"
+    # output_dir = f"../examples/outputs/results/{args.config}" 
+    output_dir = args.output_dir
+    if not os.path.exists(output_dir):
+        raise FileNotFoundError(f"Output directory {output_dir} does not exist.")
 
-    'HealthApp': {
-        'log_file': 'HealthApp/HealthApp_2k.log',
-        'log_format': '<Time>\|<Component>\|<Pid>\|<Content>',
-    },
-
-    'Apache': {
-        'log_file': 'Apache/Apache_2k.log',
-        'log_format': '\[<Time>\] \[<Level>\] <Content>',
-    },
-
-    'Proxifier': {
-        'log_file': 'Proxifier/Proxifier_2k.log',
-        'log_format': '\[<Time>\] <Program> - <Content>',
-    },
-
-    'OpenSSH': {
-        'log_file': 'OpenSSH/OpenSSH_2k.log',
-        'log_format': '<Date> <Day> <Time> <Component> sshd\[<Pid>\]: <Content>',
-    },
-
-    'OpenStack': {
-        'log_file': 'OpenStack/OpenStack_2k.log',
-        'log_format': '<Logrecord> <Date> <Time> <Pid> <Level> <Component> \[<ADDR>\] <Content>',
-    },
-    #
-    'Mac': {
-        'log_file': 'Mac/Mac_2k.log',
-        'log_format': '<Month>  <Date> <Time> <User> <Component>\[<PID>\]( \(<Address>\))?: <Content>',
-    }
-}
-
-bechmark_result = []
-avg_f1, avg_acc = 0, 0
-avg_ga, avg_pa, avg_ed = 0, 0, 0
-avg_unseen_pa = 0
-avg_no_unseen = 0
-unseen_datasets = 0
-count = 0
-for dataset, setting in benchmark_settings.items():
-    print('\n=== Evaluation on %s ===' % dataset)
-    indir = os.path.join(input_dir, os.path.dirname(setting['log_file']))
-    log_file = os.path.basename(setting['log_file'])
-    if not os.path.exists(os.path.join(output_dir, log_file + '_structured.csv')):
-        continue
-    # try:
-    GA, PA, ED, unseen_PA, no_unseen = evaluator(
-        groundtruth=os.path.join(input_dir, log_file + '_structured.csv'),
-        parsedresult=os.path.join(output_dir, log_file + '_structured.csv')
+    # prepare results file
+    result_file = prepare_results(
+        output_dir=output_dir,
+        otc=args.oracle_template_correction,
+        complex=args.complex,
+        frequent=args.frequent
     )
-    bechmark_result.append([dataset, GA, PA, ED, unseen_PA, no_unseen])  # , _, _, _, _, _, _])
-    avg_ga += GA
-    avg_pa += PA
-    avg_ed += ED
-    avg_unseen_pa += unseen_PA
-    avg_no_unseen += no_unseen
-    count += 1
-    if no_unseen > 0:
-        unseen_datasets += 1
-    # except Exception as ex:
-    #     print(ex)
-    #     pass
+    if args.dataset != "null":
+        datasets = [args.dataset]
 
-bechmark_result.append(["Average", avg_ga / count, avg_pa / count,
-                        avg_ed / count, avg_unseen_pa / unseen_datasets,
-                        avg_no_unseen / unseen_datasets])
-
-print('\n=== Overall evaluation results ===')
-df_result = pd.DataFrame(bechmark_result,
-                         columns=['Dataset', 'Group Accuracy', 'Parsing Accuracy', 'Edit distance', 'unseen_PA',
-                                  'no_unseen'])
-df_result.set_index('Dataset', inplace=True)
-print(df_result)
-df_result.T.to_csv(os.path.join(output_dir, 'benchmark_result.csv'))
+    for dataset in datasets:
+        log_file = f"{dataset}_full.log_structured.csv"
+        # if os.path.exists(os.path.join(output_dir, f"{dataset}_full.log_structured.csv")):
+        #     continue
+        
+        # run evaluator for a dataset
+        # The file is only for evalutation, so we remove the parameter "LogParser"
+        evaluator(
+            dataset=dataset,
+            input_dir=input_dir,
+            output_dir=output_dir,
+            log_file=log_file,
+            otc=args.oracle_template_correction,
+            complex=args.complex,
+            frequent=args.frequent,
+            result_file=result_file,
+        )  # it internally saves the results into a summary file
+    metric_file = os.path.join(output_dir, result_file)
+    
+    if args.dataset == "null":
+        post_average(metric_file)
+    

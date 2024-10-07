@@ -1,4 +1,4 @@
-from logppt.evaluation.utils.evaluator_main import evaluator
+from logppt.logppt.evaluation.evaluator_main import evaluator
 import os
 import pandas as pd
 
