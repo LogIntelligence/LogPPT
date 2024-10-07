@@ -8,6 +8,16 @@ import logging
 from multiprocessing.managers import BaseManager
 from tqdm import tqdm
 
+
+# try:
+#     multiprocessing.set_start_method('fork')
+# except RuntimeError:
+#     pass
+
+
+ctx_in_main = multiprocessing.get_context('forkserver')
+# ctx_in_main.set_forkserver_preload(['logppt.parsing_cache', 'logppt.parsing_base', 'logppt.models.roberta', 'logppt.data.data_loader', 'logppt.arguments', 'logppt.trainer'])
+
 cache_lock = multiprocessing.Lock()
 
 logger = logging.getLogger("LogPPT")
@@ -18,7 +28,7 @@ def verify_template(template):
     return any(char not in string.punctuation for char in template)
 
 def get_template_line(log_line, device, model, vtoken, cache):
-    model.to(device)
+    # model.to(device)
     model.eval()
     log = " ".join(log_line.strip().split())
     results = cache.match_event(log)
@@ -43,15 +53,15 @@ def get_template_line(log_line, device, model, vtoken, cache):
 
 def template_extraction(model, device, log_lines, vtoken="virtual-param", n_workers=1):
 
+    model.share_memory()
     logger.info("Starting template extraction")
-
     templates = []
     start_time = time.time()
     BaseManager.register('ParsingCache', ParsingCache)
     manager = BaseManager()
     manager.start()
     cache = manager.ParsingCache()
-    with multiprocessing.Pool(processes=n_workers) as executor:
+    with ctx_in_main.Pool(processes=n_workers) as executor:
         templates = list(executor.starmap(get_template_line, tqdm([(log_line, device, model, vtoken, cache) for log_line in log_lines], desc='Parsing')))
     
     # manager.shutdown()

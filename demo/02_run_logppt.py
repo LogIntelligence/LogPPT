@@ -23,6 +23,7 @@ from copy import copy
 
 from logppt.arguments import get_args
 from logppt.parsing_par import template_extraction
+# from logppt.parsing_base import template_extraction
 from logppt.trainer import TrainingArguments, Trainer
 from logppt.models.roberta import RobertaForLogParsing
 from logppt.data.data_loader import DataLoaderForPromptTuning
@@ -36,68 +37,6 @@ logger.addHandler(logging.StreamHandler(sys.stdout))
 formatter = logging.Formatter(
     '%(asctime)s | %(name)s | %(levelname)s | %(message)s')
 logger.handlers[0].setFormatter(formatter)
-
-import multiprocessing
-from multiprocessing.managers import BaseManager
-from logppt.parsing_cache import ParsingCache
-import string
-# from tqdm import tqdm
-
-
-# cache_lock = multiprocessing.Lock()
-
-# def verify_template(template):
-#     template = template.replace("<*>", "")
-#     template = template.replace(" ", "")
-#     return any(char not in string.punctuation for char in template)
-
-# def get_template_line(log_line, device, model, vtoken, cache):
-#     model.to(device)
-#     model.eval()
-#     log = " ".join(log_line.strip().split())
-#     results = cache.match_event(log)
-#     model_invocation = 0
-#     model_time = 0
-#     if results[0] != "NoMatch":
-#         template = (results[0], results[1]) # template, id
-#     else:
-#         with cache_lock:
-#             t0 = time.time()
-#             template = model.parse(log, device=device, vtoken=vtoken)
-#             model_time = time.time() - t0
-#             if verify_template(template):
-#                 template_id = cache.add_templates(template, True, results[2])
-#                 print(f"Added template: {template} with id: {template_id}")
-#                 # print(cache.template_list)
-#             else:
-#                 template_id = None
-#             template = (template, template_id)
-#         model_invocation = 1
-#     return template, model_invocation, model_time
-
-# def template_extraction(model, device, log_lines, vtoken="virtual-param", n_workers=1):
-
-#     logger.info("Starting template extraction")
-
-#     templates = []
-#     start_time = time.time()
-#     BaseManager.register('ParsingCache', ParsingCache)
-#     manager = BaseManager()
-#     manager.start()
-#     cache = manager.ParsingCache()
-#     with multiprocessing.Pool(processes=n_workers) as executor:
-#         templates = list(executor.starmap(get_template_line, [(log_line, device, model, vtoken, cache) for log_line in log_lines]))
-    
-#     # manager.shutdown()
-#     no_of_invocations = sum([template[1] for template in templates])
-#     model_time = sum([template[2] for template in templates])
-#     templates = [template[0] for template in templates]
-
-#     logger.info(f"Total time taken: {time.time() - start_time}")
-#     logger.info(f"Total time taken by model: {model_time}")
-#     logger.info(f"No of model invocations: {no_of_invocations}")
-#     return templates, model_time, cache.get_template_list()
-
 
 
 if __name__ == '__main__':
@@ -155,11 +94,11 @@ if __name__ == '__main__':
         # logger=logger
     )
 
-    t0 = time.time()
-    p_model = trainer.train()
-    trainer.save_pretrained(common_args.output_dir)
-    t1 = time.time()
-    logger.info("Training time: {0} seconds".format(t1 - t0))
+    # t0 = time.time()
+    # p_model = trainer.train()
+    # trainer.save_pretrained(common_args.output_dir)
+    # t1 = time.time()
+    # logger.info("Training time: {0} seconds".format(t1 - t0))
 
     # Parsing
     p_model.load_checkpoint(common_args.output_dir)
@@ -173,6 +112,8 @@ if __name__ == '__main__':
     # cache_lock = multiprocessing.Lock()
     templates, model_time, template_list = template_extraction(
         p_model, device, log_lines, vtoken=data_loader.vtoken, n_workers=common_args.parsing_num_processes)
+    # templates, model_time, template_list = template_extraction(
+    #     p_model, device, log_lines, vtoken=data_loader.vtoken)
 
     templates = [template[0] if template[1] is None else template_list[template[1]] for template in templates]
 
