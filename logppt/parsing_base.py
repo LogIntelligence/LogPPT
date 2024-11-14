@@ -33,6 +33,7 @@ def template_extraction(model, device, log_lines, vtoken="virtual-param"):
 
     logger.info("Starting template extraction")
     model.eval()
+    model.to(device)
     cache = ParsingCache()
     start_time = time.time()
     templates = []
