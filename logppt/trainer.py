@@ -148,9 +148,10 @@ class Trainer:
         for _ in range(self.args.num_train_epochs):
             total_loss = []
             for step, batch in enumerate(self.train_loader):
-                batch.pop('ori_labels', 'not found ner_labels')
+                # batch.pop('ori_labels', 'not found ner_labels')
                 batch = {k: v.to(self.device) for k, v in batch.items()}
                 loss = self.model(batch)
+                # loss = output['loss']
 
                 total_loss.append(float(loss))
                 loss = loss / self.args.gradient_accumulation_steps
@@ -185,8 +186,8 @@ class Trainer:
             batch.pop('ori_labels', 'not found ner_labels')
             batch = {k: v.to(self.device) for k, v in batch.items()}
             with torch.no_grad():
-                loss = self.model(batch)
-                total_loss += float(loss)
+                outputs = self.model(batch)
+                total_loss += float(outputs.loss)
         
         return total_loss / len(self.eval_loader)
 

@@ -2,13 +2,16 @@ from transformers import (
     RobertaForMaskedLM,
     AutoTokenizer,
 )
-from collections import Counter
-from logppt.models.base import ModelBase
 import re
 import torch
 from torch import nn
 
+from logppt.models.base import ModelBase
 from logppt.postprocess import correct_single_template
+import pdb
+# from logppt.models.crf_layer import CRFLayer
+from torchcrf import CRF
+
 
 delimiters = "([ |\(|\)|\[|\]|\{|\})])"
 
@@ -32,40 +35,44 @@ class RobertaForLogParsing(ModelBase):
                  model_path,
                  num_label_tokens: int = 1,
                  vtoken="virtual-param",
-                 ct_loss_weight=0.1,
                  **kwargs
                  ):
         super().__init__(model_path, num_label_tokens)
         self.plm = RobertaForMaskedLM.from_pretrained(self.model_path)
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_path)
+        self.use_crf = False
         self.tokenizer.model_max_length = self.plm.config.max_position_embeddings - 2
         self.vtoken = vtoken
-        self.sim = Similarity(0.05)
-        self.ct_loss = nn.CrossEntropyLoss()
-        self.ct_loss_weight = ct_loss_weight
+        self.vtoken_id = self.tokenizer.convert_tokens_to_ids(vtoken)
+        if kwargs.get("use_crf", True):
+            self.use_crf = True
+            self.crf = CRF(2, batch_first=True)
+        self.crf_weight = kwargs.get("crf_weight", 0.1)
 
-    def compute_loss(self, batch, outputs):
-        vtoken_id = self.tokenizer.convert_tokens_to_ids(self.vtoken)
-        y = batch['labels'] == vtoken_id
-        vtoken_reprs = outputs.hidden_states[-1][y]
-        if vtoken_reprs.size(0) % 2 == 1:
-            vtoken_reprs = vtoken_reprs[:-1]
-        if vtoken_reprs.size(0) == 0:
-            return outputs.loss
-        z1_embed = vtoken_reprs[:vtoken_reprs.size(0) // 2]
-        z2_embed = vtoken_reprs[vtoken_reprs.size(0) // 2:]
-        sim = self.sim(z1_embed.unsqueeze(1), z2_embed.unsqueeze(0))
-        labels = torch.arange(sim.size(0)).long().to(sim.device)
-        loss_ct = self.ct_loss(sim, labels)
-        return outputs.loss + loss_ct * self.ct_loss_weight
-
-    def forward(self, batch, contrastive=False):
+    def forward(self, batch):
+        tags =  batch.pop('ori_labels', 'not found ner_labels')
         outputs = self.plm(**batch, output_hidden_states=True)
-        if contrastive:
-            loss = self.compute_loss(batch, outputs)
-        else:
-            loss = outputs.loss
+        plm_loss = outputs.loss
+        if not self.use_crf:
+            return plm_loss
+        # logits = torch.softmax(outputs.logits, -1)
+        logits = outputs.logits[:,:,[self.vtoken_id]]
+        O_logits = outputs.logits[:,:,:self.vtoken_id].max(-1)[0].unsqueeze(-1)
+        logits = torch.cat([O_logits, logits], dim=-1)
+        logits = logits[:, 1:, :]
+        # tags = batch['labels']
+        mask = batch['attention_mask'].bool()
+        mask[tags == -100] = 0
+        mask = mask[:, 1:]
+        tags = tags[:, 1:]
+        # mask[:, 0] = 0
+        # mask = mask.bool()
+        tags = tags.masked_fill_(~mask, 0)
+        # pdb.set_trace()
+        crf_loss = self.crf(logits, tags, mask=mask)
+        loss = plm_loss - self.crf_weight * crf_loss
         return loss
+
 
     def add_label_token(self, label_map=None, num_tokens: int = 1):
         if label_map is None:
@@ -128,29 +135,58 @@ class RobertaForLogParsing(ModelBase):
         tokenized_input = {k: v.to(device) for k, v in tokenized_input.items()}
         with torch.no_grad():
             outputs = self.plm(**tokenized_input, output_hidden_states=True)
-        logits = outputs.logits.argmax(dim=-1)
-        # logits = accelerator.pad_across_processes(logits, dim=1, pad_index=-100)
-        logits = logits.detach().cpu().clone().tolist()
-        template = map_template(
-            self.tokenizer, tokenized_input['input_ids'][0], logits[0], vtoken=vtoken)
-        return correct_single_template(template)
+        predictions = outputs.logits.argmax(dim=-1)
+        vtoken_id = self.tokenizer.convert_tokens_to_ids(vtoken)
+
+        if self.use_crf:
+            logits = outputs.logits[:,:,[self.vtoken_id]]
+            O_logits = outputs.logits[:,:,:self.vtoken_id].max(-1)[0].unsqueeze(-1)
+            logits = torch.cat([O_logits, logits], dim=-1)
+            logits = logits[:, 1:-1, :]
+        
+        # input_ids = tokenized_input['input_ids'][0]
+        input_tokens = self.tokenizer.convert_ids_to_tokens(tokenized_input['input_ids'][0])[1:-1]
+        if self.use_crf:
+            labels = self.crf.decode(logits)[0]
+            print(input_tokens)
+            print(labels)
+            template = map_template(input_tokens, labels)
+            print(template)
+            # pdb.set_trace()
+            return correct_single_template(template)
+        else:
+            logits = predictions.detach().cpu().clone().tolist()
+            labels = [1 if x == vtoken_id else 0 for x in logits[0][1:-1]]
+            template = map_template(input_tokens, labels)
+            return correct_single_template(template)
     
     def load_checkpoint(self, checkpoint_path):
         self.plm = RobertaForMaskedLM.from_pretrained(checkpoint_path)
         self.tokenizer = AutoTokenizer.from_pretrained(checkpoint_path)
 
 
-def map_template(tokenizer, c, t, vtoken="<*>"):
-    vtoken = tokenizer.convert_tokens_to_ids(vtoken)
-    tokens = tokenizer.convert_ids_to_tokens(c)
+def get_label_with_crf(emissions=None, viterbi_decoder=None):
+    emissions = emissions[0][1:-1, :]
+    sent_scores = torch.tensor(emissions)
+    sent_len, n_label = sent_scores.shape
+    sent_probs = torch.nn.functional.softmax(sent_scores, dim=1)
+    start_probs = torch.zeros(sent_len) + 1e-6
+    sent_probs = torch.cat((start_probs.view(sent_len, 1), sent_probs), 1)
+    feats = viterbi_decoder.forward(torch.log(sent_probs).view(1, sent_len, n_label + 1))
+    print(feats.shape)
+    pdb.set_trace()
+    vit_labels = viterbi_decoder.viterbi(feats)
+    vit_labels = vit_labels.view(sent_len)
+    vit_labels = vit_labels.detach().cpu().numpy()
+    return vit_labels
+
+def map_template(inputs, labels):
     res = [" "]
-    for i in range(1, len(c)):
-        if c[i] == tokenizer.sep_token_id:
-            break
-        if t[i] < vtoken:
-            res.append(tokens[i])
+    for i in range(0, len(inputs)):
+        if labels[i] == 0:
+            res.append(inputs[i])
         else:
-            if "Ġ" in tokens[i]:
+            if "Ġ" in inputs[i]:
                 # if "<*>" not in res[-1]:
                 res.append("Ġ<*>")
             elif "<*>" not in res[-1]:

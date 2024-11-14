@@ -3,22 +3,22 @@ import time
 from logppt.parsing_cache import ParsingCache
 import string
 
-import multiprocessing
+# import multiprocessing
 import logging
 from multiprocessing.managers import BaseManager
 from tqdm import tqdm
+import torch.multiprocessing as mp
+
+try:
+    mp.set_start_method('fork')
+except RuntimeError:
+    pass
 
 
-# try:
-#     multiprocessing.set_start_method('fork')
-# except RuntimeError:
-#     pass
-
-
-ctx_in_main = multiprocessing.get_context('forkserver')
+# ctx_in_main = multiprocessing.get_context('forkserver')
 # ctx_in_main.set_forkserver_preload(['logppt.parsing_cache', 'logppt.parsing_base', 'logppt.models.roberta', 'logppt.data.data_loader', 'logppt.arguments', 'logppt.trainer'])
 
-cache_lock = multiprocessing.Lock()
+cache_lock = mp.Lock()
 
 logger = logging.getLogger("LogPPT")
 
@@ -61,10 +61,10 @@ def template_extraction(model, device, log_lines, vtoken="virtual-param", n_work
     manager = BaseManager()
     manager.start()
     cache = manager.ParsingCache()
-    with ctx_in_main.Pool(processes=n_workers) as executor:
+    with mp.Pool(n_workers) as executor:
         templates = list(executor.starmap(get_template_line, tqdm([(log_line, device, model, vtoken, cache) for log_line in log_lines], desc='Parsing')))
     
-    # manager.shutdown()
+    manager.shutdown()
     no_of_invocations = sum([template[1] for template in templates])
     model_time = sum([template[2] for template in templates])
     templates = [template[0] for template in templates]

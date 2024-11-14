@@ -7,26 +7,27 @@ python 02_run_logppt.py --log_file ../datasets/loghub-full/$dataset/${dataset}_f
 ```
 """
 
-
 import sys
 sys.path.append("../")
 
-import torch
-import pandas as pd
-import os
-import logging
-from transformers import set_seed
-import time
-from collections import Counter
-import pickle
-from copy import copy
-
-from logppt.arguments import get_args
-from logppt.parsing_par import template_extraction
-# from logppt.parsing_base import template_extraction
-from logppt.trainer import TrainingArguments, Trainer
-from logppt.models.roberta import RobertaForLogParsing
+from logppt.models.viterbi import ViterbiDecoder, get_abstract_transitions
 from logppt.data.data_loader import DataLoaderForPromptTuning
+from logppt.models.roberta import RobertaForLogParsing
+from logppt.trainer import TrainingArguments, Trainer
+# from logppt.parsing_par import template_extraction
+from logppt.parsing_base import template_extraction
+from logppt.arguments import get_args
+from copy import copy
+import pickle
+from collections import Counter
+import time
+from transformers import set_seed
+import logging
+import os
+import pandas as pd
+import torch
+
+# from logppt.parsing_base import template_extraction
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -47,16 +48,15 @@ if __name__ == '__main__':
 
     assert data_args.train_file is not None, "A training file is required"
 
-    # Load model and tokenizer
-    p_model = RobertaForLogParsing(
-        model_args.model_name_or_path, ct_loss_weight=0.1)
-
-    logger.info("Loaded RoBERTa model")
-
     # Load data
     logger.info("Loading training data from {0} ...".format(
         data_args.train_file))
     data_loader = DataLoaderForPromptTuning(data_args)
+
+    # Load model and tokenizer
+    p_model = RobertaForLogParsing(model_args.model_name_or_path, use_crf=model_args.use_crf)
+    logger.info("Loaded RoBERTa model")
+
     p_model.tokenizer = data_loader.initialize(p_model.tokenizer)
     data_loader.tokenize()
     data_loader.build_dataloaders(
@@ -65,12 +65,21 @@ if __name__ == '__main__':
         p_model.plm, common_args.no_label_words)
     p_model.add_label_token(param_label_words)
 
+
+    # print(model_args.use_crf)
+    # if model_args.use_crf:
+    #     # assert data_args.validation_file is not None, "A validation file is required for CRF"
+    #     abstract_transitions = get_abstract_transitions(
+    #         data_loader.processed_raw_datasets['train'])
+    #     viterbi_decoder = ViterbiDecoder(3, abstract_transitions, 0.05)
+    #     p_model.add_crf(viterbi_decoder)
+
     # Training
     training_args = TrainingArguments(
         output_dir=common_args.output_dir,
         overwrite_output_dir=False,
         do_train=True,
-        do_eval=True,
+        do_eval=False,
         do_predict=False,
         evaluation_strategy="steps",
         per_device_train_batch_size=8,
@@ -93,12 +102,13 @@ if __name__ == '__main__':
         device=device,
         # logger=logger
     )
-
-    # t0 = time.time()
-    # p_model = trainer.train()
-    # trainer.save_pretrained(common_args.output_dir)
-    # t1 = time.time()
-    # logger.info("Training time: {0} seconds".format(t1 - t0))
+    
+    # Training
+    t0 = time.time()
+    p_model = trainer.train()
+    trainer.save_pretrained(common_args.output_dir)
+    t1 = time.time()
+    logger.info("Training time: {0} seconds".format(t1 - t0))
 
     # Parsing
     p_model.load_checkpoint(common_args.output_dir)
@@ -110,12 +120,13 @@ if __name__ == '__main__':
     p_model.eval()
 
     # cache_lock = multiprocessing.Lock()
-    templates, model_time, template_list = template_extraction(
-        p_model, device, log_lines, vtoken=data_loader.vtoken, n_workers=common_args.parsing_num_processes)
     # templates, model_time, template_list = template_extraction(
-    #     p_model, device, log_lines, vtoken=data_loader.vtoken)
+    #     p_model, device, log_lines, vtoken=data_loader.vtoken, n_workers=common_args.parsing_num_processes)
+    templates, model_time = template_extraction(
+        p_model, device, log_lines, vtoken=data_loader.vtoken)
 
-    templates = [template[0] if template[1] is None else template_list[template[1]] for template in templates]
+    # templates = [template[0] if template[1]
+    #              is None else template_list[template[1]] for template in templates]
 
     log_df['EventTemplate'] = pd.Series(templates)
 
@@ -124,14 +135,16 @@ if __name__ == '__main__':
     task_output_dir = data_args.task_output_dir
     if not os.path.exists(task_output_dir):
         os.makedirs(task_output_dir)
-    log_df.to_csv(f"{task_output_dir}/{data_args.dataset_name}_full.log_structured.csv", index=False)
+    log_df.to_csv(
+        f"{task_output_dir}/{data_args.dataset_name}_full.log_structured.csv", index=False)
 
     counter = Counter(templates)
     items = list(counter.items())
     items.sort(key=lambda x: x[1], reverse=True)
     template_df = pd.DataFrame(items, columns=['EventTemplate', 'Occurrence'])
     template_df['EventID'] = [f"E{i + 1}" for i in range(len(template_df))]
-    template_df[['EventID', 'EventTemplate', 'Occurrence']].to_csv(f"{task_output_dir}/{data_args.dataset_name}_full.log_templates.csv", index=False)
+    template_df[['EventID', 'EventTemplate', 'Occurrence']].to_csv(
+        f"{task_output_dir}/{data_args.dataset_name}_full.log_templates.csv", index=False)
 
     # Save time cost
     # time_cost_file = f"{task_output_dir}/time_cost.json"

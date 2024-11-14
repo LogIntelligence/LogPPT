@@ -8,28 +8,40 @@ from transformers import (
 
 MODEL_CONFIG_CLASSES = list(MODEL_MAPPING.keys())
 MODEL_TYPES = tuple(conf.model_type for conf in MODEL_CONFIG_CLASSES)
-LR_SCHEDULER_TYPE = ["linear", "cosine", "cosine_with_restarts", "polynomial", "constant", "constant_with_warmup"]
+LR_SCHEDULER_TYPE = ["linear", "cosine", "cosine_with_restarts",
+                     "polynomial", "constant", "constant_with_warmup"]
+
 
 @dataclass
 class ModelArguments:
     model_name_or_path: str = field(
         default="roberta-base",
-        metadata={"help": "Path to pretrained model or model identifier from huggingface.co/models"}
+        metadata={
+            "help": "Path to pretrained model or model identifier from huggingface.co/models"}
     )
+
+    use_crf: bool = field(
+        default=False,
+        metadata={"help": "Whether to use CRF for parsing"},
+    )
+
 
 @dataclass
 class TrainingArguments:
     per_device_train_batch_size: Optional[int] = field(
         default=8,
-        metadata={"help": "Batch size (per device) for the training dataloader."}
+        metadata={
+            "help": "Batch size (per device) for the training dataloader."}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=8,
-        metadata={"help": "Batch size (per device) for the evaluation dataloader."}
+        metadata={
+            "help": "Batch size (per device) for the evaluation dataloader."}
     )
     learning_rate: Optional[float] = field(
         default=5e-5,
-        metadata={"help": "Initial learning rate (after the potential warmup period) to use."}
+        metadata={
+            "help": "Initial learning rate (after the potential warmup period) to use."}
     )
     weight_decay: Optional[float] = field(
         default=0.0,
@@ -41,11 +53,13 @@ class TrainingArguments:
     )
     max_train_steps: Optional[int] = field(
         default=1000,
-        metadata={"help": "Total number of training steps to perform. If provided, overrides num_train_epochs."}
+        metadata={
+            "help": "Total number of training steps to perform. If provided, overrides num_train_epochs."}
     )
     gradient_accumulation_steps: Optional[int] = field(
         default=1,
-        metadata={"help": "Number of updates steps to accumulate before performing a backward/update pass."}
+        metadata={
+            "help": "Number of updates steps to accumulate before performing a backward/update pass."}
     )
     lr_scheduler_type: Optional[str] = field(
         default="linear",
@@ -60,7 +74,9 @@ class TrainingArguments:
 
     def __post_init__(self):
         if self.lr_scheduler_type not in LR_SCHEDULER_TYPE:
-            raise ValueError("Unknown learning rate scheduler, you should pick one in " + ",".join(LR_SCHEDULER_TYPE))
+            raise ValueError(
+                "Unknown learning rate scheduler, you should pick one in " + ",".join(LR_SCHEDULER_TYPE))
+
 
 @dataclass
 class DataArguments:
@@ -78,7 +94,7 @@ class DataArguments:
         default="outputs",
         metadata={"help": "The output directory of the log analytic task"}
     )
-    
+
     train_file: Optional[str] = field(
         default=None,
         metadata={"help": "A json file containing the training data."}
@@ -94,12 +110,15 @@ class DataArguments:
     )
     text_column_name: Optional[str] = field(
         default=None,
-        metadata={"help": "The column name of text to input in the file (a csv or JSON file)."}
+        metadata={
+            "help": "The column name of text to input in the file (a csv or JSON file)."}
     )
     label_column_name: Optional[str] = field(
         default=None,
-        metadata={"help": "The column name of label to input in the file (a csv or JSON file)."}
+        metadata={
+            "help": "The column name of label to input in the file (a csv or JSON file)."}
     )
+
 
 @dataclass
 class CommonArguments:
@@ -117,7 +136,8 @@ class CommonArguments:
     )
     pad_to_max_length: bool = field(
         default=False,
-        metadata={"help": "If passed, pad all samples to `max_length`. Otherwise, dynamic padding is used."}
+        metadata={
+            "help": "If passed, pad all samples to `max_length`. Otherwise, dynamic padding is used."}
     )
     output_dir: Optional[str] = field(
         default=None,
@@ -143,8 +163,10 @@ class CommonArguments:
         metadata={"help": "number of processes for parsing"}
     )
 
+
 def get_args():
     """Parse all the args."""
-    parser = HfArgumentParser((DataArguments, ModelArguments, TrainingArguments, CommonArguments))
+    parser = HfArgumentParser(
+        (DataArguments, ModelArguments, TrainingArguments, CommonArguments))
     args = parser.parse_args_into_dataclasses()
     return args

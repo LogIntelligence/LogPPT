@@ -1,3 +1,6 @@
+import sys
+sys.path.append("../")
+
 import json
 import os
 import pandas as pd
@@ -5,15 +8,18 @@ import pandas as pd
 from logppt import BENCHMARK
 from logppt.sampling import adaptive_random_sampling
 
-DATA_VERSION = '2k' # '2k' or 'full'
+DATA_VERSION = 'full' # '2k' or 'full'
 
 if __name__ == '__main__':
-    data_dir = f"./datasets/loghub-{DATA_VERSION}"
-    output_dir = f"./datasets/loghub-{DATA_VERSION}"
+    data_dir = f"../datasets/loghub-{DATA_VERSION}"
+    output_dir = f"../datasets/loghub-{DATA_VERSION}"
     for dataset in BENCHMARK.keys():
         print(dataset)
         os.makedirs(f'{output_dir}/{dataset}/samples', exist_ok=True)
         log_file = BENCHMARK[dataset]['log_file'].format(DATA_VERSION)
+        if not os.path.exists(f'{data_dir}/{log_file}_structured.csv'):
+            print(f"File {log_file}_structured.csv does not exist. Skipping...")
+            continue
         print(f"Loading {log_file}...")
         labelled_logs = pd.read_csv(f'{data_dir}/{log_file}_structured.csv')
         print(f"Loaded {len(labelled_logs)} logs.")
