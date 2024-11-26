@@ -4,7 +4,7 @@ sys.path.append('.')
 import json
 import os
 import pandas as pd
-from logppt.sampling import adaptive_random_sampling
+from logppt.sampling_base import adaptive_random_sampling
 from logppt import BENCHMARK
 
 

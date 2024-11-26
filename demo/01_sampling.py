@@ -6,7 +6,8 @@ import os
 import pandas as pd
 
 from logppt import BENCHMARK
-from logppt.sampling import adaptive_random_sampling
+# from logppt.sampling_base import adaptive_random_sampling
+from logppt.sampling.hierachical_sampling import sampling
 
 DATA_VERSION = 'full' # '2k' or 'full'
 
@@ -34,7 +35,7 @@ if __name__ == '__main__':
         shots = [8, 16, 32, 64, 128, 256]
 
         ## Adaptive Random Sampling from LogPPT ###
-        sample_candidates = adaptive_random_sampling(raw_logs, labels, shots)
+        sample_candidates = sampling(raw_logs, labels, shots)
 
         for shot, samples in sample_candidates.items():
             assert len(samples) == shot, f"Sample size mismatch: {len(samples)} != {shot}"

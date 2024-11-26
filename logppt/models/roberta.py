@@ -9,7 +9,6 @@ from torch import nn
 from logppt.models.base import ModelBase
 from logppt.postprocess import correct_single_template
 import pdb
-# from logppt.models.crf_layer import CRFLayer
 from torchcrf import CRF
 
 
@@ -46,8 +45,7 @@ class RobertaForLogParsing(ModelBase):
         self.vtoken_id = self.tokenizer.convert_tokens_to_ids(vtoken)
         if kwargs.get("use_crf", True):
             self.use_crf = True
-            self.crf = CRF(2, batch_first=True)
-        self.crf_weight = kwargs.get("crf_weight", 0.1)
+            self.crf = CRF(2)
 
     def forward(self, batch):
         tags =  batch.pop('ori_labels', 'not found ner_labels')
@@ -55,22 +53,17 @@ class RobertaForLogParsing(ModelBase):
         plm_loss = outputs.loss
         if not self.use_crf:
             return plm_loss
-        # logits = torch.softmax(outputs.logits, -1)
         logits = outputs.logits[:,:,[self.vtoken_id]]
         O_logits = outputs.logits[:,:,:self.vtoken_id].max(-1)[0].unsqueeze(-1)
         logits = torch.cat([O_logits, logits], dim=-1)
         logits = logits[:, 1:, :]
-        # tags = batch['labels']
         mask = batch['attention_mask'].bool()
         mask[tags == -100] = 0
         mask = mask[:, 1:]
         tags = tags[:, 1:]
-        # mask[:, 0] = 0
-        # mask = mask.bool()
         tags = tags.masked_fill_(~mask, 0)
-        # pdb.set_trace()
-        crf_loss = self.crf(logits, tags, mask=mask)
-        loss = plm_loss - self.crf_weight * crf_loss
+        crf_loss = self.crf(logits, tags, mask=mask).mean()
+        loss = plm_loss - crf_loss
         return loss
 
 
@@ -91,8 +84,7 @@ class RobertaForLogParsing(ModelBase):
                     raise RuntimeError(f"{token} wrong split: {index}")
                 else:
                     index = index[0]
-                # assert index >= num_tokens, (index, num_tokens, token)
-                # n_label_word = len(list(set(label_map[token])))
+                    
                 ws = label_map[token]
                 e_token = self.plm.roberta.embeddings.word_embeddings.weight.data[ws[0]]
                 for i in ws[1:]:
@@ -147,7 +139,8 @@ class RobertaForLogParsing(ModelBase):
         # input_ids = tokenized_input['input_ids'][0]
         input_tokens = self.tokenizer.convert_ids_to_tokens(tokenized_input['input_ids'][0])[1:-1]
         if self.use_crf:
-            labels = self.crf.decode(logits)[0]
+            mask = tokenized_input['attention_mask'].bool()[:, 1:-1]
+            labels = self.crf.viterbi_decode(logits, mask)[0]
             print(input_tokens)
             print(labels)
             template = map_template(input_tokens, labels)
