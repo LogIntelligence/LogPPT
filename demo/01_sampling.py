@@ -6,7 +6,7 @@ import os
 import pandas as pd
 
 from logppt import BENCHMARK
-# from logppt.sampling_base import adaptive_random_sampling
+from logppt.sampling_base import adaptive_random_sampling
 from logppt.sampling.hierachical_sampling import sampling
 
 DATA_VERSION = 'full' # '2k' or 'full'
@@ -34,11 +34,19 @@ if __name__ == '__main__':
                 f.write(json.dumps({'log': log, 'template': label}) + '\n')
         shots = [8, 16, 32, 64, 128, 256]
 
-        ## Adaptive Random Sampling from LogPPT ###
+        ### Hierarchical sampling
         sample_candidates = sampling(raw_logs, labels, shots)
 
         for shot, samples in sample_candidates.items():
             assert len(samples) == shot, f"Sample size mismatch: {len(samples)} != {shot}"
             with open(f'{output_dir}/{dataset}/samples/logppt_{shot}.json', 'w') as f:
+                for sample in samples:
+                    f.write(json.dumps({'log': sample[0], 'template': sample[1]}) + '\n')
+
+        ### Adaptive random sampling
+        sample_candidates = adaptive_random_sampling(raw_logs, labels, shots, n_candidate=32)
+        for shot, samples in sample_candidates.items():
+            assert len(samples) == shot, f"Sample size mismatch: {len(samples)} != {shot}"
+            with open(f'{output_dir}/{dataset}/samples/random_{shot}.json', 'w') as f:
                 for sample in samples:
                     f.write(json.dumps({'log': sample[0], 'template': sample[1]}) + '\n')
