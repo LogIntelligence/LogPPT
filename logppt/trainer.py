@@ -115,7 +115,7 @@ class Trainer:
 
         # self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
 
-        self.optimizer = Adafactor(optimizer_grouped_parameters, lr=self.args.learning_rate)
+        self.optimizer = Adafactor(optimizer_grouped_parameters, lr=self.args.learning_rate, relative_step=False)
 
         self.lr_scheduler = get_scheduler(
             name=self.args.lr_scheduler_type,
