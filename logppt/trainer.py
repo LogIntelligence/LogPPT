@@ -106,23 +106,21 @@ class Trainer:
             },
         ]
 
-        # self.optimizer = torch.optim.AdamW(
-        #     optimizer_grouped_parameters,
-        #     lr=self.args.learning_rate,
-        #     betas=(0.9, 0.999),
-        #     eps=1e-8,
-        # )
+        self.optimizer = torch.optim.SGD(
+            optimizer_grouped_parameters,
+            lr=self.args.learning_rate,
+        )
 
         # self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
 
-        self.optimizer = Adafactor(optimizer_grouped_parameters)#, lr=self.args.learning_rate, relative_step=False)
+        # self.optimizer = Adafactor(optimizer_grouped_parameters, lr=self.args.learning_rate, relative_step=F)
 
-        # self.lr_scheduler = get_scheduler(
-        #     name=self.args.lr_scheduler_type,
-        #     optimizer=self.optimizer,
-        #     num_warmup_steps=self.args.num_warmup_steps,
-        #     num_training_steps=self.args.max_train_steps,
-        # )
+        self.lr_scheduler = get_scheduler(
+            name=self.args.lr_scheduler_type,
+            optimizer=self.optimizer,
+            num_warmup_steps=self.args.num_warmup_steps,
+            num_training_steps=self.args.max_train_steps,
+        )
 
         self.logger.info(f"Initialized Trainer with {self.args.num_warmup_steps} warmup steps and {self.args.max_train_steps} training steps")
         
@@ -162,7 +160,7 @@ class Trainer:
                 loss.backward()
                 if step % self.args.gradient_accumulation_steps == 0 or step == len(self.train_loader) - 1:
                     self.optimizer.step()
-                    # self.lr_scheduler.step()
+                    self.lr_scheduler.step()
                     self.optimizer.zero_grad()
                     progress_bar.update(1)
                     progress_bar.set_description(f"Loss: {float(loss)}")
