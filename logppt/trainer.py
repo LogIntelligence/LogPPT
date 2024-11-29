@@ -2,7 +2,7 @@ import logging
 import math
 import torch
 from tqdm import tqdm
-from transformers import get_scheduler
+from transformers.optimization import Adafactor, AdamW, get_scheduler
 
 from typing import Any, Optional
 
@@ -106,12 +106,16 @@ class Trainer:
             },
         ]
 
-        self.optimizer = torch.optim.AdamW(
-            optimizer_grouped_parameters,
-            lr=self.args.learning_rate,
-            betas=(0.9, 0.999),
-            eps=1e-8,
-        )
+        # self.optimizer = torch.optim.AdamW(
+        #     optimizer_grouped_parameters,
+        #     lr=self.args.learning_rate,
+        #     betas=(0.9, 0.999),
+        #     eps=1e-8,
+        # )
+
+        self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
+
+        # self.optimizer = Adafactor(optimizer_grouped_parameters, lr=self.args.learning_rate)
 
         self.lr_scheduler = get_scheduler(
             name=self.args.lr_scheduler_type,
