@@ -106,14 +106,14 @@ class Trainer:
             },
         ]
 
-        # self.optimizer = torch.optim.RMSprop(
-        #     optimizer_grouped_parameters,
-        #     lr=self.args.learning_rate,
-        #     alpha=0.99,
-        #     eps=1e-8,
-        # )
+        self.optimizer = torch.optim.SparseAdam(
+            optimizer_grouped_parameters,
+            lr=self.args.learning_rate,
+            betas=(0.9, 0.999),
+            eps=1e-8,
+        )
 
-        self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
+        # self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
 
         # self.optimizer = Adafactor(optimizer_grouped_parameters, lr=self.args.learning_rate, relative_step=F)
 
