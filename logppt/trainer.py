@@ -106,7 +106,7 @@ class Trainer:
             },
         ]
 
-        self.optimizer = torch.optim.SparseAdam(
+        self.optimizer = torch.optim.Adam(
             optimizer_grouped_parameters,
             lr=self.args.learning_rate,
             betas=(0.9, 0.999),
