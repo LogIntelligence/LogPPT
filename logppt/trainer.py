@@ -106,10 +106,11 @@ class Trainer:
             },
         ]
 
-        self.optimizer = torch.optim.SGD(
+        self.optimizer = torch.optim.RMSprop(
             optimizer_grouped_parameters,
             lr=self.args.learning_rate,
-            momentum=0.999,
+            alpha=0.99,
+            eps=1e-8,
         )
 
         # self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
