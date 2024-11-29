@@ -113,9 +113,9 @@ class Trainer:
         #     eps=1e-8,
         # )
 
-        self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
+        # self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
 
-        # self.optimizer = Adafactor(optimizer_grouped_parameters, lr=self.args.learning_rate)
+        self.optimizer = Adafactor(optimizer_grouped_parameters, lr=self.args.learning_rate)
 
         self.lr_scheduler = get_scheduler(
             name=self.args.lr_scheduler_type,
@@ -124,7 +124,7 @@ class Trainer:
             num_training_steps=self.args.max_train_steps,
         )
 
-        self.logger.info("Initialized Trainer")
+        self.logger.info(f"Initialized Trainer with {self.args.num_warmup_steps} warmup steps and {self.args.max_train_steps} training steps")
         
 
     def train(self):
