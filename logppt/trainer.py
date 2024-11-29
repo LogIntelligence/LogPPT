@@ -109,6 +109,7 @@ class Trainer:
         self.optimizer = torch.optim.SGD(
             optimizer_grouped_parameters,
             lr=self.args.learning_rate,
+            momentum=0.999,
         )
 
         # self.optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.learning_rate)
