@@ -99,8 +99,7 @@ if __name__ == '__main__':
         eval_loader=data_loader.get_val_dataloader(),
         compute_metrics=None,
         no_train_samples=len(data_loader.raw_datasets['train']),
-        device=device,
-        # logger=logger
+        device=device
     )
     
     # Training

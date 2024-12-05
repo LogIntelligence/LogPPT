@@ -69,8 +69,8 @@ class DataLoaderForPromptTuning(BaseDataLoader):
             input_ids = []
             attention_masks = []
             for i, (log, label) in enumerate(zip(examples[self.text_column_name], examples[self.label_column_name])):
-                log = " ".join(log.strip().split())
-                label = " ".join(label.strip().split())
+                log = " ".join(log.strip().split()).lower()
+                label = " ".join(label.strip().split()).lower()
                 template_regex = get_template_regex(label)
                 if template_regex is None:
                     input_tokens, label_tokens = [log], ['o']
