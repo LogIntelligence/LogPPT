@@ -34,6 +34,8 @@ class RobertaForLogParsing(ModelBase):
                  model_path,
                  num_label_tokens: int = 1,
                  vtoken="virtual-param",
+                 ct_loss_weight=0.1,
+                 crf_loss_weight=0.5,
                  **kwargs
                  ):
         super().__init__(model_path, num_label_tokens)
@@ -46,13 +48,27 @@ class RobertaForLogParsing(ModelBase):
         if kwargs.get("use_crf", True):
             self.use_crf = True
             self.crf = CRF(2)
+            self.crf_loss_weight = crf_loss_weight
+        self.ct_loss_weight = ct_loss_weight
 
     def forward(self, batch):
         tags =  batch.pop('ori_labels', 'not found ner_labels')
         outputs = self.plm(**batch, output_hidden_states=True)
+
+        y = batch['labels'] == self.vtoken_id
+        vtoken_reprs = outputs.hidden_states[-1][y]
+        if vtoken_reprs.size(0) % 2 == 1:
+            vtoken_reprs = vtoken_reprs[:-1]
+        if vtoken_reprs.size(0) == 0:
+            return loss
+        z1_embed = vtoken_reprs[:vtoken_reprs.size(0) // 2]
+        z2_embed = vtoken_reprs[vtoken_reprs.size(0) // 2:]
+        sim = self.sim(z1_embed.unsqueeze(1), z2_embed.unsqueeze(0))
+        labels = torch.arange(sim.size(0)).long().to(sim.device)
+        loss_ct = self.ct_loss(sim, labels)
         plm_loss = outputs.loss
         if not self.use_crf:
-            return plm_loss
+            return plm_loss + loss_ct * self.ct_loss_weight
         logits = outputs.logits[:,:,[self.vtoken_id]]
         O_logits = outputs.logits[:,:,:self.vtoken_id].max(-1)[0].unsqueeze(-1)
         logits = torch.cat([O_logits, logits], dim=-1)
@@ -63,7 +79,7 @@ class RobertaForLogParsing(ModelBase):
         tags = tags[:, 1:]
         tags = tags.masked_fill_(~mask, 0)
         crf_loss = self.crf(logits, tags, mask=mask).mean()
-        loss = plm_loss - crf_loss
+        loss = plm_loss + loss_ct * self.ct_loss_weight + (-crf_loss * self.crf_loss_weight)
         return loss
 
 
