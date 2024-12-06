@@ -60,12 +60,13 @@ class RobertaForLogParsing(ModelBase):
         if vtoken_reprs.size(0) % 2 == 1:
             vtoken_reprs = vtoken_reprs[:-1]
         if vtoken_reprs.size(0) == 0:
-            return loss
-        z1_embed = vtoken_reprs[:vtoken_reprs.size(0) // 2]
-        z2_embed = vtoken_reprs[vtoken_reprs.size(0) // 2:]
-        sim = self.sim(z1_embed.unsqueeze(1), z2_embed.unsqueeze(0))
-        labels = torch.arange(sim.size(0)).long().to(sim.device)
-        loss_ct = self.ct_loss(sim, labels)
+            loss_ct = torch.tensor(0.0).to(vtoken_reprs.device)
+        else:
+            z1_embed = vtoken_reprs[:vtoken_reprs.size(0) // 2]
+            z2_embed = vtoken_reprs[vtoken_reprs.size(0) // 2:]
+            sim = self.sim(z1_embed.unsqueeze(1), z2_embed.unsqueeze(0))
+            labels = torch.arange(sim.size(0)).long().to(sim.device)
+            loss_ct = self.ct_loss(sim, labels)
         plm_loss = outputs.loss
         if not self.use_crf:
             return plm_loss + loss_ct * self.ct_loss_weight

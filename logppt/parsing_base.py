@@ -42,7 +42,7 @@ def template_extraction(model, device, log_lines, vtoken="virtual-param"):
     pbar = tqdm(total=len(log_lines), desc='Parsing')
     templates = []
     for log in log_lines:
-        log = " ".join(log.strip().split()).lower()
+        log = " ".join(log.strip().split())
         try:
             template = cache_for_all_invocations[log]
         except KeyError:
