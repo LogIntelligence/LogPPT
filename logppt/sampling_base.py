@@ -49,6 +49,9 @@ def min_distance(c_set, t_set):
 def adaptive_random_sampling(logs, labels=None, shots=[8], n_candidate=128):
     if labels is None:
         labels = logs.copy()
+    # remove duplicates based on logs
+    logs, labels = list(zip(*list(set(zip(logs, labels)))))
+
     sample_results = {}
     sample_set = []
     T = []

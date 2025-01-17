@@ -251,7 +251,7 @@ def hierarchical_distribute(hierarchical_clusters, shot, logs=[], labels=[]):
                     break
             coarse_quota -= round_quota
 
-        
+        print("Fine quotas: ", fine_quotas)
         # assert sum(fine_quotas) == shot, "Quota mismatch"
 
         for fine_id, fine_key in enumerate(fine_clusters):
@@ -265,7 +265,9 @@ def hierarchical_distribute(hierarchical_clusters, shot, logs=[], labels=[]):
             cluster_labels = [labels[i] for i in cluster_ids]
             
             assert fine_quota <= len(cluster_logs), "Quota mismatch"
-            samples = adaptive_random_sampling(cluster_logs, cluster_labels, fine_quota)
+            # samples = adaptive_random_sampling(cluster_logs, cluster_labels, fine_quota)
+            # randomly sample from the cluster
+            samples = random.sample(list(zip(cluster_logs, cluster_labels)), fine_quota)
             candidate_samples.extend(samples)
 
     return candidate_samples
@@ -299,3 +301,36 @@ def sampling(logs, labels=None, shots=[8]):
 
     return sample_candidates
 
+
+
+def hierarchical_distribute2(hierarchical_clusters, shot, logs=[], labels=[]):
+    candidate_samples = []
+    coarse_clusters = hierarchical_clusters.keys()
+    # coarse_clusters = shuffle(list(coarse_clusters))
+    coarse_clusters = sorted(coarse_clusters, key=lambda x: hierarchical_clusters[x]["size"], reverse=True)
+    corase_size = len(coarse_clusters)
+    coarse_quotas = [0] * corase_size
+    while shot > 0:
+        round_quota = 0
+        for coarse_id, coarse_key in enumerate(coarse_clusters):
+            if coarse_quotas[coarse_id] == hierarchical_clusters[coarse_key]["size"]:
+                continue
+            coarse_quota = min(int(shot // corase_size) + (coarse_id < shot % corase_size), hierarchical_clusters[coarse_key]["size"] - coarse_quotas[coarse_id])
+            if coarse_quota == 0:
+                coarse_quota = 1
+            coarse_quotas[coarse_id] += coarse_quota
+            round_quota += coarse_quota
+            if round_quota == shot:
+                break
+        shot -= round_quota
+    for coarse_id, coarse_key in enumerate(coarse_clusters):
+        coarse_quota = coarse_quotas[coarse_id]
+        logs_ids = []
+        for _, log_ids in hierarchical_clusters[coarse_key]["cluster"].items():
+            logs_ids.extend(log_ids)
+        logs = [logs[i] for i in logs_ids]
+        labels = [labels[i] for i in logs_ids]
+        samples = adaptive_random_sampling(logs, labels, coarse_quota)
+        candidate_samples.extend(samples)
+
+    return candidate_samples

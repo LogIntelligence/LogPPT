@@ -10,15 +10,6 @@ python 02_run_logppt.py --log_file ../datasets/loghub-full/$dataset/${dataset}_f
 import sys
 sys.path.append("../")
 
-from logppt.models.viterbi import ViterbiDecoder, get_abstract_transitions
-from logppt.data.data_loader import DataLoaderForPromptTuning
-from logppt.models.roberta import RobertaForLogParsing
-from logppt.trainer import TrainingArguments, Trainer
-# from logppt.parsing_par import template_extraction
-from logppt.parsing_base import template_extraction
-from logppt.arguments import get_args
-from copy import copy
-import pickle
 from collections import Counter
 import time
 from transformers import set_seed
@@ -26,8 +17,13 @@ import logging
 import os
 import pandas as pd
 import torch
+import json
 
-# from logppt.parsing_base import template_extraction
+from logppt.data.data_loader import DataLoaderForPromptTuning
+from logppt.models.roberta import RobertaForLogParsing
+from logppt.trainer import TrainingArguments, Trainer
+from logppt.parsing_base import template_extraction
+from logppt.arguments import get_args
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -43,6 +39,7 @@ logger.handlers[0].setFormatter(formatter)
 if __name__ == '__main__':
 
     data_args, model_args, train_args, common_args = get_args()
+
     if common_args.seed is not None:
         set_seed(common_args.seed)
 
@@ -64,15 +61,6 @@ if __name__ == '__main__':
     param_label_words = data_loader.find_parameter_label_words(
         p_model.plm, common_args.no_label_words)
     p_model.add_label_token(param_label_words)
-
-
-    # print(model_args.use_crf)
-    # if model_args.use_crf:
-    #     # assert data_args.validation_file is not None, "A validation file is required for CRF"
-    #     abstract_transitions = get_abstract_transitions(
-    #         data_loader.processed_raw_datasets['train'])
-    #     viterbi_decoder = ViterbiDecoder(3, abstract_transitions, 0.05)
-    #     p_model.add_crf(viterbi_decoder)
 
     # Training
     training_args = TrainingArguments(
@@ -134,6 +122,16 @@ if __name__ == '__main__':
     task_output_dir = data_args.task_output_dir
     if not os.path.exists(task_output_dir):
         os.makedirs(task_output_dir)
+    
+    # save common_args, training_args, model_args, data_args to config.json
+    if not os.path.exists(f"{task_output_dir}/config.json"):
+        with open(f"{task_output_dir}/config.json", 'w') as file:
+            json.dump({
+                'common_args': vars(common_args),
+                'training_args': vars(training_args),
+                'model_args': vars(model_args),
+                'data_args': vars(data_args)
+            }, file)
     log_df.to_csv(
         f"{task_output_dir}/{data_args.dataset_name}_full.log_structured.csv", index=False)
 
@@ -146,15 +144,15 @@ if __name__ == '__main__':
         f"{task_output_dir}/{data_args.dataset_name}_full.log_templates.csv", index=False)
 
     # Save time cost
-    # time_cost_file = f"{task_output_dir}/time_cost.json"
-    # time_table = {}
-    # if os.path.exists(time_cost_file):
-    #     with open(time_cost_file, 'r') as file:
-    #         time_table = json.load(file)
-    # time_table[data_args.dataset_name] = {
-    #     'TrainingTime': (t1 - t0).__round__(3),
-    #     'ParsingTime': (t2 - t1).__round__(3),
-    #     'ModelTime': model_time.__round__(3)
-    # }
-    # with open(time_cost_file, 'w') as file:
-    #     json.dump(time_table, file)
+    time_cost_file = f"{task_output_dir}/time_cost.json"
+    time_table = {}
+    if os.path.exists(time_cost_file):
+        with open(time_cost_file, 'r') as file:
+            time_table = json.load(file)
+    time_table[data_args.dataset_name] = {
+        'TrainingTime': (t1 - t0).__round__(3),
+        'ParsingTime': (t2 - t1).__round__(3),
+        'ModelTime': model_time.__round__(3)
+    }
+    with open(time_cost_file, 'w') as file:
+        json.dump(time_table, file)
