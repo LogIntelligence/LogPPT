@@ -118,7 +118,8 @@ def evaluator(
         complex,
         frequent,
         result_file,
-        lstm=False
+        lstm=False,
+        filter_templates=None
 ):
     """
     Unit function to run the evaluation for a specific configuration.
@@ -175,11 +176,10 @@ def evaluator(
     groundtruth['EventTemplate'] = groundtruth['EventTemplate'].map(correct_template_general)
     parsedresult['EventTemplate'] = parsedresult.progress_apply(align_with_null_values, axis=1)
 
-    filter_templates = None
     logger.info("Start compute grouping accuracy")
     # calculate grouping accuracy
     start_time = time.time()
-    GA, FGA = evaluate(groundtruth, parsedresult, filter_templates)
+    GA, FGA = evaluate(groundtruth, parsedresult)
 
     GA_end_time = time.time() - start_time
     logger.info('Grouping Accuracy calculation done. [Time taken: {:.3f}]'.format(GA_end_time))
@@ -197,9 +197,9 @@ def evaluator(
     # calculate template-level accuracy
     start_time = time.time()
     if lstm == True:
-        tool_templates, ground_templates, FTA, PTA, RTA = evaluate_template_level_lstm(dataset, groundtruth, parsedresult, filter_templates)
+        tool_templates, ground_templates, FTA, PTA, RTA = evaluate_template_level_lstm(dataset, groundtruth, parsedresult)
     else:
-        tool_templates, ground_templates, FTA, PTA, RTA = evaluate_template_level(dataset, groundtruth, parsedresult, filter_templates)
+        tool_templates, ground_templates, FTA, PTA, RTA = evaluate_template_level(dataset, groundtruth, parsedresult)
     TA_end_time = time.time() - start_time
     logger.info('Template-level accuracy calculation done. [Time taken: {:.3f}]'.format(TA_end_time))
 

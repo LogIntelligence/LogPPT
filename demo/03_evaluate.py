@@ -15,6 +15,7 @@ Copyright (C) 2022 University of Luxembourg
 
 import sys
 import os
+import json
 
 sys.path.append('../')
 
@@ -79,6 +80,13 @@ if __name__ == "__main__":
         
         # run evaluator for a dataset
         # The file is only for evalutation, so we remove the parameter "LogParser"
+        # train_file = f"../datasets/loghub/{dataset}/validation.json"
+        train_file = f"../datasets/loghub/{dataset}/samples/logppt_32.json"
+        with open(train_file, 'r') as f:
+            train_data = f.readlines()
+        # each line is a json object
+        train_data = [json.loads(line) for line in train_data]
+        filtered_logs = list(set(log['template'] for log in train_data))
         evaluator(
             dataset=dataset,
             input_dir=input_dir,
@@ -88,6 +96,7 @@ if __name__ == "__main__":
             complex=args.complex,
             frequent=args.frequent,
             result_file=result_file,
+            filter_templates=filtered_logs,
         )  # it internally saves the results into a summary file
     metric_file = os.path.join(output_dir, result_file)
     
