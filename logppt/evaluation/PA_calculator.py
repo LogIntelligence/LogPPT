@@ -66,6 +66,7 @@ def calculate_parsing_accuracy(groundtruth_df, parsedresult_df, filter_templates
     # parsedresult_df = pd.read_csv(parsedresult)
     # groundtruth_df = pd.read_csv(groundtruth)
     # groundtruth_df['EventTemplate'] = groundtruth_df['EventTemplate'].map(correct_template_general)
+    print(filter_templates)
     if filter_templates is not None:
         unseen_df = groundtruth_df[~groundtruth_df['EventTemplate'].isin(filter_templates)]
         unseen_parsedresult_df = parsedresult_df.loc[groundtruth_df.index]
