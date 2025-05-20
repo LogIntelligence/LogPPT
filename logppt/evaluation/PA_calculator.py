@@ -67,8 +67,12 @@ def calculate_parsing_accuracy(groundtruth_df, parsedresult_df, filter_templates
     # groundtruth_df = pd.read_csv(groundtruth)
     # groundtruth_df['EventTemplate'] = groundtruth_df['EventTemplate'].map(correct_template_general)
     if filter_templates is not None:
-        groundtruth_df = groundtruth_df[groundtruth_df['EventTemplate'].isin(filter_templates)]
-        parsedresult_df = parsedresult_df.loc[groundtruth_df.index]
+        unseen_df = groundtruth_df[~groundtruth_df['EventTemplate'].isin(filter_templates)]
+        unseen_parsedresult_df = parsedresult_df.loc[groundtruth_df.index]
+        correctly_parsed_unseen_messages = unseen_parsedresult_df[['EventTemplate']].eq(unseen_df[['EventTemplate']]).values.sum()
+        total_unseen_messages = len(unseen_parsedresult_df[['Content']])
+        uPA = float(correctly_parsed_unseen_messages) / total_unseen_messages
+        print('Unseen Parsing_Accuracy (uPA): {:.4f}'.format(uPA))
     correctly_parsed_messages = parsedresult_df[['EventTemplate']].eq(groundtruth_df[['EventTemplate']]).values.sum()
     total_messages = len(parsedresult_df[['Content']])
 
@@ -80,7 +84,7 @@ def calculate_parsing_accuracy(groundtruth_df, parsedresult_df, filter_templates
     # SA = sum(similarities) / len(similarities)
     # print('Parsing_Accuracy (PA): {:.4f}, Similarity_Accuracy (SA): {:.4f}'.format(PA, SA))
     print('Parsing_Accuracy (PA): {:.4f}'.format(PA))
-    return PA
+    return PA, uPA
 
 
 def calculate_parsing_accuracy_lstm(groundtruth_df, parsedresult_df, filter_templates=None):

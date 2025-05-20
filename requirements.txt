@@ -8,5 +8,4 @@ scipy
 textdistance
 seqeval
 accelerate
-sklearn
 scikit-learn

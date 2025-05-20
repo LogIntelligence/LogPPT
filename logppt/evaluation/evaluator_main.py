@@ -190,7 +190,7 @@ def evaluator(
         PA = calculate_parsing_accuracy_lstm(groundtruth, parsedresult, filter_templates)
         logger.info("Finish calculate_parsing_accuracy_lstm")
     else:
-        PA = calculate_parsing_accuracy(groundtruth, parsedresult, filter_templates)
+        PA, uPA = calculate_parsing_accuracy(groundtruth, parsedresult, filter_templates)
     PA_end_time = time.time() - start_time
     logger.info('Parsing Accuracy calculation done. [Time taken: {:.3f}]'.format(PA_end_time))
 
@@ -220,9 +220,10 @@ def evaluator(
              "{:.3f}".format(GA) + ',' + \
              "{:.3f}".format(PA) + ',' + \
              "{:.3f}".format(FGA) + ',' + \
+             "{:.3f}".format(FTA) + ',' + \
+             "{:.3f}".format(uPA) + ',' + \
              "{:.3f}".format(PTA) + ',' + \
-             "{:.3f}".format(RTA) + ',' + \
-             "{:.3f}".format(FTA) + '\n'
+             "{:.3f}".format(RTA) + '\n'
              # "{:.1f}".format(GA_end_time) + ',' + \
              # "{:.1f}".format(PA_end_time) + ',' + \
              # "{:.1f}".format(TA_end_time) + ',' + \
