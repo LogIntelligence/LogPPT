@@ -71,7 +71,7 @@ def calculate_parsing_accuracy(groundtruth_df, parsedresult_df, filter_templates
         unseen_parsedresult_df = parsedresult_df.loc[groundtruth_df.index]
         correctly_parsed_unseen_messages = unseen_parsedresult_df[['EventTemplate']].eq(unseen_df[['EventTemplate']]).values.sum()
         total_unseen_messages = len(unseen_parsedresult_df[['Content']])
-        if total_messages == 0:
+        if total_unseen_messages == 0:
             uPA = 0
         else:
             uPA = float(correctly_parsed_unseen_messages) / total_unseen_messages
