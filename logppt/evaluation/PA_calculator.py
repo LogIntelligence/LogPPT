@@ -69,8 +69,7 @@ def calculate_parsing_accuracy(groundtruth_df, parsedresult_df, filter_templates
     print(filter_templates)
     if filter_templates is not None:
         unseen_df = groundtruth_df[~groundtruth_df['EventTemplate'].isin(filter_templates)]
-        # print(len(unseen_df))
-        print(unseen_df['EventTemplate'][0:10])
+        print(len(unseen_df))
         unseen_parsedresult_df = parsedresult_df.loc[unseen_df.index]
         correctly_parsed_unseen_messages = unseen_parsedresult_df[['EventTemplate']].eq(unseen_df[['EventTemplate']]).values.sum()
         total_unseen_messages = len(unseen_df[['Content']])
