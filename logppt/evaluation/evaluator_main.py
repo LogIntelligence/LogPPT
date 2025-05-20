@@ -175,6 +175,10 @@ def evaluator(
     groundtruth['EventTemplate'] = groundtruth.progress_apply(align_with_null_values, axis=1)
     groundtruth['EventTemplate'] = groundtruth['EventTemplate'].map(correct_template_general)
     parsedresult['EventTemplate'] = parsedresult.progress_apply(align_with_null_values, axis=1)
+    if filter_templates is not None:
+        # apply correct_template_general to filter_templates
+        filter_templates = [correct_template_general(template) for template in filter_templates]
+
 
     logger.info("Start compute grouping accuracy")
     # calculate grouping accuracy
