@@ -9,5 +9,5 @@ def post_average(metric_file):
     df = pd.concat([df, new_row], ignore_index=True)
     df.to_csv(metric_file, index=False)
     df = pd.read_csv(metric_file)
-    transposed_df = df.transpose()
-    transposed_df.to_csv(metric_file)
+    # transposed_df = df.transpose()
+    df.to_csv(metric_file)

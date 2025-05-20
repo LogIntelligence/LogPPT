@@ -48,7 +48,7 @@ def prepare_results(output_dir, otc, complex, frequent):
             # fw.writerow(['Dataset', 'GA_time', 'PA_time', 'TA_time', 'parse_time', 'identified_templates',
             #              'ground_templates', 'GA', 'PA', 'FTA', 'PTA', 'RTA', 'OG', 'UG', 'MX'])
             fw.writerow(['Dataset', 'traning_time', 'parsing_time', 'identified_templates',
-                        'ground_templates', 'GA', 'PA', 'FGA', 'PTA', 'RTA', 'FTA'])
+                        'ground_templates', 'GA', 'PA', 'FGA', 'uPA', 'FTA', 'PTA', 'RTA'])
 
     return result_file
 
@@ -140,6 +140,7 @@ def evaluator(
     if not os.path.exists(parsedresult) or is_file_empty(parsedresult):
         logger.info("No output file generated.")
         result = dataset + ',' + \
+                "None" + ',' + \
                 "None" + ',' + \
                 "None" + ',' + \
                 "None" + ',' + \
