@@ -48,7 +48,7 @@ def prepare_results(output_dir, otc, complex, frequent):
             # fw.writerow(['Dataset', 'GA_time', 'PA_time', 'TA_time', 'parse_time', 'identified_templates',
             #              'ground_templates', 'GA', 'PA', 'FTA', 'PTA', 'RTA', 'OG', 'UG', 'MX'])
             fw.writerow(['Dataset', 'traning_time', 'parsing_time', 'identified_templates',
-                        'ground_templates', 'GA', 'PA', 'FGA', 'uPA', 'FTA', 'PTA', 'RTA'])
+                        'ground_templates', 'GA', 'PA', 'FGA', 'FTA', 'uPA', 'PTA', 'RTA'])
 
     return result_file
 
@@ -174,7 +174,7 @@ def evaluator(
     tqdm.pandas()
     logger.info("Start to align with null values")
     groundtruth['EventTemplate'] = groundtruth.progress_apply(align_with_null_values, axis=1)
-    groundtruth['EventTemplate'] = groundtruth['EventTemplate'].map(correct_template_general)
+    groundtruth['EventTemplate'] = groundtruth['EventTemplate'].map(correct_single_template)
     parsedresult['EventTemplate'] = parsedresult.progress_apply(align_with_null_values, axis=1)
     if filter_templates is not None:
         # apply correct_template_general to filter_templates

@@ -65,6 +65,7 @@ def template_extraction(model, device, log_lines, vtoken="virtual-param"):
             cache_for_all_invocations[log] = template
             templates.append(template)
             pbar.update(1)
+    print(cache.template_tree)
     logger.info(f"Total time taken: {time.time() - start_time}")
     logger.info(f"No of model invocations: {len(cache_for_all_invocations.keys())}")
     logger.info(f"Total time taken by model: {model_time}")

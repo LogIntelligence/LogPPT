@@ -31,7 +31,6 @@ class ParsingCache(object):
             return -1
         if insert or len(relevant_templates) == 0:
             id = self.insert(event_template, template_tokens, len(self.template_list))
-            # self.template_list.append(event_template)
             self.template_list[id] = event_template
             return id
         
@@ -49,20 +48,19 @@ class ParsingCache(object):
             success, id = self.modify(similar_template, event_template)
             if not success:
                 id = self.insert(event_template, template_tokens, len(self.template_list))
-                # self.template_list.append(event_template)
                 self.template_list[id] = event_template
             return id
         else:
             id = self.insert(event_template, template_tokens, len(self.template_list))
-            # self.template_list.append(event_template)
             self.template_list[id] = event_template
             return id
-            #print("template tokens: ", template_tokens)
             
     def insert(self, event_template, template_tokens, template_id):
         start_token = template_tokens[0]
         if start_token not in self.template_tree:
             self.template_tree[start_token] = {}
+            self.template_tree[start_token]["occurrence"] = 0
+        self.template_tree[start_token]["occurrence"] += 1
         move_tree = self.template_tree[start_token]
 
         tidx = 1
