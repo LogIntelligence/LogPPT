@@ -174,7 +174,7 @@ def evaluator(
     tqdm.pandas()
     logger.info("Start to align with null values")
     groundtruth['EventTemplate'] = groundtruth.progress_apply(align_with_null_values, axis=1)
-    groundtruth['EventTemplate'] = groundtruth['EventTemplate'].map(correct_single_template)
+    # groundtruth['EventTemplate'] = groundtruth['EventTemplate'].map(correct_template_general)
     parsedresult['EventTemplate'] = parsedresult.progress_apply(align_with_null_values, axis=1)
     if filter_templates is not None:
         # apply correct_template_general to filter_templates
