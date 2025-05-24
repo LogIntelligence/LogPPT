@@ -166,9 +166,9 @@ def evaluator(
     groundtruth.Content = groundtruth.Content.str.lower()
     parsedresult.EventTemplate = parsedresult.EventTemplate.str.lower()
     groundtruth.EventTemplate = groundtruth.EventTemplate.str.lower()
-    # logger.info("Start to modify output")
-    # parsedresult['EventTemplate'] = parsedresult['EventTemplate'].apply(lambda x: correct_single_template(x))
-    # groundtruth['EventTemplate'] = groundtruth['EventTemplate'].apply(lambda x: correct_single_template(x))
+    logger.info("Start to modify output")
+    parsedresult['EventTemplate'] = parsedresult['EventTemplate'].apply(lambda x: correct_single_template(x))
+    groundtruth['EventTemplate'] = groundtruth['EventTemplate'].apply(lambda x: correct_single_template(x))
 
     # remove null values
     tqdm.pandas()
@@ -178,7 +178,7 @@ def evaluator(
     parsedresult['EventTemplate'] = parsedresult.progress_apply(align_with_null_values, axis=1)
     if filter_templates is not None:
         # apply correct_template_general to filter_templates
-        filter_templates = [correct_template_general(template.lower()) for template in filter_templates]
+        filter_templates = [correct_single_template(template.lower()) for template in filter_templates]
 
 
     logger.info("Start compute grouping accuracy")
