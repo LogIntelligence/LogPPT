@@ -27,6 +27,10 @@ from logppt.evaluation.template_level_analysis import evaluate_template_level, e
 from logppt.evaluation.PA_calculator import calculate_parsing_accuracy, calculate_parsing_accuracy_lstm
 import pandas as pd
 from .post_process import correct_single_template
+
+from pandarallel import pandarallel
+pandarallel.initialize(progress_bar=False)
+
 import logging
 
 logger = logging.getLogger("LogPPT")
@@ -167,15 +171,15 @@ def evaluator(
     parsedresult.EventTemplate = parsedresult.EventTemplate.str.lower()
     groundtruth.EventTemplate = groundtruth.EventTemplate.str.lower()
     logger.info("Start to modify output")
-    parsedresult['EventTemplate'] = parsedresult['EventTemplate'].apply(lambda x: correct_single_template(x))
-    groundtruth['EventTemplate'] = groundtruth['EventTemplate'].apply(lambda x: correct_single_template(x))
+    parsedresult['EventTemplate'] = parsedresult['EventTemplate'].parallel_apply(lambda x: correct_single_template(x))
+    groundtruth['EventTemplate'] = groundtruth['EventTemplate'].parallel_apply(lambda x: correct_single_template(x))
 
     # remove null values
     tqdm.pandas()
     logger.info("Start to align with null values")
-    groundtruth['EventTemplate'] = groundtruth.progress_apply(align_with_null_values, axis=1)
+    groundtruth['EventTemplate'] = groundtruth.parallel_apply(align_with_null_values, axis=1)
     # groundtruth['EventTemplate'] = groundtruth['EventTemplate'].map(correct_template_general)
-    parsedresult['EventTemplate'] = parsedresult.progress_apply(align_with_null_values, axis=1)
+    parsedresult['EventTemplate'] = parsedresult.parallel_apply(align_with_null_values, axis=1)
     if filter_templates is not None:
         # apply correct_template_general to filter_templates
         filter_templates = [correct_single_template(template.lower()) for template in filter_templates]
