@@ -60,7 +60,7 @@ class ParsingCache(object):
         param_percentages = []
         for template in self.template_list.values():
             tokens = message_split(template)
-            num_param = sum(1 for token in tokens if token == "<*>")
+            num_param = sum([1 for token in tokens if token == "<*>"])
             if len(tokens) > 0:
                 param_percentages.append((len(tokens) - num_param) / len(tokens))
         if param_percentages:
