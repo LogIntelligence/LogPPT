@@ -20,6 +20,7 @@ class ParsingCache(object):
     def __init__(self):
         self.template_tree = {}
         self.template_list = {}
+        self.threshold = 0.8  # similarity threshold for merging templates
 
     def get_template_list(self):
         return self.template_list
@@ -44,23 +45,32 @@ class ParsingCache(object):
             if similarity > max_similarity:
                 max_similarity = similarity
                 similar_template = rt
-        if max_similarity > 0.8:
+        if max_similarity > self.threshold:
             success, id = self.modify(similar_template, event_template)
             if not success:
                 id = self.insert(event_template, template_tokens, len(self.template_list))
                 self.template_list[id] = event_template
-            return id
         else:
             id = self.insert(event_template, template_tokens, len(self.template_list))
             self.template_list[id] = event_template
-            return id
+        self.recompute_threshold()
+        return id
+    
+    def recompute_threshold(self):
+        param_percentages = []
+        for template in self.template_list.values():
+            tokens = message_split(template)
+            num_param = sum(1 for token in tokens if token == "<*>")
+            if len(tokens) > 0:
+                param_percentages.append((len(tokens) - num_param) / len(tokens))
+        if param_percentages:
+            self.threshold = (sum(param_percentages) / len(param_percentages) + self.threshold) / 2
             
+
     def insert(self, event_template, template_tokens, template_id):
         start_token = template_tokens[0]
         if start_token not in self.template_tree:
             self.template_tree[start_token] = {}
-            self.template_tree[start_token]["occurrence"] = 0
-        self.template_tree[start_token]["occurrence"] += 1
         move_tree = self.template_tree[start_token]
 
         tidx = 1
