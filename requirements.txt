@@ -8,6 +8,6 @@ regex==2024.7.24
 scikit_learn==1.6.1
 scipy==1.15.3
 textdistance==4.6.3
-torch==2.3.0
+torch==2.8.0
 tqdm==4.66.5
 transformers==4.43.3
